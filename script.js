@@ -65,6 +65,28 @@
     toggleBtn.textContent = shouldOpen ? 'Collapse all' : 'Expand all';
   });
 
+  /* ── 3b. Show / Hide extended explanations ──────────────────────────── */
+  const explBtn = $('#toggle-explanations');
+  const STORAGE_KEY = 'genai-roadmap:explanations-visible';
+
+  const applyExplanationState = (visible) => {
+    $$('.part-extended').forEach(el => { el.hidden = !visible; });
+    explBtn.setAttribute('aria-pressed', String(visible));
+    explBtn.textContent = visible ? 'Hide explanations' : 'Show explanations';
+  };
+
+  // Restore state from localStorage on page load
+  const savedVisible = localStorage.getItem(STORAGE_KEY) === 'true';
+  applyExplanationState(savedVisible);
+
+  // Toggle on click
+  explBtn.addEventListener('click', () => {
+    const currentlyVisible = explBtn.getAttribute('aria-pressed') === 'true';
+    const nextVisible = !currentlyVisible;
+    applyExplanationState(nextVisible);
+    localStorage.setItem(STORAGE_KEY, String(nextVisible));
+  });
+
   /* ── 4. Back to top ──────────────────────────────────────────────────── */
   const fab = $('#back-to-top');
   const firstPartTop = () => $('section.part')?.getBoundingClientRect().top ?? 0;
