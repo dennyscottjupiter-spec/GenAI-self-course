@@ -65,11 +65,13 @@ def audit():
     has_observer = 'IntersectionObserver' in js
     has_search = 'debounce' in js
     has_toggle = 'toggle-all' in js
+    has_toggle_explanations = 'toggle-explanations' in js
     has_back_to_top = 'back-to-top' in js
     has_deep_link = 'location.hash' in js
     print(f"  IntersectionObserver: {ok(has_observer)}")
     print(f"  Search/debounce: {ok(has_search)}")
     print(f"  Expand/collapse toggle: {ok(has_toggle)}")
+    print(f"  Explanation toggle: {ok(has_toggle_explanations)}")
     print(f"  Back-to-top button: {ok(has_back_to_top)}")
     print(f"  Deep-link support: {ok(has_deep_link)}")
 
@@ -94,12 +96,16 @@ def audit():
     has_warn_banner = 'warn-banner' in html
     has_search_input = 'type="search"' in html
     has_toc = '<nav id="toc"' in html
+    extended_blocks = len(re.findall(r'<div class="part-extended"', html))
+    has_toggle_button = 'id="toggle-explanations"' in html
     print(f"  Preamble section: {ok(has_preamble)}")
     print(f"  Track A banner: {ok(has_track_a_banner)}")
     print(f"  Track B banner: {ok(has_track_b_banner)}")
     print(f"  Track B warning banner: {ok(has_warn_banner)}")
     print(f"  Search input: {ok(has_search_input)}")
     print(f"  TOC sidebar: {ok(has_toc)}")
+    print(f"  Extended explanation blocks: {extended_blocks} (expected 19) {ok(extended_blocks == 19)}")
+    print(f"  Toggle explanations button: {ok(has_toggle_button)}")
 
     # File size checks
     print("\n[PERFORMANCE CHECKS]")
@@ -123,10 +129,13 @@ def audit():
     print("\n[CODE CLEANLINESS]")
     has_todo = 'TODO' in html or 'FIXME' in html
     has_debug = 'console.log' in html
-    has_trailing_placeholders = '{{' in html.replace('{{SUMMARY_', '')
+    has_trailing_placeholders = '{{' in html.replace('{{SUMMARY_', '').replace('{{EXTENDED_', '')
+    has_extended_placeholders = '{{EXTENDED_' in html
     print(f"  No TODO/FIXME: {ok(not has_todo)}")
     print(f"  console.log allowed: [OK]")
-    print(f"  No stray placeholders: {ok(not has_trailing_placeholders)}")
+    print(f"  No stray SUMMARY placeholders: {ok(not html.count('{{SUMMARY_'))}")
+    print(f"  No stray EXTENDED placeholders: {ok(not has_extended_placeholders)}")
+    print(f"  No other placeholders: {ok(not has_trailing_placeholders)}")
 
     print("\n=== AUDIT COMPLETE ===\n")
 

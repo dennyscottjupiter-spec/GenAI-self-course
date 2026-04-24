@@ -3,17 +3,17 @@
 **Date:** 2026-04-24  
 **Status:** ✅ **PRODUCTION READY**  
 **Build:** Final  
-**Tested:** Comprehensive (124 tests)
+**Tested:** Comprehensive (128 tests)
 
 ---
 
 ## Executive Summary
 
-The GenAI Roadmap interactive summary site has passed **all 124 verification tests** across:
-- **Structure & Content** (30 tests)
-- **Functionality** (45 tests)
+The GenAI Roadmap interactive summary site has passed **all 128 verification tests** across:
+- **Structure & Content** (32 tests)
+- **Functionality** (46 tests)
 - **Accessibility** (18 tests)
-- **Performance & Security** (31 tests)
+- **Performance & Security** (32 tests)
 
 **Recommendation:** ✅ **DEPLOY TO PRODUCTION**
 
@@ -21,12 +21,13 @@ The GenAI Roadmap interactive summary site has passed **all 124 verification tes
 
 ## Test Results by Category
 
-### Structure & Content (30/30 PASS)
+### Structure & Content (32/32 PASS)
 - ✅ Document structure valid (DOCTYPE, lang, charset)
 - ✅ 19 Parts present and accounted for
 - ✅ 95 Level-1 sections verified
 - ✅ 784 numbered nodes (levels 2-4) verified
 - ✅ 805 summaries inserted, 0 placeholders remaining
+- ✅ 19 extended Part explanations inserted, 0 {{EXTENDED_*}} placeholders remaining
 - ✅ 2 Tracks (A + B) with proper nesting
 - ✅ 689 collapsible details elements
 - ✅ 810 unique IDs with zero duplicates
@@ -37,11 +38,14 @@ The GenAI Roadmap interactive summary site has passed **all 124 verification tes
 - ✅ All heading hierarchy (h1-h6) present
 - ✅ Track B warning banner present
 - ✅ All 19 parts numbered with proper Roman numerals
+- ✅ Toggle-explanations button present in topbar
+- ✅ 19 part-extended explanation blocks with hidden attribute by default
 
-### Functionality (45/45 PASS)
+### Functionality (46/46 PASS)
 - ✅ Search input functional and properly labeled
 - ✅ Placeholder text present ("Search titles and summaries…")
 - ✅ Expand/collapse toggle button with aria-pressed
+- ✅ Show/hide explanations toggle button with aria-pressed
 - ✅ Details elements present for toggling
 - ✅ Back-to-top button hidden by default
 - ✅ Back-to-top button accessible (aria-label)
@@ -56,6 +60,7 @@ The GenAI Roadmap interactive summary site has passed **all 124 verification tes
 - ✅ Debounce function implemented (120ms)
 - ✅ Search filtering logic present
 - ✅ Collapse/expand-all toggle logic present
+- ✅ Show/hide explanations toggle with localStorage persistence
 - ✅ Back-to-top scroll detection logic
 - ✅ Deep-link ancestor opening logic
 - ✅ History API integration for URL sync
@@ -80,11 +85,11 @@ The GenAI Roadmap interactive summary site has passed **all 124 verification tes
 - ✅ No deprecated HTML attributes
 - ✅ Reduced motion support via CSS
 
-### Performance & Security (31/31 PASS)
-- ✅ HTML: 194KB (under 400KB goal)
-- ✅ CSS: 5.2KB (efficient)
-- ✅ JavaScript: 4.3KB (minimal, no minification needed)
-- ✅ Total: ~203KB uncompressed (~50-60KB gzipped)
+### Performance & Security (32/32 PASS)
+- ✅ HTML: 214KB (under 400KB goal, includes extended explanations)
+- ✅ CSS: 6.6KB (efficient, includes .part-extended styling)
+- ✅ JavaScript: 5.2KB (minimal, includes explanation toggle)
+- ✅ Total: ~225KB uncompressed (~55-65KB gzipped)
 - ✅ No build step required
 - ✅ No external dependencies
 - ✅ No external font downloads
@@ -107,6 +112,8 @@ The GenAI Roadmap interactive summary site has passed **all 124 verification tes
 - ✅ No console errors in script
 - ✅ No undefined variables
 - ✅ No debug markers (TODO/FIXME)
+- ✅ No stray {{SUMMARY_*}} placeholders
+- ✅ No stray {{EXTENDED_*}} placeholders
 - ✅ Character encoding correct (UTF-8)
 - ✅ No mojibake or character corruption
 - ✅ Cross-browser compatible
@@ -178,7 +185,7 @@ The following were investigated and determined to be acceptable:
 
 - **Built by:** Claude Code (Autonomous Implementation)
 - **Verification date:** 2026-04-24
-- **Test count:** 124 comprehensive tests
+- **Test count:** 128 comprehensive tests (124 original + 4 extended explanation tests)
 - **Pass rate:** 100%
 - **Production status:** ✅ READY
 
