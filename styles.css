@@ -29,10 +29,25 @@ body { background: var(--bg); color: var(--text); font-family: var(--sans); line
 .visually-hidden { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 
 /* Top bar */
-.topbar { display: flex; gap: 1rem; align-items: center; padding: .75rem 1rem; background: var(--sidebar-bg); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 10; }
+.topbar {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  padding: .75rem 1rem;
+  background: var(--sidebar-bg);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  /* needed so the absolutely-centred title positions relative to the bar */
+  position: sticky;
+}
 
-/* Atari-inspired title */
+/* Atari-inspired title — absolutely centred in the topbar */
 .title {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
   font-family: "Courier New", Consolas, "Cascadia Code", monospace;
   font-size: 1.05rem;
   font-weight: 900;
@@ -45,6 +60,7 @@ body { background: var(--bg); color: var(--text); font-family: var(--sans); line
     0 0 12px #ffb00099,
     0 0 28px #ff800033;
   white-space: nowrap;
+  pointer-events: none; /* clicks pass through to underlying elements */
 }
 
 .top-nav { display: flex; gap: .5rem; margin-left: auto; }

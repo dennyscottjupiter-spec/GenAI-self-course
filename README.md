@@ -1,190 +1,224 @@
-# The Complete Generative AI Roadmap — Interactive Summary Site
+# The Complete Generative AI Roadmap
 
-A beautiful, searchable static website that transforms the comprehensive GenAI learning roadmap into a browsable outline. Built with zero dependencies, VS Code Dark+ theming, and full accessibility support.
+A searchable, interactive static website that turns the GenAI learning roadmap into a browsable outline. Zero dependencies — open `index.html` and it works.
 
-## Overview
+---
 
-**What it is:** A single-page static HTML site (index.html + styles.css + script.js) that renders the GenAI roadmap as an interactive, nested outline.
+## What's Inside
 
-**What's inside:**
-- **19 Parts** (Parts I–XIX) covering foundations through current landscape
-- **95 numbered sections** (1–95) with detailed 1–3 sentence summaries
-- **700+ leaves** (level-2, level-3, level-4) with atomic explanations
-- **Track A (evergreen)** — stable concepts (Parts I–XV)
-- **Track B (current)** — time-sensitive landscape review (Parts XVI–XIX)
+| Layer | Detail |
+|---|---|
+| **19 Parts** (I – XIX) | Foundations → current landscape |
+| **95 numbered sections** | Each with a 2–3 sentence summary |
+| **700 + leaves** (levels 2–4) | Atomic, one-idea-per-bullet explanations |
+| **Track A (Parts I–XV)** | Evergreen — stable concepts that age slowly |
+| **Track B (Parts XVI–XIX)** | Time-sensitive — refresh once a year |
 
-**Key features:**
-- 💾 **Zero external dependencies** — no npm, no CDN, no frameworks
-- 🎨 **VS Code Dark+** theme — comfortable for long reading sessions
-- 🔍 **Real-time search** — filters sections and sidebar TOC simultaneously
-- 📱 **Fully responsive** — single column on mobile, two columns on desktop
-- ♿ **WCAG AA accessible** — keyboard navigation, screen-reader friendly, focus indicators
-- 📖 **Active section highlight** — TOC updates as you scroll
-- 🔗 **Deep linking** — URL anchors like `#s-7-4-1-1` work perfectly
-- 🎯 **Collapse/expand** — toggle all sections at once, or expand individual leaves
+---
 
 ## Files
 
 ```
 .
-├── README.md                          ← This file
-├── PLAN.md                            ← Detailed implementation plan (for reference)
-├── genai-roadmap.md                   ← Source outline (19 Parts, 95 sections)
-├── index.html                         ← Complete site HTML (inlined content + markup)
-├── styles.css                         ← VS Code Dark+ styling + responsive layout
-├── script.js                          ← Interactivity (search, scroll highlight, toggle)
-└── tools/
-    ├── convert_markdown.py            ← Converts roadmap markdown → HTML structure
-    ├── generate_summaries.py          ← Fills 805 {{SUMMARY_*}} placeholders
-    └── audit.py                       ← Comprehensive verification checklist
+├── index.html               ← Complete site (all content inlined)
+├── styles.css               ← VS Code Dark+ theme + responsive layout
+├── script.js                ← Search, scroll highlight, collapse, deep links
+├── genai-roadmap.md         ← Source outline (19 Parts, 95 sections)
+├── tools/
+│   ├── convert_markdown.py  ← Converts roadmap .md → HTML structure
+│   ├── generate_summaries.py← Fills all {{SUMMARY_*}} placeholders
+│   ├── audit.py             ← 124-check verification script
+│   └── fix_issues.py        ← Post-generation fixes (TOC, preamble)
+├── PLAN.md                  ← Implementation plan (reference)
+└── VERIFICATION.md          ← 124/124 test audit report
 ```
+
+---
 
 ## Quick Start
 
-### View the Site Locally
+### 1 — View Locally (Recommended First Step)
+
+Python ships a tiny web server perfect for local HTML previewing.
 
 ```bash
-# Start a local server (Python 3 required)
+# Start the server — run this from the project folder
 python3 -m http.server 8000
 
-# Open in browser
-# http://localhost:8000
+# Open your browser and go to:
+http://localhost:8000
 ```
 
-The site loads instantly — no build step, no install required.
+> The site loads instantly — no build step, no `npm install`, nothing to configure.
 
-### View on GitHub Pages (when deployed)
+### 2 — Stopping the Local Server (Important — Read This)
 
-Once pushed to GitHub and Pages enabled:
+**The short answer:** press `Ctrl + C` in the terminal where the server is running.
+
+**The full picture — why it matters:**
+
+`python3 -m http.server` is a **development-only tool**. It serves every file in your project folder to anyone who can reach your machine on port 8000. On your home laptop with a normal firewall this is fine — only your own browser connects. But there are two situations where you must stop it:
+
+| Situation | Risk | What to do |
+|---|---|---|
+| You're on a public/shared Wi-Fi (café, airport, office) | Other people on the same network can browse your files | Stop the server before joining the network, or pass `--bind 127.0.0.1` (see below) |
+| You walked away and forgot it's running | Low risk at home; medium risk on shared networks | Stop it when not actively using it |
+
+**Always use the `--bind` flag to be safe:**
+
+```bash
+# Binds to localhost ONLY — no other device on the network can reach it
+python3 -m http.server 8000 --bind 127.0.0.1
 ```
-https://yourusername.github.io/GenAI-self-course/
+
+**How to kill a forgotten server:**
+
+```bash
+# macOS / Linux — find the process
+lsof -i :8000
+# Output shows PID (process ID), e.g. "Python  12345 ..."
+kill 12345
+
+# Windows (PowerShell or Command Prompt)
+netstat -ano | findstr :8000
+# Note the PID in the last column, then:
+taskkill /PID 12345 /F
 ```
+
+**Rule of thumb:** treat this server like leaving your front door open. Fine inside your house, not fine in a hotel lobby.
+
+---
+
+## Features
+
+| Feature | How it works |
+|---|---|
+| **Real-time search** | Type in the sidebar — filters sections and TOC simultaneously (120 ms debounce) |
+| **Expand / Collapse all** | Toggle button in the header opens or closes every `<details>` element at once |
+| **Active section highlight** | `IntersectionObserver` watches headings and highlights the matching TOC link as you scroll |
+| **Deep links** | Any section has a stable URL anchor, e.g. `#s-7-4-1-1`; the page auto-opens collapsed ancestors on load |
+| **Back to top** | Floating button appears after 400 px of scroll |
+| **Keyboard navigation** | Tab through skip link → chips → search → TOC → content; full screen-reader support |
+
+---
 
 ## How to Use the Site
 
-**Sidebar (left):**
-- **Search input** — type keywords to filter sections and TOC in real-time
-- **Track chips** — jump to Track A (evergreen) or Track B (current)
-- **Table of Contents** — three-level outline (Track → Part → Section). Click to jump. Active section highlights as you scroll.
+**Sidebar (left)**
+- Search box — type any keyword to filter both the TOC and the main content
+- Track chips — jump straight to Track A (evergreen) or Track B (current)
+- Table of Contents — three-level: Track → `Roman — Part Title` → `N. Section`. Click to jump; active section highlights as you scroll
 
-**Main content (center):**
-- **Nested sections** — read straight through or jump around via TOC/search
-- **Expand/collapse** — level-2+ sections are collapsible `<details>` elements. Expand individual branches or use the "Expand all" button
-- **Level-4 leaves** — deepest atomic ideas (e.g., `7.4.1.1` — some concept)
+**Main content (centre)**
+- Read straight through, or jump via TOC or search
+- Every `<details>` element is collapsible — click the `▸` triangle to expand/collapse individual branches
+- Use the header's **Expand all** button to open everything at once
 
-**Header:**
-- **Title** — The Complete Generative AI Roadmap
-- **"Track A / Track B" chips** — Quick jump between tracks
-- **"Expand all" button** — Toggle collapse/expand for entire main content
+**Header**
+- Centred Atari-style title (amber phosphor glow, monospace, uppercase)
+- **Track A / Track B** chips for quick jumps
+- **Expand all** toggle
 
-**Floating button (bottom-right):**
-- **"↑ Top"** — Appears after scrolling 400px down. Smooth-scroll back to top.
+**Floating button (bottom-right)**
+- **↑ Top** — appears once you scroll 400 px down
 
-## Technical Highlights
+---
 
-### Architecture
+## Architecture
 
-- **Single-file delivery** — all content inlined into `index.html`. No separate JSON, no API calls.
-- **Semantic HTML5** — `<section>`, `<details>`, `<summary>`, `<nav>`, `<aside>`, `<main>`, proper `<h2>–<h6>` hierarchy.
-- **CSS custom properties** — colors, fonts, spacing defined once, reused everywhere. Easy to theme.
-- **Vanilla JavaScript (4.3KB)** — no frameworks, no build step.
-  - IntersectionObserver for active section highlight
-  - Debounced search (120ms) for responsive filtering
-  - History API for clean URL sync
-  - Ancestors auto-open when deep-linking into collapsed nodes
+```
+HTML (194 KB)           → all content inlined; no external JSON or API calls
+CSS  (  5 KB)           → CSS custom properties, Grid, Flexbox, print stylesheet
+JS   (  4 KB)           → vanilla ES6+; no framework; no build step required
+Total payload ≈ 203 KB  → ~50–60 KB gzipped
+```
 
-### Performance
+**Semantic HTML5 elements used:** `<header>`, `<nav>`, `<main>`, `<aside>`, `<section>`, `<details>`, `<summary>`, headings `<h2>`–`<h6>`
 
-- **HTML:** 193 KB (well under 400 KB goal)
-- **CSS:** 5.2 KB
-- **JS:** 4.3 KB
-- **Total payload:** ~203 KB (uncompressed)
-- **Lighthouse Performance:** 90+
-- **No network requests** after initial page load — everything is static
+**Accessibility (WCAG AA):**
+- Skip link, `lang="en"`, `aria-label`, `aria-pressed`, `aria-current="location"`
+- 2 px focus ring on all interactive elements
+- `prefers-reduced-motion` respected (no smooth-scroll for users who opt out)
+- Color contrast ≥ 4.5 : 1 (muted text uses `#a0a0a0`, not `#858585`)
 
-### Accessibility
+**Responsive breakpoints:**
+- ≥ 900 px — two columns: sticky sidebar (300 px) + content
+- 600–900 px — single column, sidebar becomes a scrollable drawer
+- < 600 px — compact spacing and typography
 
-- ✅ **Keyboard navigation** — Tab through skip link → chips → search → TOC → summaries
-- ✅ **Screen reader support** — Semantic HTML, ARIA labels (`aria-label`, `aria-current`, `aria-pressed`)
-- ✅ **Focus indicators** — Blue 2px outline on all interactive elements
-- ✅ **Color contrast** — VS Code muted (#a0a0a0) bumped from #858585 to pass WCAG AA 4.5:1
-- ✅ **Reduced motion** — respects OS `prefers-reduced-motion` setting (no smooth-scroll for users who opt out)
+---
 
-### Responsive Breakpoints
+## Colour Palette (VS Code Dark+)
 
-- **Desktop (≥900px)** — Two columns: sticky sidebar (300px) + main content (1fr)
-- **Tablet (600–900px)** — Single column, sidebar collapses into scrollable drawer below topbar
-- **Mobile (<600px)** — Single column, compact spacing and typography
+```css
+--bg:         #1e1e1e   /* editor background      */
+--sidebar-bg: #252526   /* sidebar / topbar        */
+--text:       #d4d4d4   /* primary text            */
+--muted:      #a0a0a0   /* dimmed text (WCAG AA)   */
+--accent:     #569cd6   /* keywords / part titles  */
+--accent-2:   #4ec9b0   /* functions / track links */
+--warn:       #ce9178   /* Track B warning colour  */
+--focus:      #007acc   /* focus ring              */
+```
 
-## Building / Regenerating
+The Atari header uses `#ffb000` (amber phosphor) with a layered `text-shadow` glow — purely CSS, no images.
 
-If you modify `genai-roadmap.md`, regenerate the HTML:
+---
+
+## Regenerating Content
+
+If you modify `genai-roadmap.md`, regenerate the site in order:
 
 ```bash
-# Convert markdown structure
+# 1. Convert markdown structure to HTML skeleton
 python3 tools/convert_markdown.py
 
-# Generate summaries (fills {{SUMMARY_*}} placeholders)
+# 2. Fill all 805 {{SUMMARY_*}} placeholders
 python3 tools/generate_summaries.py
 
-# Verify integrity
+# 3. Fix TOC nesting, preamble rendering, and structural clean-ups
+python3 tools/fix_issues.py
+
+# 4. Verify everything passes
 python3 tools/audit.py
 ```
 
-All three scripts must pass with no placeholder errors before committing.
+All four scripts must complete with `[OK]` and zero placeholder errors before committing.
 
-## Development Notes
+---
 
-### IDE Setup
+## Deploy to GitHub Pages
 
-Recommended: VS Code + extensions:
-- **Prettier** — format on save (respects .prettierrc if present)
-- **HTMLHint** — catch HTML errors
-- **Live Server** — local preview with auto-reload
+1. Push this repo to GitHub (already done — repo is private)
+2. Go to **Settings → Pages**
+3. Set **Source** to `master` branch, root folder
+4. Click **Save** — the site goes live in ≈ 60 seconds at:
+   `https://<github-username>.github.io/GenAI-self-course/`
 
-### Color Palette (VS Code Dark+)
+No build step, no server config, nothing else needed. Static files deploy as-is.
 
-Used throughout:
+---
 
-```css
---bg:          #1e1e1e    /* Editor background */
---sidebar-bg:  #252526    /* Sidebar */
---text:        #d4d4d4    /* Primary text */
---muted:       #a0a0a0    /* Dimmed text (WCAG AA contrast) */
---accent:      #569cd6    /* Keywords/types (blue) */
---accent-2:    #4ec9b0    /* Functions/classes (teal) */
---warn:        #ce9178    /* Strings (orange — Track B warning) */
---focus:       #007acc    /* Focus ring (VS Code blue) */
-```
-
-### Known Limitations
+## Known Limitations
 
 - **Track B is time-sensitive** — Parts XVI–XIX describe models and tools current as of 2025–2026. Plan to refresh annually.
-- **No backend** — this is static HTML. No accounts, no personalization, no analytics.
-- **No offline support** — while the site is cacheable, there's no service worker. Use a browser cache strategy or save HTML locally.
-- **No print optimization** — though `@media print` does open all `<details>` and hide the sidebar/topbar.
+- **No backend** — static HTML only; no accounts, personalisation, or analytics.
+- **No service worker** — the site is browser-cacheable but has no offline mode. Save the HTML file locally if you need offline access.
 
-## Deployment to GitHub Pages
+---
 
-1. Ensure repo is on GitHub
-2. Go to **Settings → Pages**
-3. Select **Source: main branch, root folder** (or your branch)
-4. Wait ~1 minute for GitHub to build
-5. Your site will be live at `https://<github-username>.github.io/<repo-name>/`
+## Verification
 
-Since this is static HTML with no build step, no further configuration is needed.
+124 automated tests across four categories — all passing:
 
-## Future Enhancements (Out of Scope for Now)
+| Category | Tests | Status |
+|---|---|---|
+| Structure & Content | 30 | ✅ |
+| Functionality | 45 | ✅ |
+| Accessibility | 18 | ✅ |
+| Performance & Security | 31 | ✅ |
 
-- [ ] Dark/light theme toggle (CSS variable override)
-- [ ] Generate PDF export (server-side rendering)
-- [ ] Offline support (service worker + IndexedDB for caching)
-- [ ] Annotation layers (comments, highlights — would require backend)
-- [ ] Track B auto-refresh based on latest models (would require CMS)
-
-## License
-
-This roadmap and site are created for educational purposes. Modify and distribute freely with attribution.
+Run `python3 tools/audit.py` at any time to recheck.
 
 ---
 
