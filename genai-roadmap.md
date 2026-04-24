@@ -21,6 +21,7 @@ This outline is split into **two tracks**:
 ---
 
 ## Part I — What AI Actually Is (And Isn't)
+> **Extended:** AI is the engineering discipline of building systems that perform tasks we'd normally call "intelligent" — recognising images, understanding language, making decisions under uncertainty. The key concept here is the split between **narrow AI** (does one thing very well, like spam filters) and **general AI** (a hypothetical system matching human reasoning). The single most important idea: today's "AI" is almost entirely narrow AI, and confusing the two is the root of most hype. This Part has no predecessor — it's the foundation — and connects forward to **Part II (How AI Actually Learns)** because understanding what AI *is* makes the 70-year journey of how we built it actually make sense.
 
 ### 1. Defining Intelligence
 - 1.1 Human intelligence — what it actually does
@@ -75,6 +76,7 @@ This outline is split into **two tracks**:
 ---
 
 ## Part II — How AI Actually Learns
+> **Extended:** Machine learning is the process by which systems improve at tasks through **examples and feedback** rather than explicit instructions. The core mechanism is deceptively simple: a model makes a guess, we measure how wrong it is with a **loss function**, and **gradient descent** nudges the model's weights to reduce that error, iterating until performance plateaus. The single most important idea: learning is just organized error correction at scale, and everything else (overfitting, validation splits, hyperparameters) is about making sure the error correction generalizes to new data. This Part builds on **Part I (What AI Is)** because defining intelligence isn't useful without understanding the learning process, and connects forward to **Part III (What Makes AI "Generative")** because generative systems are learned via the same core machinery.
 
 ### 5. Machine Learning Essentials
 - 5.1 What a "model" is (the recipe analogy)
@@ -121,6 +123,7 @@ This outline is split into **two tracks**:
 ---
 
 ## Part III — What Makes AI "Generative"
+> **Extended:** Generative AI is a class of models trained to produce new data that resembles its training distribution — images, text, sound, video, code — rather than just classifying or predicting existing data. The key concepts are **latent space** (a compressed representation of the data) and **diffusion** or **autoregressive** sampling (the process of building output one token or pixel at a time). The single most important idea: generative models work by learning the underlying distribution of data and then sampling from it, which is why they can produce novel, coherent outputs instead of just retrieving from a database. This Part builds on **Part II (How AI Learns)** because generative training is just learning applied to output-generation tasks, and connects forward to **Part IV (How Generative Models Are Trained)** because the "how they work" conceptually is useless without understanding the specific training tricks that make modern generative systems practical.
 
 ### 8. Generative vs. Discriminative
 - 8.1 Predicting a label vs. producing new content
@@ -161,6 +164,7 @@ This outline is split into **two tracks**:
 ---
 
 ## Part IV — How Generative Models Are Trained
+> **Extended:** Training a generative model at scale requires engineering tricks that most non-ML practitioners don't realize: **attention mechanisms** (which let the model focus on the most relevant parts of its input), **transformer architecture** (which parallelizes computation and scales elegantly), and **self-supervised learning** (teaching the model to predict the next token using only the data itself, no expensive labels). The single most important idea: transformers and self-supervision together unlocked the ability to train on massive unlabeled data, which is why LLMs became possible. The difference between a generative model that works on your desk and one that works at web scale is almost entirely engineering. This Part builds on **Part III (What Makes AI "Generative")** because you need to know what generative means before caring how to train it efficiently, and connects forward to **Part V (Large Language Models)** because LLMs are the most important application of these training techniques.
 
 ### 11. The Training Pipeline
 - 11.1 Pre-training
@@ -196,6 +200,7 @@ This outline is split into **two tracks**:
 ---
 
 ## Part V — Large Language Models (LLMs)
+> **Extended:** Large Language Models (LLMs) are generative models trained on vast quantities of text (books, websites, code) to predict the next token given what came before, resulting in systems that can reason, translate, summarize, and code despite being fundamentally statistical prediction engines. The key concepts are **tokenization** (how text becomes numbers), **context window** (how much history the model can see), and **scaling laws** (the empirical observation that bigger models trained on more data are reliably better). The single most important idea: LLMs are not programmed to be smart — they emerge smarter as you scale, which is why two-year-old models feel outdated but 10-year-old architectural ideas (transformers) are still core. This Part builds on **Part IV (Generative Model Training)** because LLMs are just transformers trained on text at massive scale, and connects forward to **Part VI (Multimodal AI)** because the same transformer architecture that works for text also works for vision, and combining both opens new capabilities.
 
 ### 13. What an LLM Is
 - 13.1 Next-token prediction as the single objective
@@ -240,6 +245,7 @@ This outline is split into **two tracks**:
 ---
 
 ## Part VI — Multimodal AI
+> **Extended:** Multimodal AI systems process and generate multiple types of data at once — text, images, audio, video — using a unified architecture that treats different modalities as different "languages" to learn. The key concepts are **cross-modal alignment** (learning which image matches which text), **tokenization for vision** (breaking images into patches just like text is broken into tokens), and **shared latent space** (a common representation where text and images can be compared). The single most important idea: vision and language aren't separate problems — they're the same learning problem applied to different data types, so architectures that work for text can be adapted for images, and systems trained on both are more robust and capable than single-modality experts. This Part builds on **Part V (LLMs)** because multimodal systems are an extension of LLM architecture to new input types, and connects forward to **Part VII (Prompt Engineering)** because the human-AI interaction patterns discovered for text prompts apply and strengthen across modalities.
 
 ### 16. The Multimodal Shift
 - 16.1 Why modalities are converging
@@ -280,6 +286,7 @@ This outline is split into **two tracks**:
 ---
 
 ## Part VII — The Craft of Prompt Engineering
+> **Extended:** Prompt engineering is the art and (increasingly) science of writing inputs to generative models so they produce useful, reliable, coherent outputs — and it's one of the few skills that works consistently across all models and modalities without code. The key concepts are **few-shot prompting** (showing examples), **chain-of-thought** (asking the model to reason step-by-step), and **role-playing** (framing the model as an expert or persona to guide its behavior). The single most important idea: LLMs are prediction machines that respond strongly to how you frame the context; the same factual question phrased three different ways can yield wildly different answers, so crafting the phrasing is often more impactful than training a custom model. This Part builds on **Part VI (Multimodal AI)** because multimodal systems are controlled the same way — through prompt language — and connects forward to **Part VIII (Retrieval and Memory)** because prompt engineering alone hits a wall without giving the model access to external facts.
 
 ### 21. Prompting Fundamentals
 - 21.1 Why prompting is a real skill
@@ -361,6 +368,7 @@ This outline is split into **two tracks**:
 ---
 
 ## Part VIII — Retrieval and Memory (RAG)
+> **Extended:** Retrieval-Augmented Generation (RAG) solves the knowledge bottleneck of generative models by letting them look up facts in an external database (a search index, a knowledge base, the internet) at generation time, rather than relying only on what was in their training data. The key concepts are **vector embeddings** (converting facts into a searchable format), **semantic search** (finding relevant facts by meaning, not keywords), and **in-context learning** (feeding the retrieved facts into the prompt so the model grounds its answer). The single most important idea: combining a fast retrieval system with a slower language model is dramatically more scalable and more correct than trying to make the model store and recall all facts internally. This Part builds on **Part VII (Prompt Engineering)** because RAG is prompt engineering elevated with a retrieval layer, and connects forward to **Part IX (Fine-Tuning and Customization)** because when retrieval isn't enough and the model genuinely needs to change its behavior, fine-tuning becomes necessary.
 
 ### 27. The Memory Problem
 - 27.1 Why LLMs forget between sessions
@@ -402,6 +410,7 @@ This outline is split into **two tracks**:
 ---
 
 ## Part IX — Fine-Tuning and Customization
+> **Extended:** Fine-tuning is the process of taking a pre-trained model and running a short training loop on your own data to adapt it to a specific task or style — email copywriting, customer-service tone, technical documentation — without training a model from scratch. The key concepts are **parameter-efficient fine-tuning** (modifying only a fraction of the model's weights to save compute), **instruction-tuning** (training the model to follow task-specific instructions), and **the fine-tuning paradox** (more data isn't always better; quality of examples matters enormously). The single most important idea: a tiny fine-tuned model often outperforms a huge general model on a narrow task, because the task-specific adaptation is worth more than raw scale. This Part builds on **Part VIII (RAG)** because you often combine RAG and fine-tuning (facts + task-specific behavior), and connects forward to **Part X (Agentic AI)** because truly autonomous systems need both fine-tuned behavior and the ability to act.
 
 ### 32. When Customization Makes Sense
 - 32.1 Prompting vs. RAG vs. fine-tuning — decision tree
@@ -429,6 +438,7 @@ This outline is split into **two tracks**:
 ---
 
 ## Part X — Agentic AI (Deep Dive)
+> **Extended:** Agentic AI systems are models that can not only generate text but also observe their environment, make decisions, and take **actions** — calling APIs, reading files, updating databases — in loops until a goal is reached, without human intervention between steps. The key concepts are **tool use** (letting models call functions), **reasoning loops** (models thinking through multi-step problems), and **memory and planning** (maintaining state across interactions and deciding what to do next). The single most important idea: the difference between a chatbot and an agent is that an agent acts; it observes consequences of its actions and adjusts, making agentic systems exponentially more powerful for real-world tasks but also harder to align and control. This Part builds on **Part IX (Fine-Tuning)** because agentic systems often use fine-tuned models for reliability in action-triggering, and connects forward to **Part XI (Running AI Locally)** because deploying agentic systems on your own hardware is the frontier of autonomous applications.
 
 ### 36. From Chatbots to Agents
 - 36.1 What makes an AI "agentic"
@@ -535,6 +545,7 @@ This outline is split into **two tracks**:
 ---
 
 ## Part XI — Running AI Locally
+> **Extended:** Running AI locally means deploying generative models on your own computer or server instead of calling a cloud API — you own the model, the data never leaves your machine, and latency is zero. The key concepts are **model quantization** (shrinking models by reducing numerical precision), **hardware acceleration** (GPUs, TPUs, specialized chips that run models orders of magnitude faster), and **trade-offs** (local models are usually smaller/older than cloud models, but the privacy and control are worth it for many use cases). The single most important idea: advances in quantization have made running capable models (7B–13B parameter LLMs) feasible on consumer hardware, collapsing the cost of entry for serious AI builders. This Part builds on **Part X (Agentic AI)** because agents often need to run locally to operate in isolation or real-time, and connects forward to **Part XII (AI for Creators and Builders)** because creators have unique incentives to own their models locally.
 
 ### 46. Why Run AI Locally
 - 46.1 Privacy and data sovereignty
@@ -619,6 +630,7 @@ This outline is split into **two tracks**:
 ---
 
 ## Part XII — AI for Creators and Builders
+> **Extended:** AI is increasingly a tool for creators — writers, artists, musicians, coders — to augment their output, automate tedious parts of their craft, and explore ideas at velocity that would be impossible by hand. The key concepts are **prompt-as-specification** (describing what you want in natural language instead of code), **iteration and feedback loops** (running a model, rejecting bad outputs, trying again), and **creative surplus** (the net gain in output quality and volume when human creativity is paired with AI generation). The single most important idea: AI is not replacing creators; it's lowering the floor for entry and raising the ceiling for output, so the bottleneck shifts from *doing the work* to *having good taste*. This Part builds on **Part XI (Running AI Locally)** because many creators prefer privacy and don't want their work uploaded to APIs, and connects forward to **Part XIII (Evaluation and Critical Thinking)** because having taste — knowing what's good — becomes the core skill.
 
 ### 54. AI for Writing
 - 54.1 Long-form drafting workflows
@@ -660,6 +672,7 @@ This outline is split into **two tracks**:
 ---
 
 ## Part XIII — Evaluation and Critical Thinking
+> **Extended:** Evaluation is the discipline of measuring whether AI systems are actually correct, safe, and useful — not just confident — and it's surprisingly hard because "goodness" depends on the task (a factual summary needs accuracy; creative writing needs coherence and novelty, not accuracy). The key concepts are **metrics vs. judgment** (automated scores like BLEU or accuracy miss the human element, but human evaluation is expensive and subjective), **red-teaming** (trying to break the system to find edge cases), and **feedback loops** (using real-world outcomes to constantly improve). The single most important idea: a system that sounds good but is wrong is worse than one that sounds awkward but is correct, so critical thinking about evaluation definitions must come before you deploy. This Part builds on **Part XII (AI for Creators)** because creators need to evaluate their own outputs instead of blindly shipping whatever the model produces, and connects forward to **Part XIV (Ethics, Safety, Law, and Society)** because evaluating for quality is inseparable from evaluating for fairness and harm.
 
 ### 60. Evaluating AI Outputs
 - 60.1 Correctness
@@ -698,6 +711,7 @@ This outline is split into **two tracks**:
 ---
 
 ## Part XIV — Ethics, Safety, Law, and Society
+> **Extended:** AI systems operate in the real world, affecting real people, so they carry ethical, legal, and safety responsibilities: bias in hiring models costs people jobs unfairly, facial recognition can enable mass surveillance, and models trained on copyrighted data raise ownership questions. The key concepts are **fairness and bias mitigation** (ensuring systems don't discriminate), **interpretability and explainability** (understanding why a model made a decision), and **alignment** (training models to follow human values, not just user commands). The single most important idea: the easiest way to avoid AI ethics failures is to treat them as engineering requirements from day one, not afterthoughts; good systems are designed to be fair, interpretable, and aligned, not ethically correct by accident. This Part builds on **Part XIII (Evaluation)** because ethical evaluation is part of the broader evaluation discipline, and connects forward to **Part XV (Personal Mastery and Staying Current)** because staying ethical in a fast-moving field requires continuous learning.
 
 ### 64. AI Bias and Fairness
 - 64.1 Sources of bias (data, labels, design, deployment)
@@ -752,6 +766,7 @@ This outline is split into **two tracks**:
 ---
 
 ## Part XV — Personal Mastery and Staying Current
+> **Extended:** The AI field moves faster than any technology in history — models double in capability every 6–12 months, new architectures emerge regularly, and what was cutting-edge last year is a historical artifact this year. The key concepts are **building intuition** (understanding principles so you can adapt when implementations change), **learning-by-doing** (reading papers and blogs is passive; building things teaches deeply), and **community and dialogue** (staying in contact with other practitioners who see the landscape). The single most important idea: you can't memorize a field that changes this fast; you can only develop a mental model of how things work and an ability to quickly assimilate new ideas. This Part builds on **Part XIV (Ethics, Safety, Law)** because staying current includes staying aware of new ethical risks as capabilities grow, and it concludes Track A — the evergreen foundation — before we move to **Part XVI (Current Model Families)** where time-sensitivity begins.
 
 ### 71. Building AI Literacy
 - 71.1 Core mental models every AI-literate person carries
@@ -791,6 +806,7 @@ This outline is split into **two tracks**:
 ---
 
 ## Part XVI — Current Model Families
+> **Extended:** Current model families are the specific models you use today — GPT-4, Claude, Llama, Mistral, Gemini — each with different strengths, training approaches, and trade-offs. The key concepts are **model lineages** (how one version builds on previous ones), **capability leaders** (which models are best for which tasks), and **open vs. closed** (whether weights and training details are public). The single most important idea: the models you learn on this month will be superseded in 6–12 months, so studying *current* models is about understanding the landscape right now, not investing in permanent knowledge; treat this section as a snapshot. This Part builds on **Part XV (Personal Mastery)** because staying current is the skill that lets you navigate this section meaningfully, and connects forward to **Part XVII (Specialized and Niche Models)** because not all capability is in the giant generalist models.
 
 ### 75. Frontier Closed Models
 - 75.1 OpenAI
@@ -832,6 +848,7 @@ This outline is split into **two tracks**:
 ---
 
 ## Part XVII — Current Tool Ecosystem
+> **Extended:** Beyond the giant general-purpose models, specialized models are optimized for specific domains — medical diagnosis, code generation, reasoning, law — and they often outperform generalist models on their niche even if they're smaller. The key concepts are **task-specific training** (models trained primarily on domain data), **reasoning models** (systems optimized for multi-step problem-solving), and **modality specialization** (image-only or audio-only models that beat all-around competitors). The single most important idea: the trend is toward specialization; future AI stacks will mix many models, each best-in-class for its domain, rather than one giant model for everything. This Part builds on **Part XVI (Current Model Families)** because you need to know the generalists to understand the specialists' positioning, and connects forward to **Part XVIII (Frontier Capabilities and Research)** because the frontier is where new specialization ideas are born.
 
 ### 78. Consumer Chat Interfaces
 - 78.1 ChatGPT
@@ -920,6 +937,7 @@ This outline is split into **two tracks**:
 ---
 
 ## Part XVIII — Current Frontier Topics
+> **Extended:** The frontier of AI research is exploring capabilities that don't yet exist in production: **reasoning at depth** (solving complex multi-step problems), **very long context** (remembering hundreds of pages or years of interaction), **cross-modal understanding** (deeply integrating vision, audio, text, and sensor data), and **energy efficiency** (building powerful models that don't require data centers to run). The key concepts are **scaling laws and their limits** (whether bigger = better forever, or whether we hit walls), **architecture innovation** (new ways to structure models beyond transformers), and **human-AI collaboration** (systems designed to augment human judgment, not replace it). The single most important idea: the frontier isn't just about making models better at existing tasks; it's about opening entirely new classes of problems we can solve. This Part builds on **Part XVII (Specialized Models)** because frontier research often starts by specializing at the edges, and connects forward to **Part XIX (The Real Future)** because understanding the frontier is how you think about what comes next.
 
 ### 85. Reasoning Models (Current State)
 - 85.1 Test-time compute as a scaling dimension
@@ -953,6 +971,7 @@ This outline is split into **two tracks**:
 ---
 
 ## Part XIX — Staying Current (Living Resources)
+> **Extended:** The real future of AI is not predetermined — it depends on the choices we make now about how to build, deploy, and govern these systems. The key concepts are **multiple plausible futures** (utopian AI abundance, dystopian AI concentration, evolutionary stagnation, systemic collapse) and **agency** (you and others can influence which future happens). The single most important idea: the narrative that "AI will happen to us" is false; practitioners, policymakers, and users collectively decide what AI becomes. This Part concludes the roadmap by building on all of **Parts I–XVIII**, synthesizing evergreen principles with current landscape understanding, so you can form your own vision rather than being shaped by the consensus of the moment.
 
 ### 90. Researchers and Thinkers to Follow (2026 Snapshot)
 - 90.1 Safety and alignment voices
