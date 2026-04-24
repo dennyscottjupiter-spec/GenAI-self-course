@@ -23,6 +23,10 @@ def convert():
         if not line.strip():
             continue
 
+        # Skip blockquotes (Extended explanation blocks, handled separately)
+        if line.startswith('>'):
+            continue
+
         # Preamble
         if line.startswith('## How This'):
             if not preamble_added:
@@ -79,6 +83,7 @@ def convert():
                 html.append(f'<section class="part" id="{part_id}">')
                 html.append(f'<h3><span class="numprefix">{m.group(1)}</span> {escape_html(m.group(2))}</h3>')
                 html.append(f'<p class="summary">{{{{SUMMARY_{part_id}}}}}</p>')
+                html.append(f'<div class="part-extended" id="ext-{part_id}" hidden>{{{{EXTENDED_{part_id}}}}}</div>')
                 toc.append(f'<li class="toc-part"><a href="#{part_id}">{escape_html(m.group(2))}</a>\n<ul>')
                 in_part = True
             continue

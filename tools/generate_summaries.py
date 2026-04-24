@@ -9,6 +9,7 @@ def generate_summaries() -> dict:
     lines = content.split('\n')
 
     summaries = {}
+    extended = {}  # Store extended explanations
     part_context = ""
     section_context = ""
     level2_context = ""
@@ -39,6 +40,15 @@ def generate_summaries() -> dict:
                 if part_title:
                     summary = f"{part_title} covers foundational concepts and principles essential for understanding this domain."
                     summaries[part_id] = summary
+
+                # Look for extended explanation (blockquote immediately after Part heading)
+                if i+1 < len(lines) and lines[i+1].startswith('> **Extended:**'):
+                    extended_text = lines[i+1][2:]  # Remove '> '
+                    # Convert **bold** to <strong>bold</strong>
+                    extended_text = re.sub(r'\*\*(.+?)\*\*', r'<strong>\1</strong>', extended_text)
+                    # Wrap in HTML
+                    extended_html = f'<p>{extended_text}</p>'
+                    extended[part_id] = extended_html
 
         # Level-1 sections
         if re.match(r'^###\s+\d+\.\s+', line):
@@ -112,10 +122,10 @@ def generate_summaries() -> dict:
     summaries['track-a'] = "Evergreen Core — foundational GenAI concepts that remain constant and essential regardless of technological changes or market evolution."
     summaries['track-b'] = "Current Landscape — time-sensitive overview of existing models, tools, and platforms. Refresh annually for relevance."
 
-    return summaries
+    return summaries, extended
 
-def apply_summaries(summaries: dict):
-    """Apply summaries to index.html."""
+def apply_summaries(summaries: dict, extended: dict):
+    """Apply summaries and extended explanations to index.html."""
     index_path = pathlib.Path('index.html')
     html = index_path.read_text(encoding='utf-8')
 
@@ -129,14 +139,23 @@ def apply_summaries(summaries: dict):
             text = text.replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;')
             html = html.replace(placeholder, text)
 
+    # Apply extended explanations
+    for ext_id, ext_html in extended.items():
+        placeholder = f'{{{{EXTENDED_{ext_id}}}}}'
+        if placeholder in html:
+            html = html.replace(placeholder, ext_html)
+
     index_path.write_text(html, encoding='utf-8')
 
-    remaining = html.count('{{SUMMARY_')
+    remaining_summary = html.count('{{SUMMARY_')
+    remaining_extended = html.count('{{EXTENDED_')
     print(f"[OK] Applied {len(summaries)} summaries")
-    print(f"[INFO] Remaining placeholders: {remaining}")
+    print(f"[OK] Applied {len(extended)} extended explanations")
+    print(f"[INFO] Remaining SUMMARY placeholders: {remaining_summary}")
+    print(f"[INFO] Remaining EXTENDED placeholders: {remaining_extended}")
     if missing:
-        print(f"[WARN] Missing IDs: {', '.join(missing[:5])}")
+        print(f"[WARN] Missing summary IDs: {', '.join(missing[:5])}")
 
 if __name__ == '__main__':
-    summaries = generate_summaries()
-    apply_summaries(summaries)
+    summaries, extended = generate_summaries()
+    apply_summaries(summaries, extended)
