@@ -130,6 +130,19 @@ details > summary h4, details > summary h5, details > summary h6 { display: inli
 /* Highlight (for search matches) */
 mark { background: #515c6a; color: #fff; padding: 0 2px; border-radius: 2px; }
 
+/* Extended Part explanations — hidden by default via [hidden] */
+.part-extended {
+  margin: .5rem 0 1.25rem;
+  padding: .75rem 1rem;
+  border-left: 3px solid var(--accent-2);
+  background: #252526;
+  color: var(--text);
+  line-height: 1.65;
+  font-size: .95rem;
+}
+.part-extended p { margin: 0; }
+.part-extended strong { color: var(--accent); }
+
 /* Responsive */
 @media (max-width: 900px) {
   .layout { grid-template-columns: 1fr; }
