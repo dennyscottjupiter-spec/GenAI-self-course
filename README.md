@@ -146,6 +146,8 @@ Total payload ≈ 203 KB  → ~50–60 KB gzipped
 - 600–900 px — single column, sidebar becomes a scrollable drawer
 - < 600 px — compact spacing and typography
 
+**Architectural decisions:** See [`docs/ADR-001-single-file.md`](docs/ADR-001-single-file.md) for the rationale behind keeping the roadmap as a single HTML file instead of splitting into per-Part files.
+
 ---
 
 ## Colour Palette (VS Code Dark+)
