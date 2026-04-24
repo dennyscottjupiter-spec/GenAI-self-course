@@ -1,0 +1,3406 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A summarized, browsable guide to the complete Generative AI learning roadmap.">
+  <meta property="og:title" content="The Complete Generative AI Roadmap">
+  <title>The Complete Generative AI Roadmap</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="topbar">
+    <h1 class="title">The Complete Generative AI Roadmap</h1>
+    <nav class="top-nav" aria-label="Track jumps">
+      <a class="chip" href="#track-a">Track A — Evergreen</a>
+      <a class="chip" href="#track-b">Track B — Current</a>
+    </nav>
+    <button id="toggle-all" class="chip" aria-pressed="false">Expand all</button>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar" aria-label="Table of contents">
+      <div role="search">
+        <label for="search" class="visually-hidden">Filter sections</label>
+        <input id="search" type="search" placeholder="Search titles and summaries…" autocomplete="off">
+      </div>
+      <nav id="toc" aria-label="Roadmap sections">
+<ul>
+<li class="toc-track"><a href="#track-a">🟢 Track A — Evergreen Core</a>
+<ul>
+<li class="toc-part"><a href="#part-i">What AI Actually Is (And Isn't)</a>
+<ul>
+<li><a href="#s-1">Defining Intelligence</a></li>
+<li><a href="#s-2">Types of AI Systems</a></li>
+<li><a href="#s-3">A Compact History of AI</a></li>
+<li><a href="#s-4">Data — The Fuel of AI</a></li>
+<li class="toc-part"><a href="#part-ii">How AI Actually Learns</a>
+<ul>
+<li><a href="#s-5">Machine Learning Essentials</a></li>
+<li><a href="#s-6">Neural Networks — The Core Engine</a></li>
+<li><a href="#s-7">Key Architectures (Conceptual)</a></li>
+<li class="toc-part"><a href="#part-iii">What Makes AI "Generative"</a>
+<ul>
+<li><a href="#s-8">Generative vs. Discriminative</a></li>
+<li><a href="#s-9">Core Generative Architectures</a></li>
+<li><a href="#s-10">Tokens, Embeddings, and Latent Space</a></li>
+<li class="toc-part"><a href="#part-iv">How Generative Models Are Trained</a>
+<ul>
+<li><a href="#s-11">The Training Pipeline</a></li>
+<li><a href="#s-12">Parameters, Weights, and Scale</a></li>
+<li class="toc-part"><a href="#part-v">Large Language Models (LLMs)</a>
+<ul>
+<li><a href="#s-13">What an LLM Is</a></li>
+<li><a href="#s-14">What LLMs Know (And Don't)</a></li>
+<li><a href="#s-15">Model Families (Evergreen Categories)</a></li>
+<li class="toc-part"><a href="#part-vi">Multimodal AI</a>
+<ul>
+<li><a href="#s-16">The Multimodal Shift</a></li>
+<li><a href="#s-17">Vision-Language Models</a></li>
+<li><a href="#s-18">Audio AI</a></li>
+<li><a href="#s-19">Video AI</a></li>
+<li><a href="#s-20">Image Generation Deep Dive</a></li>
+<li class="toc-part"><a href="#part-vii">The Craft of Prompt Engineering</a>
+<ul>
+<li><a href="#s-21">Prompting Fundamentals</a></li>
+<li><a href="#s-22">Core Prompting Techniques</a></li>
+<li><a href="#s-23">Advanced Prompt Strategies</a></li>
+<li><a href="#s-24">Prompt Patterns by Task</a></li>
+<li><a href="#s-25">Provider-Specific Conventions</a></li>
+<li><a href="#s-26">Prompt Security and Failure Modes</a></li>
+<li class="toc-part"><a href="#part-viii">Retrieval and Memory (RAG)</a>
+<ul>
+<li><a href="#s-27">The Memory Problem</a></li>
+<li><a href="#s-28">RAG Fundamentals</a></li>
+<li><a href="#s-29">Embeddings and Vector Search</a></li>
+<li><a href="#s-30">Advanced RAG Patterns</a></li>
+<li><a href="#s-31">Building a "Chat with Your Documents" System (Conceptual)</a></li>
+<li class="toc-part"><a href="#part-ix">Fine-Tuning and Customization</a>
+<ul>
+<li><a href="#s-32">When Customization Makes Sense</a></li>
+<li><a href="#s-33">Fine-Tuning, Conceptually</a></li>
+<li><a href="#s-34">No-Code Customization</a></li>
+<li><a href="#s-35">Distillation (Conceptual)</a></li>
+<li class="toc-part"><a href="#part-x">Agentic AI (Deep Dive)</a>
+<ul>
+<li><a href="#s-36">From Chatbots to Agents</a></li>
+<li><a href="#s-37">Tool Use (Function Calling)</a></li>
+<li><a href="#s-38">Agent Memory</a></li>
+<li><a href="#s-39">Planning and Reasoning in Agents</a></li>
+<li><a href="#s-40">Multi-Agent Systems</a></li>
+<li><a href="#s-41">Model Context Protocol (MCP)</a></li>
+<li><a href="#s-42">Computer Use Agents</a></li>
+<li><a href="#s-43">Coding Agents (CLI and IDE)</a></li>
+<li><a href="#s-44">SKILL.md and the Skills Paradigm</a></li>
+<li><a href="#s-45">Agent Evaluation</a></li>
+<li class="toc-part"><a href="#part-xi">Running AI Locally</a>
+<ul>
+<li><a href="#s-46">Why Run AI Locally</a></li>
+<li><a href="#s-47">Open-Weight vs. Open-Source (The Distinction That Matters)</a></li>
+<li><a href="#s-48">Quantization</a></li>
+<li><a href="#s-49">Local Inference Stacks</a></li>
+<li><a href="#s-50">Hardware Considerations</a></li>
+<li><a href="#s-51">Open Model Families (Evergreen Categories)</a></li>
+<li><a href="#s-52">Local AI Workflows</a></li>
+<li><a href="#s-53">Self-Hosting the Full Stack</a></li>
+<li class="toc-part"><a href="#part-xii">AI for Creators and Builders</a>
+<ul>
+<li><a href="#s-54">AI for Writing</a></li>
+<li><a href="#s-55">AI for Image Creation</a></li>
+<li><a href="#s-56">AI for Video</a></li>
+<li><a href="#s-57">AI for Music and Audio</a></li>
+<li><a href="#s-58">AI for Coding (From a Non-Developer's Angle)</a></li>
+<li><a href="#s-59">Workflow and Automation Platforms (Conceptual)</a></li>
+<li class="toc-part"><a href="#part-xiii">Evaluation and Critical Thinking</a>
+<ul>
+<li><a href="#s-60">Evaluating AI Outputs</a></li>
+<li><a href="#s-61">Benchmarks (Conceptually)</a></li>
+<li><a href="#s-62">Evals for Your Own Use</a></li>
+<li><a href="#s-63">Critical Thinking About AI</a></li>
+<li class="toc-part"><a href="#part-xiv">Ethics, Safety, Law, and Society</a>
+<ul>
+<li><a href="#s-64">AI Bias and Fairness</a></li>
+<li><a href="#s-65">AI Safety and Alignment</a></li>
+<li><a href="#s-66">Misinformation, Deepfakes, and Trust</a></li>
+<li><a href="#s-67">Privacy and Data Rights</a></li>
+<li><a href="#s-68">Intellectual Property and Copyright</a></li>
+<li><a href="#s-69">Regulation Landscape (Evergreen Framing)</a></li>
+<li><a href="#s-70">AI and Work</a></li>
+<li class="toc-part"><a href="#part-xv">Personal Mastery and Staying Current</a>
+<ul>
+<li><a href="#s-71">Building AI Literacy</a></li>
+<li><a href="#s-72">Staying Current Without Drowning</a></li>
+<li><a href="#s-73">Leading AI Adoption (For Teams and Orgs)</a></li>
+<li><a href="#s-74">Frontiers (Evergreen Framing)</a></li>
+</ul>
+</li>
+<li class="toc-track"><a href="#track-b">🟡 Track B — Current Landscape (2025–2026)</a>
+<ul>
+<li class="toc-part"><a href="#part-xvi">Current Model Families</a>
+<ul>
+<li><a href="#s-75">Frontier Closed Models</a></li>
+<li><a href="#s-76">Current Open-Weight Leaders</a></li>
+<li><a href="#s-77">Current Benchmark Standings</a></li>
+<li class="toc-part"><a href="#part-xvii">Current Tool Ecosystem</a>
+<ul>
+<li><a href="#s-78">Consumer Chat Interfaces</a></li>
+<li><a href="#s-79">Coding Assistants (Current)</a></li>
+<li><a href="#s-80">Productivity Integrations</a></li>
+<li><a href="#s-81">Research and Search</a></li>
+<li><a href="#s-82">Image, Video, Voice, Music (Current Leaders)</a></li>
+<li><a href="#s-83">Agent and Automation Platforms (Current)</a></li>
+<li><a href="#s-84">Local Inference (Current)</a></li>
+<li class="toc-part"><a href="#part-xviii">Current Frontier Topics</a>
+<ul>
+<li><a href="#s-85">Reasoning Models (Current State)</a></li>
+<li><a href="#s-86">MCP Ecosystem (Current State)</a></li>
+<li><a href="#s-87">Computer-Use Agents (Current State)</a></li>
+<li><a href="#s-88">Current Skills Ecosystem</a></li>
+<li><a href="#s-89">Governance Developments (Current)</a></li>
+<li class="toc-part"><a href="#part-xix">Staying Current (Living Resources)</a>
+<ul>
+<li><a href="#s-90">Researchers and Thinkers to Follow (2026 Snapshot)</a></li>
+<li><a href="#s-91">Newsletters and Blogs (2026 Snapshot)</a></li>
+<li><a href="#s-92">Podcasts (2026 Snapshot)</a></li>
+<li><a href="#s-93">YouTube Channels (2026 Snapshot)</a></li>
+<li><a href="#s-94">Communities (2026 Snapshot)</a></li>
+<li><a href="#s-95">Conferences and Events (2026 Snapshot)</a></li>
+</ul>
+</li>
+</ul>
+</nav>
+    </aside>
+
+    <main id="main" class="content">
+<h2>How This Roadmap Is Built</h2>
+<p>This outline is split into **two tracks**: - **Track A — Evergreen Core (Parts I–XV)** — Stable concepts that age slowly. The backbone you study once and carry forever. - **Track B — Current Landscape (Parts XVI–XIX)** — Named models, tools, and frontier topics. Expect to refresh this section once a year. **Sequencing logic:** each Part builds on the previous one. You can safely skip any leaf whose number you don't care about (e.g., skip `7.4.1.1` and go to `7.4.2`) without losing the thread. **Depth convention:** up to four levels of nesting (e.g., `7.4.1.1`). Every leaf is atomic — one idea per bullet. ---</p>
+<section class="track" id="track-a">
+<h2 class="track-title">🟢 Track A — Evergreen Core</h2>
+<p class="summary">Evergreen Core — foundational GenAI concepts that remain constant and essential regardless of technological changes or market evolution.</p>
+<section class="part" id="part-i">
+<h3><span class="numprefix">I</span> What AI Actually Is (And Isn't)</h3>
+<p class="summary">What AI Actually Is (And Isn't) covers foundational concepts and principles essential for understanding this domain.</p>
+<section class="sec lvl-1" id="s-1">
+<h4><span class="numprefix">1.</span> Defining Intelligence</h4>
+<p class="summary">Defining Intelligence introduces 1.1 Human intelligence.</p>
+<details class="sec lvl-2" id="s-1-1" open>
+<summary><h5><span class="numprefix">1.1</span> Human intelligence — what it actually does</h5></summary>
+<p class="summary">Human intelligence — what it actually does breaks down into 3 specific concepts and techniques.</p>
+<details class="sec lvl-3" id="s-1-1-1">
+<summary><h6><span class="numprefix">1.1.1</span> Reasoning, memory, perception, learning</h6></summary>
+<p class="summary">Reasoning, memory, perception, learning.</p>
+<details class="sec lvl-3" id="s-1-1-2">
+<summary><h6><span class="numprefix">1.1.2</span> Generalization — the ability to handle the unseen</h6></summary>
+<p class="summary">Generalization — the ability to handle the unseen.</p>
+<details class="sec lvl-3" id="s-1-1-3">
+<summary><h6><span class="numprefix">1.1.3</span> Embodiment, emotion, intuition (the parts AI lacks)</h6></summary>
+<p class="summary">Embodiment, emotion, intuition (the parts AI lacks).</p>
+<details class="sec lvl-2" id="s-1-2" open>
+<summary><h5><span class="numprefix">1.2</span> Machine intelligence — what it actually does</h5></summary>
+<p class="summary">Machine intelligence — what it actually does breaks down into 3 specific concepts and techniques.</p>
+<details class="sec lvl-3" id="s-1-2-1">
+<summary><h6><span class="numprefix">1.2.1</span> Pattern matching at massive scale</h6></summary>
+<p class="summary">Pattern matching at massive scale.</p>
+<details class="sec lvl-3" id="s-1-2-2">
+<summary><h6><span class="numprefix">1.2.2</span> Statistical prediction vs. true understanding</h6></summary>
+<p class="summary">Statistical prediction vs. true understanding.</p>
+<details class="sec lvl-3" id="s-1-2-3">
+<summary><h6><span class="numprefix">1.2.3</span> Why "intelligence" is a loaded word in AI discourse</h6></summary>
+<p class="summary">Why "intelligence" is a loaded word in AI discourse.</p>
+<details class="sec lvl-2" id="s-1-3" open>
+<summary><h5><span class="numprefix">1.3</span> Why this distinction matters in daily use of AI</h5></summary>
+<p class="summary">Covers the fundamentals of why this distinction matters in daily use of ai.</p>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</section>
+<section class="sec lvl-1" id="s-2">
+<h4><span class="numprefix">2.</span> Types of AI Systems</h4>
+<p class="summary">Types of AI Systems introduces 2.1 Narrow AI vs. General AI vs. Superintelligence.</p>
+<details class="sec lvl-2" id="s-2-1" open>
+<summary><h5><span class="numprefix">2.1</span> Narrow AI vs. General AI vs. Superintelligence</h5></summary>
+<p class="summary">Narrow AI vs. General AI vs. Superintelligence breaks down into 3 specific concepts and techniques.</p>
+<details class="sec lvl-3" id="s-2-1-1">
+<summary><h6><span class="numprefix">2.1.1</span> Why today's AI is narrow (even when it feels general)</h6></summary>
+<p class="summary">Why today's AI is narrow (even when it feels general).</p>
+<details class="sec lvl-3" id="s-2-1-2">
+<summary><h6><span class="numprefix">2.1.2</span> AGI definitions — why there's no consensus</h6></summary>
+<p class="summary">AGI definitions — why there's no consensus.</p>
+<details class="sec lvl-3" id="s-2-1-3">
+<summary><h6><span class="numprefix">2.1.3</span> Superintelligence — speculative but taken seriously</h6></summary>
+<p class="summary">Superintelligence — speculative but taken seriously.</p>
+<details class="sec lvl-2" id="s-2-2" open>
+<summary><h5><span class="numprefix">2.2</span> Symbolic AI vs. Statistical (Connectionist) AI</h5></summary>
+<p class="summary">Symbolic AI vs. Statistical (Connectionist) AI breaks down into 3 specific concepts and techniques.</p>
+<details class="sec lvl-3" id="s-2-2-1">
+<summary><h6><span class="numprefix">2.2.1</span> The rule-based paradigm</h6></summary>
+<p class="summary">The rule-based paradigm.</p>
+<details class="sec lvl-3" id="s-2-2-2">
+<summary><h6><span class="numprefix">2.2.2</span> The learning paradigm</h6></summary>
+<p class="summary">The learning paradigm.</p>
+<details class="sec lvl-3" id="s-2-2-3">
+<summary><h6><span class="numprefix">2.2.3</span> Neuro-symbolic hybrids</h6></summary>
+<p class="summary">Neuro-symbolic hybrids.</p>
+<details class="sec lvl-2" id="s-2-3" open>
+<summary><h5><span class="numprefix">2.3</span> The learning paradigms</h5></summary>
+<p class="summary">The learning paradigms breaks down into 4 specific concepts and techniques.</p>
+<details class="sec lvl-3" id="s-2-3-1">
+<summary><h6><span class="numprefix">2.3.1</span> Supervised learning</h6></summary>
+<p class="summary">Supervised learning.</p>
+<details class="sec lvl-3" id="s-2-3-2">
+<summary><h6><span class="numprefix">2.3.2</span> Unsupervised learning</h6></summary>
+<p class="summary">Unsupervised learning.</p>
+<details class="sec lvl-3" id="s-2-3-3">
+<summary><h6><span class="numprefix">2.3.3</span> Self-supervised learning (the secret behind LLMs)</h6></summary>
+<p class="summary">Self-supervised learning (the secret behind LLMs).</p>
+<details class="sec lvl-3" id="s-2-3-4">
+<summary><h6><span class="numprefix">2.3.4</span> Reinforcement learning</h6></summary>
+<p class="summary">Reinforcement learning.</p>
+<details class="sec lvl-2" id="s-2-4" open>
+<summary><h5><span class="numprefix">2.4</span> Where Generative AI sits in this map</h5></summary>
+<p class="summary">Covers the fundamentals of where generative ai sits in this map.</p>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</section>
+<section class="sec lvl-1" id="s-3">
+<h4><span class="numprefix">3.</span> A Compact History of AI</h4>
+<p class="summary">A Compact History of AI introduces 3.1 Pre-2012, 3.2 2012–2017.</p>
+<details class="sec lvl-2" id="s-3-1" open>
+<summary><h5><span class="numprefix">3.1</span> Pre-2012 — rule-based systems and early ML</h5></summary>
+<p class="summary">Covers the fundamentals of pre-2012 — rule-based systems and early ml.</p>
+<details class="sec lvl-2" id="s-3-2" open>
+<summary><h5><span class="numprefix">3.2</span> 2012–2017 — the deep learning revolution</h5></summary>
+<p class="summary">2012–2017 — the deep learning revolution breaks down into 2 specific concepts and techniques.</p>
+<details class="sec lvl-3" id="s-3-2-1">
+<summary><h6><span class="numprefix">3.2.1</span> AlexNet and why GPUs changed everything</h6></summary>
+<p class="summary">AlexNet and why GPUs changed everything.</p>
+<details class="sec lvl-3" id="s-3-2-2">
+<summary><h6><span class="numprefix">3.2.2</span> The ImageNet moment</h6></summary>
+<p class="summary">The ImageNet moment.</p>
+<details class="sec lvl-2" id="s-3-3" open>
+<summary><h5><span class="numprefix">3.3</span> 2017–2022 — the transformer era</h5></summary>
+<p class="summary">2017–2022 — the transformer era breaks down into 2 specific concepts and techniques.</p>
+<details class="sec lvl-3" id="s-3-3-1">
+<summary><h6><span class="numprefix">3.3.1</span> "Attention Is All You Need"</h6></summary>
+<p class="summary">"Attention Is All You Need".</p>
+<details class="sec lvl-3" id="s-3-3-2">
+<summary><h6><span class="numprefix">3.3.2</span> BERT, GPT-2, GPT-3 — scaling wins</h6></summary>
+<p class="summary">BERT, GPT-2, GPT-3 — scaling wins.</p>
+<details class="sec lvl-2" id="s-3-4" open>
+<summary><h5><span class="numprefix">3.4</span> 2022–present — the generative mainstream</h5></summary>
+<p class="summary">2022–present — the generative mainstream breaks down into 2 specific concepts and techniques.</p>
+<details class="sec lvl-3" id="s-3-4-1">
+<summary><h6><span class="numprefix">3.4.1</span> ChatGPT as the inflection point</h6></summary>
+<p class="summary">ChatGPT as the inflection point.</p>
+<details class="sec lvl-3" id="s-3-4-2">
+<summary><h6><span class="numprefix">3.4.2</span> The tool, agent, and multimodal expansions</h6></summary>
+<p class="summary">The tool, agent, and multimodal expansions.</p>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</section>
+<section class="sec lvl-1" id="s-4">
+<h4><span class="numprefix">4.</span> Data — The Fuel of AI</h4>
+<p class="summary">Data — The Fuel of AI introduces 4.1 What counts as data, 4.2 The training data pipeline.</p>
+<details class="sec lvl-2" id="s-4-1" open>
+<summary><h5><span class="numprefix">4.1</span> What counts as data</h5></summary>
+<p class="summary">What counts as data breaks down into 2 specific concepts and techniques.</p>
+<details class="sec lvl-3" id="s-4-1-1">
+<summary><h6><span class="numprefix">4.1.1</span> Structured vs. unstructured</h6></summary>
+<p class="summary">Structured vs. unstructured.</p>
+<details class="sec lvl-3" id="s-4-1-2">
+<summary><h6><span class="numprefix">4.1.2</span> Text, image, audio, video, sensor data</h6></summary>
+<p class="summary">Text, image, audio, video, sensor data.</p>
+<details class="sec lvl-2" id="s-4-2" open>
+<summary><h5><span class="numprefix">4.2</span> The training data pipeline</h5></summary>
+<p class="summary">The training data pipeline breaks down into 3 specific concepts and techniques.</p>
+<details class="sec lvl-3" id="s-4-2-1">
+<summary><h6><span class="numprefix">4.2.1</span> Collection, filtering, deduplication</h6></summary>
+<p class="summary">Collection, filtering, deduplication.</p>
+<details class="sec lvl-3" id="s-4-2-2">
+<summary><h6><span class="numprefix">4.2.2</span> Labeling and annotation</h6></summary>
+<p class="summary">Labeling and annotation.</p>
+<details class="sec lvl-3" id="s-4-2-3">
+<summary><h6><span class="numprefix">4.2.3</span> Synthetic data (when real data isn't enough)</h6></summary>
+<p class="summary">Synthetic data (when real data isn't enough).</p>
+<details class="sec lvl-2" id="s-4-3" open>
+<summary><h5><span class="numprefix">4.3</span> Data quality vs. data quantity</h5></summary>
+<p class="summary">Covers the fundamentals of data quality vs. data quantity.</p>
+<details class="sec lvl-2" id="s-4-4" open>
+<summary><h5><span class="numprefix">4.4</span> Bias in data and how it propagates into models</h5></summary>
+<p class="summary">Covers the fundamentals of bias in data and how it propagates into models.</p>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</section>
+</section>
+<section class="part" id="part-ii">
+<h3><span class="numprefix">II</span> How AI Actually Learns</h3>
+<p class="summary">How AI Actually Learns covers foundational concepts and principles essential for understanding this domain.</p>
+<section class="sec lvl-1" id="s-5">
+<h4><span class="numprefix">5.</span> Machine Learning Essentials</h4>
+<p class="summary">Machine Learning Essentials introduces 5.1 What a "model" is (the recipe analogy), 5.2 The training loop.</p>
+<details class="sec lvl-2" id="s-5-1" open>
+<summary><h5><span class="numprefix">5.1</span> What a "model" is (the recipe analogy)</h5></summary>
+<p class="summary">Covers the fundamentals of what a "model" is (the recipe analogy).</p>
+<details class="sec lvl-2" id="s-5-2" open>
+<summary><h5><span class="numprefix">5.2</span> The training loop</h5></summary>
+<p class="summary">The training loop breaks down into 3 specific concepts and techniques.</p>
+<details class="sec lvl-3" id="s-5-2-1">
+<summary><h6><span class="numprefix">5.2.1</span> Loss functions — the scoreboard</h6></summary>
+<p class="summary">Loss functions — the scoreboard.</p>
+<details class="sec lvl-3" id="s-5-2-2">
+<summary><h6><span class="numprefix">5.2.2</span> Gradient descent — how the model improves</h6></summary>
+<p class="summary">Gradient descent — how the model improves.</p>
+<details class="sec lvl-3" id="s-5-2-3">
+<summary><h6><span class="numprefix">5.2.3</span> Epochs, batches, iterations</h6></summary>
+<p class="summary">Epochs, batches, iterations.</p>
+<details class="sec lvl-2" id="s-5-3" open>
+<summary><h5><span class="numprefix">5.3</span> Evaluation discipline</h5></summary>
+<p class="summary">Evaluation discipline breaks down into 3 specific concepts and techniques.</p>
+<details class="sec lvl-3" id="s-5-3-1">
+<summary><h6><span class="numprefix">5.3.1</span> Training vs. validation vs. test splits</h6></summary>
+<p class="summary">Training vs. validation vs. test splits.</p>
+<details class="sec lvl-3" id="s-5-3-2">
+<summary><h6><span class="numprefix">5.3.2</span> Overfitting and underfitting</h6></summary>
+<p class="summary">Overfitting and underfitting.</p>
+<details class="sec lvl-3" id="s-5-3-3">
+<summary><h6><span class="numprefix">5.3.3</span> Why generalization is the whole point</h6></summary>
+<p class="summary">Why generalization is the whole point.</p>
+<details class="sec lvl-2" id="s-5-4" open>
+<summary><h5><span class="numprefix">5.4</span> Features, labels, and targets — the vocabulary</h5></summary>
+<p class="summary">Covers the fundamentals of features, labels, and targets — the vocabulary.</p>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</section>
+<section class="sec lvl-1" id="s-6">
+<h4><span class="numprefix">6.</span> Neural Networks — The Core Engine</h4>
+<p class="summary">Neural Networks — The Core Engine introduces 6.1 The artificial neuron, 6.2 Layers: input, hidden, output, 6.3 How a network learns.</p>
+<details class="sec lvl-2" id="s-6-1" open>
+<summary><h5><span class="numprefix">6.1</span> The artificial neuron</h5></summary>
+<p class="summary">Covers the fundamentals of the artificial neuron.</p>
+<details class="sec lvl-2" id="s-6-2" open>
+<summary><h5><span class="numprefix">6.2</span> Layers: input, hidden, output</h5></summary>
+<p class="summary">Covers the fundamentals of layers: input, hidden, output.</p>
+<details class="sec lvl-2" id="s-6-3" open>
+<summary><h5><span class="numprefix">6.3</span> How a network learns</h5></summary>
+<p class="summary">How a network learns breaks down into 3 specific concepts and techniques.</p>
+<details class="sec lvl-3" id="s-6-3-1">
+<summary><h6><span class="numprefix">6.3.1</span> Forward pass</h6></summary>
+<p class="summary">Forward pass.</p>
+<details class="sec lvl-3" id="s-6-3-2">
+<summary><h6><span class="numprefix">6.3.2</span> Backpropagation (conceptual)</h6></summary>
+<p class="summary">Backpropagation (conceptual).</p>
+<details class="sec lvl-3" id="s-6-3-3">
+<summary><h6><span class="numprefix">6.3.3</span> Weights and biases — what actually gets tuned</h6></summary>
+<p class="summary">Weights and biases — what actually gets tuned.</p>
+<details class="sec lvl-2" id="s-6-4" open>
+<summary><h5><span class="numprefix">6.4</span> Activation functions (why non-linearity matters)</h5></summary>
+<p class="summary">Activation functions (why non-linearity matters) breaks down into 1 specific concepts and techniques.</p>
+<details class="sec lvl-3" id="s-6-4-1">
+<summary><h6><span class="numprefix">6.4.1</span> ReLU, sigmoid, tanh, softmax — intuition only</h6></summary>
+<p class="summary">ReLU, sigmoid, tanh, softmax — intuition only.</p>
+<details class="sec lvl-2" id="s-6-5" open>
+<summary><h5><span class="numprefix">6.5</span> Depth and width — why "deep" learning is deep</h5></summary>
+<p class="summary">Covers the fundamentals of depth and width — why "deep" learning is deep.</p>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</section>
+<section class="sec lvl-1" id="s-7">
+<h4><span class="numprefix">7.</span> Key Architectures (Conceptual)</h4>
+<p class="summary">Key Architectures (Conceptual) introduces 7.1 Feedforward networks, 7.2 Convolutional Neural Networks (CNNs).</p>
+<details class="sec lvl-2" id="s-7-1" open>
+<summary><h5><span class="numprefix">7.1</span> Feedforward networks — the simplest case</h5></summary>
+<p class="summary">Covers the fundamentals of feedforward networks — the simplest case.</p>
+<details class="sec lvl-2" id="s-7-2" open>
+<summary><h5><span class="numprefix">7.2</span> Convolutional Neural Networks (CNNs) — built for images</h5></summary>
+<p class="summary">Convolutional Neural Networks (CNNs) — built for images breaks down into 3 specific concepts and techniques.</p>
+<details class="sec lvl-3" id="s-7-2-1">
+<summary><h6><span class="numprefix">7.2.1</span> Filters and feature maps</h6></summary>
+<p class="summary">Filters and feature maps.</p>
+<details class="sec lvl-3" id="s-7-2-2">
+<summary><h6><span class="numprefix">7.2.2</span> Pooling</h6></summary>
+<p class="summary">Pooling.</p>
+<details class="sec lvl-3" id="s-7-2-3">
+<summary><h6><span class="numprefix">7.2.3</span> Why CNNs won vision before transformers</h6></summary>
+<p class="summary">Why CNNs won vision before transformers.</p>
+<details class="sec lvl-2" id="s-7-3" open>
+<summary><h5><span class="numprefix">7.3</span> Recurrent Neural Networks (RNNs, LSTMs, GRUs)</h5></summary>
+<p class="summary">Recurrent Neural Networks (RNNs, LSTMs, GRUs) breaks down into 2 specific concepts and techniques.</p>
+<details class="sec lvl-3" id="s-7-3-1">
+<summary><h6><span class="numprefix">7.3.1</span> Sequence processing</h6></summary>
+<p class="summary">Sequence processing.</p>
+<details class="sec lvl-3" id="s-7-3-2">
+<summary><h6><span class="numprefix">7.3.2</span> Vanishing gradients — why RNNs struggle</h6></summary>
+<p class="summary">Vanishing gradients — why RNNs struggle.</p>
+<details class="sec lvl-2" id="s-7-4" open>
+<summary><h5><span class="numprefix">7.4</span> Transformers — the architecture that changed everything</h5></summary>
+<p class="summary">Transformers — the architecture that changed everything breaks down into 6 specific concepts and techniques.</p>
+<details class="sec lvl-3" id="s-7-4-1">
+<summary><h6><span class="numprefix">7.4.1</span> The attention mechanism</h6></summary>
+<p class="summary">The attention mechanism.</p>
+<details class="sec lvl-4" id="s-7-4-1-1">
+<summary><h6><span class="numprefix">7.4.1.1</span> Query, key, value intuition</h6></summary>
+<p class="summary">Query, key, value intuition.</p>
+</details>
+<details class="sec lvl-4" id="s-7-4-1-2">
+<summary><h6><span class="numprefix">7.4.1.2</span> What "attention" really attends to</h6></summary>
+<p class="summary">What "attention" really attends to.</p>
+</details>
+<details class="sec lvl-3" id="s-7-4-2">
+<summary><h6><span class="numprefix">7.4.2</span> Self-attention vs. cross-attention</h6></summary>
+<p class="summary">Self-attention vs. cross-attention.</p>
+<details class="sec lvl-3" id="s-7-4-3">
+<summary><h6><span class="numprefix">7.4.3</span> Multi-head attention</h6></summary>
+<p class="summary">Multi-head attention.</p>
+<details class="sec lvl-3" id="s-7-4-4">
+<summary><h6><span class="numprefix">7.4.4</span> Positional encoding — giving order to tokens</h6></summary>
+<p class="summary">Positional encoding — giving order to tokens.</p>
+<details class="sec lvl-3" id="s-7-4-5">
+<summary><h6><span class="numprefix">7.4.5</span> Encoder-only, decoder-only, encoder-decoder</h6></summary>
+<p class="summary">Encoder-only, decoder-only, encoder-decoder.</p>
+<details class="sec lvl-3" id="s-7-4-6">
+<summary><h6><span class="numprefix">7.4.6</span> Why transformers beat everything before them</h6></summary>
+<p class="summary">Why transformers beat everything before them.</p>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</section>
+</section>
+<section class="part" id="part-iii">
+<h3><span class="numprefix">III</span> What Makes AI "Generative"</h3>
+<p class="summary">What Makes AI "Generative" covers foundational concepts and principles essential for understanding this domain.</p>
+<section class="sec lvl-1" id="s-8">
+<h4><span class="numprefix">8.</span> Generative vs. Discriminative</h4>
+<p class="summary">Generative vs. Discriminative introduces 8.1 Predicting a label vs. producing new content, 8.2 The probability-distribution mindset, 8.3 Sampling.</p>
+<details class="sec lvl-2" id="s-8-1" open>
+<summary><h5><span class="numprefix">8.1</span> Predicting a label vs. producing new content</h5></summary>
+<p class="summary">Covers the fundamentals of predicting a label vs. producing new content.</p>
+<details class="sec lvl-2" id="s-8-2" open>
+<summary><h5><span class="numprefix">8.2</span> The probability-distribution mindset</h5></summary>
+<p class="summary">Covers the fundamentals of the probability-distribution mindset.</p>
+<details class="sec lvl-2" id="s-8-3" open>
+<summary><h5><span class="numprefix">8.3</span> Sampling — why the same prompt gives different answers</h5></summary>
+<p class="summary">Covers the fundamentals of sampling — why the same prompt gives different answers.</p>
+<details class="sec lvl-2" id="s-8-4" open>
+<summary><h5><span class="numprefix">8.4</span> Deterministic vs. stochastic outputs</h5></summary>
+<p class="summary">Covers the fundamentals of deterministic vs. stochastic outputs.</p>
+</details>
+</details>
+</details>
+</details>
+</section>
+<section class="sec lvl-1" id="s-9">
+<h4><span class="numprefix">9.</span> Core Generative Architectures</h4>
+<p class="summary">Core Generative Architectures introduces 9.1 Autoregressive models (the GPT family), 9.2 Variational Autoencoders (VAEs).</p>
+<details class="sec lvl-2" id="s-9-1" open>
+<summary><h5><span class="numprefix">9.1</span> Autoregressive models (the GPT family)</h5></summary>
+<p class="summary">Autoregressive models (the GPT family) breaks down into 2 specific concepts and techniques.</p>
+<details class="sec lvl-3" id="s-9-1-1">
+<summary><h6><span class="numprefix">9.1.1</span> Next-token prediction as one task to rule them all</h6></summary>
+<p class="summary">Next-token prediction as one task to rule them all.</p>
+<details class="sec lvl-3" id="s-9-1-2">
+<summary><h6><span class="numprefix">9.1.2</span> Left-to-right generation</h6></summary>
+<p class="summary">Left-to-right generation.</p>
+<details class="sec lvl-2" id="s-9-2" open>
+<summary><h5><span class="numprefix">9.2</span> Variational Autoencoders (VAEs)</h5></summary>
+<p class="summary">Variational Autoencoders (VAEs) breaks down into 2 specific concepts and techniques.</p>
+<details class="sec lvl-3" id="s-9-2-1">
+<summary><h6><span class="numprefix">9.2.1</span> Encoding and decoding</h6></summary>
+<p class="summary">Encoding and decoding.</p>
+<details class="sec lvl-3" id="s-9-2-2">
+<summary><h6><span class="numprefix">9.2.2</span> The latent space</h6></summary>
+<p class="summary">The latent space.</p>
+<details class="sec lvl-2" id="s-9-3" open>
+<summary><h5><span class="numprefix">9.3</span> Generative Adversarial Networks (GANs)</h5></summary>
+<p class="summary">Generative Adversarial Networks (GANs) breaks down into 2 specific concepts and techniques.</p>
+<details class="sec lvl-3" id="s-9-3-1">
+<summary><h6><span class="numprefix">9.3.1</span> Generator vs. discriminator</h6></summary>
+<p class="summary">Generator vs. discriminator.</p>
+<details class="sec lvl-3" id="s-9-3-2">
+<summary><h6><span class="numprefix">9.3.2</span> What GANs excel at and fail at</h6></summary>
+<p class="summary">What GANs excel at and fail at.</p>
+<details class="sec lvl-2" id="s-9-4" open>
+<summary><h5><span class="numprefix">9.4</span> Diffusion models</h5></summary>
+<p class="summary">Diffusion models breaks down into 4 specific concepts and techniques.</p>
+<details class="sec lvl-3" id="s-9-4-1">
+<summary><h6><span class="numprefix">9.4.1</span> Forward process — adding noise</h6></summary>
+<p class="summary">Forward process — adding noise.</p>
+<details class="sec lvl-3" id="s-9-4-2">
+<summary><h6><span class="numprefix">9.4.2</span> Reverse process — learned denoising</h6></summary>
+<p class="summary">Reverse process — learned denoising.</p>
+<details class="sec lvl-3" id="s-9-4-3">
+<summary><h6><span class="numprefix">9.4.3</span> Latent diffusion (why Stable Diffusion is fast)</h6></summary>
+<p class="summary">Latent diffusion (why Stable Diffusion is fast).</p>
+<details class="sec lvl-3" id="s-9-4-4">
+<summary><h6><span class="numprefix">9.4.4</span> Why diffusion dominates image generation</h6></summary>
+<p class="summary">Why diffusion dominates image generation.</p>
+<details class="sec lvl-2" id="s-9-5" open>
+<summary><h5><span class="numprefix">9.5</span> Flow-based models — a brief overview</h5></summary>
+<p class="summary">Covers the fundamentals of flow-based models — a brief overview.</p>
+<details class="sec lvl-2" id="s-9-6" open>
+<summary><h5><span class="numprefix">9.6</span> Hybrid approaches (diffusion + transformers)</h5></summary>
+<p class="summary">Covers the fundamentals of hybrid approaches (diffusion + transformers).</p>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</section>
+<section class="sec lvl-1" id="s-10">
+<h4><span class="numprefix">10.</span> Tokens, Embeddings, and Latent Space</h4>
+<p class="summary">Tokens, Embeddings, and Latent Space introduces 10.1 Tokens and tokenization.</p>
+<details class="sec lvl-2" id="s-10-1" open>
+<summary><h5><span class="numprefix">10.1</span> Tokens and tokenization</h5></summary>
+<p class="summary">Tokens and tokenization breaks down into 3 specific concepts and techniques.</p>
+<details class="sec lvl-3" id="s-10-1-1">
+<summary><h6><span class="numprefix">10.1.1</span> Why text gets split</h6></summary>
+<p class="summary">Why text gets split.</p>
+<details class="sec lvl-3" id="s-10-1-2">
+<summary><h6><span class="numprefix">10.1.2</span> Byte-pair encoding — conceptual</h6></summary>
+<p class="summary">Byte-pair encoding — conceptual.</p>
+<details class="sec lvl-3" id="s-10-1-3">
+<summary><h6><span class="numprefix">10.1.3</span> Tokens ≠ words (and why it matters)</h6></summary>
+<p class="summary">Tokens ≠ words (and why it matters).</p>
+<details class="sec lvl-2" id="s-10-2" open>
+<summary><h5><span class="numprefix">10.2</span> Vector embeddings</h5></summary>
+<p class="summary">Vector embeddings breaks down into 3 specific concepts and techniques.</p>
+<details class="sec lvl-3" id="s-10-2-1">
+<summary><h6><span class="numprefix">10.2.1</span> Meaning as coordinates</h6></summary>
+<p class="summary">Meaning as coordinates.</p>
+<details class="sec lvl-3" id="s-10-2-2">
+<summary><h6><span class="numprefix">10.2.2</span> Distance and similarity</h6></summary>
+<p class="summary">Distance and similarity.</p>
+<details class="sec lvl-3" id="s-10-2-3">
+<summary><h6><span class="numprefix">10.2.3</span> The universal role of embeddings</h6></summary>
+<p class="summary">The universal role of embeddings.</p>
+<details class="sec lvl-2" id="s-10-3" open>
+<summary><h5><span class="numprefix">10.3</span> The latent space intuition</h5></summary>
+<p class="summary">Covers the fundamentals of the latent space intuition.</p>
+<details class="sec lvl-2" id="s-10-4" open>
+<summary><h5><span class="numprefix">10.4</span> Why everything — text, image, audio — lives in the same math</h5></summary>
+<p class="summary">Covers the fundamentals of why everything — text, image, audio — lives in the same math.</p>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</section>
+</section>
+<section class="part" id="part-iv">
+<h3><span class="numprefix">IV</span> How Generative Models Are Trained</h3>
+<p class="summary">How Generative Models Are Trained covers foundational concepts and principles essential for understanding this domain.</p>
+<section class="sec lvl-1" id="s-11">
+<h4><span class="numprefix">11.</span> The Training Pipeline</h4>
+<p class="summary">The Training Pipeline introduces 11.1 Pre-training.</p>
+<details class="sec lvl-2" id="s-11-1" open>
+<summary><h5><span class="numprefix">11.1</span> Pre-training</h5></summary>
+<p class="summary">Pre-training breaks down into 3 specific concepts and techniques.</p>
+<details class="sec lvl-3" id="s-11-1-1">
+<summary><h6><span class="numprefix">11.1.1</span> Dataset scale (trillions of tokens)</h6></summary>
+<p class="summary">Dataset scale (trillions of tokens).</p>
+<details class="sec lvl-3" id="s-11-1-2">
+<summary><h6><span class="numprefix">11.1.2</span> Compute requirements</h6></summary>
+<p class="summary">Compute requirements.</p>
+<details class="sec lvl-3" id="s-11-1-3">
+<summary><h6><span class="numprefix">11.1.3</span> What the model actually learns here</h6></summary>
+<p class="summary">What the model actually learns here.</p>
+<details class="sec lvl-2" id="s-11-2" open>
+<summary><h5><span class="numprefix">11.2</span> Fine-tuning</h5></summary>
+<p class="summary">Fine-tuning breaks down into 3 specific concepts and techniques.</p>
+<details class="sec lvl-3" id="s-11-2-1">
+<summary><h6><span class="numprefix">11.2.1</span> Supervised fine-tuning (SFT)</h6></summary>
+<p class="summary">Supervised fine-tuning (SFT).</p>
+<details class="sec lvl-3" id="s-11-2-2">
+<summary><h6><span class="numprefix">11.2.2</span> Instruction tuning</h6></summary>
+<p class="summary">Instruction tuning.</p>
+<details class="sec lvl-3" id="s-11-2-3">
+<summary><h6><span class="numprefix">11.2.3</span> Domain adaptation</h6></summary>
+<p class="summary">Domain adaptation.</p>
+<details class="sec lvl-2" id="s-11-3" open>
+<summary><h5><span class="numprefix">11.3</span> Alignment (the "make it helpful and safe" stage)</h5></summary>
+<p class="summary">Alignment (the "make it helpful and safe" stage) breaks down into 5 specific concepts and techniques.</p>
+<details class="sec lvl-3" id="s-11-3-1">
+<summary><h6><span class="numprefix">11.3.1</span> Why base models are hard to use directly</h6></summary>
+<p class="summary">Why base models are hard to use directly.</p>
+<details class="sec lvl-3" id="s-11-3-2">
+<summary><h6><span class="numprefix">11.3.2</span> RLHF — Reinforcement Learning from Human Feedback</h6></summary>
+<p class="summary">RLHF — Reinforcement Learning from Human Feedback.</p>
+<details class="sec lvl-4" id="s-11-3-2-1">
+<summary><h6><span class="numprefix">11.3.2.1</span> Collecting human preferences</h6></summary>
+<p class="summary">Collecting human preferences.</p>
+</details>
+<details class="sec lvl-4" id="s-11-3-2-2">
+<summary><h6><span class="numprefix">11.3.2.2</span> Training a reward model</h6></summary>
+<p class="summary">Training a reward model.</p>
+</details>
+<details class="sec lvl-4" id="s-11-3-2-3">
+<summary><h6><span class="numprefix">11.3.2.3</span> PPO (conceptual)</h6></summary>
+<p class="summary">PPO (conceptual).</p>
+</details>
+<details class="sec lvl-3" id="s-11-3-3">
+<summary><h6><span class="numprefix">11.3.3</span> DPO — Direct Preference Optimization</h6></summary>
+<p class="summary">DPO — Direct Preference Optimization.</p>
+<details class="sec lvl-3" id="s-11-3-4">
+<summary><h6><span class="numprefix">11.3.4</span> Constitutional AI (Anthropic's approach)</h6></summary>
+<p class="summary">Constitutional AI (Anthropic's approach).</p>
+<details class="sec lvl-3" id="s-11-3-5">
+<summary><h6><span class="numprefix">11.3.5</span> AI-assisted and RLAIF methods</h6></summary>
+<p class="summary">AI-assisted and RLAIF methods.</p>
+<details class="sec lvl-2" id="s-11-4" open>
+<summary><h5><span class="numprefix">11.4</span> Parameter-efficient fine-tuning (PEFT)</h5></summary>
+<p class="summary">Parameter-efficient fine-tuning (PEFT) breaks down into 3 specific concepts and techniques.</p>
+<details class="sec lvl-3" id="s-11-4-1">
+<summary><h6><span class="numprefix">11.4.1</span> LoRA — Low-Rank Adaptation</h6></summary>
+<p class="summary">LoRA — Low-Rank Adaptation.</p>
+<details class="sec lvl-3" id="s-11-4-2">
+<summary><h6><span class="numprefix">11.4.2</span> QLoRA</h6></summary>
+<p class="summary">QLoRA.</p>
+<details class="sec lvl-3" id="s-11-4-3">
+<summary><h6><span class="numprefix">11.4.3</span> Adapters and prefix tuning</h6></summary>
+<p class="summary">Adapters and prefix tuning.</p>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</section>
+<section class="sec lvl-1" id="s-12">
+<h4><span class="numprefix">12.</span> Parameters, Weights, and Scale</h4>
+<p class="summary">Parameters, Weights, and Scale introduces 12.1 What "7B", "70B", "405B" actually mean, 12.2 Emergent abilities with scale, 12.3 Scaling laws (Chinchilla and beyond).</p>
+<details class="sec lvl-2" id="s-12-1" open>
+<summary><h5><span class="numprefix">12.1</span> What "7B", "70B", "405B" actually mean</h5></summary>
+<p class="summary">Covers the fundamentals of what "7b", "70b", "405b" actually mean.</p>
+<details class="sec lvl-2" id="s-12-2" open>
+<summary><h5><span class="numprefix">12.2</span> Emergent abilities with scale</h5></summary>
+<p class="summary">Covers the fundamentals of emergent abilities with scale.</p>
+<details class="sec lvl-2" id="s-12-3" open>
+<summary><h5><span class="numprefix">12.3</span> Scaling laws (Chinchilla and beyond) — conceptual</h5></summary>
+<p class="summary">Covers the fundamentals of scaling laws (chinchilla and beyond) — conceptual.</p>
+<details class="sec lvl-2" id="s-12-4" open>
+<summary><h5><span class="numprefix">12.4</span> Mixture-of-Experts (MoE) — getting more model for less compute</h5></summary>
+<p class="summary">Covers the fundamentals of mixture-of-experts (moe) — getting more model for less compute.</p>
+<details class="sec lvl-2" id="s-12-5" open>
+<summary><h5><span class="numprefix">12.5</span> Parameter efficiency vs. raw size</h5></summary>
+<p class="summary">Covers the fundamentals of parameter efficiency vs. raw size.</p>
+<details class="sec lvl-2" id="s-12-6" open>
+<summary><h5><span class="numprefix">12.6</span> Why bigger isn't always better anymore</h5></summary>
+<p class="summary">Covers the fundamentals of why bigger isn't always better anymore.</p>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</section>
+</section>
+<section class="part" id="part-v">
+<h3><span class="numprefix">V</span> Large Language Models (LLMs)</h3>
+<p class="summary">Large Language Models (LLMs) covers foundational concepts and principles essential for understanding this domain.</p>
+<section class="sec lvl-1" id="s-13">
+<h4><span class="numprefix">13.</span> What an LLM Is</h4>
+<p class="summary">What an LLM Is introduces 13.1 Next-token prediction as the single objective, 13.2 Why that objective generalizes to everything, 13.3 Model variants.</p>
+<details class="sec lvl-2" id="s-13-1" open>
+<summary><h5><span class="numprefix">13.1</span> Next-token prediction as the single objective</h5></summary>
+<p class="summary">Covers the fundamentals of next-token prediction as the single objective.</p>
+<details class="sec lvl-2" id="s-13-2" open>
+<summary><h5><span class="numprefix">13.2</span> Why that objective generalizes to everything</h5></summary>
+<p class="summary">Covers the fundamentals of why that objective generalizes to everything.</p>
+<details class="sec lvl-2" id="s-13-3" open>
+<summary><h5><span class="numprefix">13.3</span> Model variants</h5></summary>
+<p class="summary">Model variants breaks down into 4 specific concepts and techniques.</p>
+<details class="sec lvl-3" id="s-13-3-1">
+<summary><h6><span class="numprefix">13.3.1</span> Base models</h6></summary>
+<p class="summary">Base models.</p>
+<details class="sec lvl-3" id="s-13-3-2">
+<summary><h6><span class="numprefix">13.3.2</span> Instruct models</h6></summary>
+<p class="summary">Instruct models.</p>
+<details class="sec lvl-3" id="s-13-3-3">
+<summary><h6><span class="numprefix">13.3.3</span> Chat models</h6></summary>
+<p class="summary">Chat models.</p>
+<details class="sec lvl-3" id="s-13-3-4">
+<summary><h6><span class="numprefix">13.3.4</span> Reasoning models ("thinking" models)</h6></summary>
+<p class="summary">Reasoning models ("thinking" models).</p>
+<details class="sec lvl-2" id="s-13-4" open>
+<summary><h5><span class="numprefix">13.4</span> Context windows</h5></summary>
+<p class="summary">Context windows breaks down into 4 specific concepts and techniques.</p>
+<details class="sec lvl-3" id="s-13-4-1">
+<summary><h6><span class="numprefix">13.4.1</span> What the context window contains</h6></summary>
+<p class="summary">What the context window contains.</p>
+<details class="sec lvl-3" id="s-13-4-2">
+<summary><h6><span class="numprefix">13.4.2</span> Short vs. long context tradeoffs</h6></summary>
+<p class="summary">Short vs. long context tradeoffs.</p>
+<details class="sec lvl-3" id="s-13-4-3">
+<summary><h6><span class="numprefix">13.4.3</span> Needle-in-a-haystack evaluation</h6></summary>
+<p class="summary">Needle-in-a-haystack evaluation.</p>
+<details class="sec lvl-3" id="s-13-4-4">
+<summary><h6><span class="numprefix">13.4.4</span> Why context ≠ memory</h6></summary>
+<p class="summary">Why context ≠ memory.</p>
+<details class="sec lvl-2" id="s-13-5" open>
+<summary><h5><span class="numprefix">13.5</span> Sampling parameters</h5></summary>
+<p class="summary">Sampling parameters breaks down into 4 specific concepts and techniques.</p>
+<details class="sec lvl-3" id="s-13-5-1">
+<summary><h6><span class="numprefix">13.5.1</span> Temperature</h6></summary>
+<p class="summary">Temperature.</p>
+<details class="sec lvl-3" id="s-13-5-2">
+<summary><h6><span class="numprefix">13.5.2</span> Top-p (nucleus sampling)</h6></summary>
+<p class="summary">Top-p (nucleus sampling).</p>
+<details class="sec lvl-3" id="s-13-5-3">
+<summary><h6><span class="numprefix">13.5.3</span> Top-k</h6></summary>
+<p class="summary">Top-k.</p>
+<details class="sec lvl-3" id="s-13-5-4">
+<summary><h6><span class="numprefix">13.5.4</span> Repetition penalties and stop sequences</h6></summary>
+<p class="summary">Repetition penalties and stop sequences.</p>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</section>
+<section class="sec lvl-1" id="s-14">
+<h4><span class="numprefix">14.</span> What LLMs Know (And Don't)</h4>
+<p class="summary">What LLMs Know (And Don't) introduces 14.1 Knowledge cutoffs, 14.2 Hallucination.</p>
+<details class="sec lvl-2" id="s-14-1" open>
+<summary><h5><span class="numprefix">14.1</span> Knowledge cutoffs</h5></summary>
+<p class="summary">Covers the fundamentals of knowledge cutoffs.</p>
+<details class="sec lvl-2" id="s-14-2" open>
+<summary><h5><span class="numprefix">14.2</span> Hallucination</h5></summary>
+<p class="summary">Hallucination breaks down into 3 specific concepts and techniques.</p>
+<details class="sec lvl-3" id="s-14-2-1">
+<summary><h6><span class="numprefix">14.2.1</span> Why it happens mechanically</h6></summary>
+<p class="summary">Why it happens mechanically.</p>
+<details class="sec lvl-3" id="s-14-2-2">
+<summary><h6><span class="numprefix">14.2.2</span> Confident vs. uncertain hallucination</h6></summary>
+<p class="summary">Confident vs. uncertain hallucination.</p>
+<details class="sec lvl-3" id="s-14-2-3">
+<summary><h6><span class="numprefix">14.2.3</span> Detection strategies</h6></summary>
+<p class="summary">Detection strategies.</p>
+<details class="sec lvl-2" id="s-14-3" open>
+<summary><h5><span class="numprefix">14.3</span> In-context learning</h5></summary>
+<p class="summary">In-context learning breaks down into 2 specific concepts and techniques.</p>
+<details class="sec lvl-3" id="s-14-3-1">
+<summary><h6><span class="numprefix">14.3.1</span> Few-shot examples</h6></summary>
+<p class="summary">Few-shot examples.</p>
+<details class="sec lvl-3" id="s-14-3-2">
+<summary><h6><span class="numprefix">14.3.2</span> Why "teaching in the prompt" works</h6></summary>
+<p class="summary">Why "teaching in the prompt" works.</p>
+<details class="sec lvl-2" id="s-14-4" open>
+<summary><h5><span class="numprefix">14.4</span> Emergent abilities — and skepticism about them</h5></summary>
+<p class="summary">Covers the fundamentals of emergent abilities — and skepticism about them.</p>
+<details class="sec lvl-2" id="s-14-5" open>
+<summary><h5><span class="numprefix">14.5</span> The reasoning-vs-pattern-matching debate</h5></summary>
+<p class="summary">Covers the fundamentals of the reasoning-vs-pattern-matching debate.</p>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</section>
+<section class="sec lvl-1" id="s-15">
+<h4><span class="numprefix">15.</span> Model Families (Evergreen Categories)</h4>
+<p class="summary">Model Families (Evergreen Categories) introduces 15.1 Closed-source frontier models, 15.2 Open-weight models, 15.3 Small language models (SLMs).</p>
+<details class="sec lvl-2" id="s-15-1" open>
+<summary><h5><span class="numprefix">15.1</span> Closed-source frontier models</h5></summary>
+<p class="summary">Covers the fundamentals of closed-source frontier models.</p>
+<details class="sec lvl-2" id="s-15-2" open>
+<summary><h5><span class="numprefix">15.2</span> Open-weight models</h5></summary>
+<p class="summary">Covers the fundamentals of open-weight models.</p>
+<details class="sec lvl-2" id="s-15-3" open>
+<summary><h5><span class="numprefix">15.3</span> Small language models (SLMs)</h5></summary>
+<p class="summary">Covers the fundamentals of small language models (slms).</p>
+<details class="sec lvl-2" id="s-15-4" open>
+<summary><h5><span class="numprefix">15.4</span> Reasoning-native models (test-time compute)</h5></summary>
+<p class="summary">Covers the fundamentals of reasoning-native models (test-time compute).</p>
+<details class="sec lvl-2" id="s-15-5" open>
+<summary><h5><span class="numprefix">15.5</span> Multimodal-native models</h5></summary>
+<p class="summary">Covers the fundamentals of multimodal-native models.</p>
+<details class="sec lvl-2" id="s-15-6" open>
+<summary><h5><span class="numprefix">15.6</span> Coding-specialized models</h5></summary>
+<p class="summary">Covers the fundamentals of coding-specialized models.</p>
+<details class="sec lvl-2" id="s-15-7" open>
+<summary><h5><span class="numprefix">15.7</span> Domain-specialized models (medical, legal, scientific)</h5></summary>
+<p class="summary">Covers the fundamentals of domain-specialized models (medical, legal, scientific).</p>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</section>
+</section>
+<section class="part" id="part-vi">
+<h3><span class="numprefix">VI</span> Multimodal AI</h3>
+<p class="summary">Multimodal AI covers foundational concepts and principles essential for understanding this domain.</p>
+<section class="sec lvl-1" id="s-16">
+<h4><span class="numprefix">16.</span> The Multimodal Shift</h4>
+<p class="summary">The Multimodal Shift introduces 16.1 Why modalities are converging, 16.2 Unified representation spaces, 16.3 The path toward any-to-any models.</p>
+<details class="sec lvl-2" id="s-16-1" open>
+<summary><h5><span class="numprefix">16.1</span> Why modalities are converging</h5></summary>
+<p class="summary">Covers the fundamentals of why modalities are converging.</p>
+<details class="sec lvl-2" id="s-16-2" open>
+<summary><h5><span class="numprefix">16.2</span> Unified representation spaces</h5></summary>
+<p class="summary">Covers the fundamentals of unified representation spaces.</p>
+<details class="sec lvl-2" id="s-16-3" open>
+<summary><h5><span class="numprefix">16.3</span> The path toward any-to-any models</h5></summary>
+<p class="summary">Covers the fundamentals of the path toward any-to-any models.</p>
+</details>
+</details>
+</details>
+</section>
+<section class="sec lvl-1" id="s-17">
+<h4><span class="numprefix">17.</span> Vision-Language Models</h4>
+<p class="summary">Vision-Language Models introduces 17.1 How images become tokens, 17.2 CLIP and contrastive learning (conceptual), 17.3 Visual reasoning capabilities.</p>
+<details class="sec lvl-2" id="s-17-1" open>
+<summary><h5><span class="numprefix">17.1</span> How images become tokens</h5></summary>
+<p class="summary">Covers the fundamentals of how images become tokens.</p>
+<details class="sec lvl-2" id="s-17-2" open>
+<summary><h5><span class="numprefix">17.2</span> CLIP and contrastive learning (conceptual)</h5></summary>
+<p class="summary">Covers the fundamentals of clip and contrastive learning (conceptual).</p>
+<details class="sec lvl-2" id="s-17-3" open>
+<summary><h5><span class="numprefix">17.3</span> Visual reasoning capabilities</h5></summary>
+<p class="summary">Covers the fundamentals of visual reasoning capabilities.</p>
+<details class="sec lvl-2" id="s-17-4" open>
+<summary><h5><span class="numprefix">17.4</span> OCR, chart reading, document understanding</h5></summary>
+<p class="summary">Covers the fundamentals of ocr, chart reading, document understanding.</p>
+</details>
+</details>
+</details>
+</details>
+</section>
+<section class="sec lvl-1" id="s-18">
+<h4><span class="numprefix">18.</span> Audio AI</h4>
+<p class="summary">Audio AI introduces 18.1 Speech-to-text (ASR), 18.2 Text-to-speech (TTS), 18.3 Voice cloning.</p>
+<details class="sec lvl-2" id="s-18-1" open>
+<summary><h5><span class="numprefix">18.1</span> Speech-to-text (ASR)</h5></summary>
+<p class="summary">Covers the fundamentals of speech-to-text (asr).</p>
+<details class="sec lvl-2" id="s-18-2" open>
+<summary><h5><span class="numprefix">18.2</span> Text-to-speech (TTS)</h5></summary>
+<p class="summary">Covers the fundamentals of text-to-speech (tts).</p>
+<details class="sec lvl-2" id="s-18-3" open>
+<summary><h5><span class="numprefix">18.3</span> Voice cloning — how it works</h5></summary>
+<p class="summary">Covers the fundamentals of voice cloning — how it works.</p>
+<details class="sec lvl-2" id="s-18-4" open>
+<summary><h5><span class="numprefix">18.4</span> Real-time voice agents</h5></summary>
+<p class="summary">Covers the fundamentals of real-time voice agents.</p>
+<details class="sec lvl-2" id="s-18-5" open>
+<summary><h5><span class="numprefix">18.5</span> Music generation (conceptual)</h5></summary>
+<p class="summary">Covers the fundamentals of music generation (conceptual).</p>
+</details>
+</details>
+</details>
+</details>
+</details>
+</section>
+<section class="sec lvl-1" id="s-19">
+<h4><span class="numprefix">19.</span> Video AI</h4>
+<p class="summary">Video AI introduces 19.1 Text-to-video generation, 19.2 Image-to-video animation, 19.3 Video editing and enhancement.</p>
+<details class="sec lvl-2" id="s-19-1" open>
+<summary><h5><span class="numprefix">19.1</span> Text-to-video generation</h5></summary>
+<p class="summary">Covers the fundamentals of text-to-video generation.</p>
+<details class="sec lvl-2" id="s-19-2" open>
+<summary><h5><span class="numprefix">19.2</span> Image-to-video animation</h5></summary>
+<p class="summary">Covers the fundamentals of image-to-video animation.</p>
+<details class="sec lvl-2" id="s-19-3" open>
+<summary><h5><span class="numprefix">19.3</span> Video editing and enhancement</h5></summary>
+<p class="summary">Covers the fundamentals of video editing and enhancement.</p>
+<details class="sec lvl-2" id="s-19-4" open>
+<summary><h5><span class="numprefix">19.4</span> Deepfakes — technical reality and societal impact</h5></summary>
+<p class="summary">Covers the fundamentals of deepfakes — technical reality and societal impact.</p>
+</details>
+</details>
+</details>
+</details>
+</section>
+<section class="sec lvl-1" id="s-20">
+<h4><span class="numprefix">20.</span> Image Generation Deep Dive</h4>
+<p class="summary">Image Generation Deep Dive introduces 20.1 How diffusion generates images, step by step, 20.2 Prompting for images.</p>
+<details class="sec lvl-2" id="s-20-1" open>
+<summary><h5><span class="numprefix">20.1</span> How diffusion generates images, step by step</h5></summary>
+<p class="summary">Covers the fundamentals of how diffusion generates images, step by step.</p>
+<details class="sec lvl-2" id="s-20-2" open>
+<summary><h5><span class="numprefix">20.2</span> Prompting for images</h5></summary>
+<p class="summary">Prompting for images breaks down into 3 specific concepts and techniques.</p>
+<details class="sec lvl-3" id="s-20-2-1">
+<summary><h6><span class="numprefix">20.2.1</span> Subject, style, composition, lighting, mood</h6></summary>
+<p class="summary">Subject, style, composition, lighting, mood.</p>
+<details class="sec lvl-3" id="s-20-2-2">
+<summary><h6><span class="numprefix">20.2.2</span> Negative prompting</h6></summary>
+<p class="summary">Negative prompting.</p>
+<details class="sec lvl-3" id="s-20-2-3">
+<summary><h6><span class="numprefix">20.2.3</span> Guidance scale (CFG)</h6></summary>
+<p class="summary">Guidance scale (CFG).</p>
+<details class="sec lvl-2" id="s-20-3" open>
+<summary><h5><span class="numprefix">20.3</span> Image-to-image workflows</h5></summary>
+<p class="summary">Covers the fundamentals of image-to-image workflows.</p>
+<details class="sec lvl-2" id="s-20-4" open>
+<summary><h5><span class="numprefix">20.4</span> Inpainting and outpainting</h5></summary>
+<p class="summary">Covers the fundamentals of inpainting and outpainting.</p>
+<details class="sec lvl-2" id="s-20-5" open>
+<summary><h5><span class="numprefix">20.5</span> ControlNet and guided generation</h5></summary>
+<p class="summary">Covers the fundamentals of controlnet and guided generation.</p>
+<details class="sec lvl-2" id="s-20-6" open>
+<summary><h5><span class="numprefix">20.6</span> LoRA adapters for style and subject consistency</h5></summary>
+<p class="summary">Covers the fundamentals of lora adapters for style and subject consistency.</p>
+<details class="sec lvl-2" id="s-20-7" open>
+<summary><h5><span class="numprefix">20.7</span> Seeds and reproducibility</h5></summary>
+<p class="summary">Covers the fundamentals of seeds and reproducibility.</p>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</section>
+</section>
+<section class="part" id="part-vii">
+<h3><span class="numprefix">VII</span> The Craft of Prompt Engineering</h3>
+<p class="summary">The Craft of Prompt Engineering covers foundational concepts and principles essential for understanding this domain.</p>
+<section class="sec lvl-1" id="s-21">
+<h4><span class="numprefix">21.</span> Prompting Fundamentals</h4>
+<p class="summary">Prompting Fundamentals introduces 21.1 Why prompting is a real skill, 21.2 Anatomy of a strong prompt.</p>
+<details class="sec lvl-2" id="s-21-1" open>
+<summary><h5><span class="numprefix">21.1</span> Why prompting is a real skill</h5></summary>
+<p class="summary">Covers the fundamentals of why prompting is a real skill.</p>
+<details class="sec lvl-2" id="s-21-2" open>
+<summary><h5><span class="numprefix">21.2</span> Anatomy of a strong prompt</h5></summary>
+<p class="summary">Anatomy of a strong prompt breaks down into 5 specific concepts and techniques.</p>
+<details class="sec lvl-3" id="s-21-2-1">
+<summary><h6><span class="numprefix">21.2.1</span> Context</h6></summary>
+<p class="summary">Context.</p>
+<details class="sec lvl-3" id="s-21-2-2">
+<summary><h6><span class="numprefix">21.2.2</span> Instruction</h6></summary>
+<p class="summary">Instruction.</p>
+<details class="sec lvl-3" id="s-21-2-3">
+<summary><h6><span class="numprefix">21.2.3</span> Input data</h6></summary>
+<p class="summary">Input data.</p>
+<details class="sec lvl-3" id="s-21-2-4">
+<summary><h6><span class="numprefix">21.2.4</span> Output format</h6></summary>
+<p class="summary">Output format.</p>
+<details class="sec lvl-3" id="s-21-2-5">
+<summary><h6><span class="numprefix">21.2.5</span> Constraints and success criteria</h6></summary>
+<p class="summary">Constraints and success criteria.</p>
+<details class="sec lvl-2" id="s-21-3" open>
+<summary><h5><span class="numprefix">21.3</span> System prompts vs. user prompts</h5></summary>
+<p class="summary">Covers the fundamentals of system prompts vs. user prompts.</p>
+<details class="sec lvl-2" id="s-21-4" open>
+<summary><h5><span class="numprefix">21.4</span> The model's-eye view — what the AI actually "sees"</h5></summary>
+<p class="summary">Covers the fundamentals of the model's-eye view — what the ai actually "sees".</p>
+<details class="sec lvl-2" id="s-21-5" open>
+<summary><h5><span class="numprefix">21.5</span> Token economics — why concision matters</h5></summary>
+<p class="summary">Covers the fundamentals of token economics — why concision matters.</p>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</section>
+<section class="sec lvl-1" id="s-22">
+<h4><span class="numprefix">22.</span> Core Prompting Techniques</h4>
+<p class="summary">Core Prompting Techniques introduces 22.1 Zero-shot prompting, 22.2 Few-shot prompting.</p>
+<details class="sec lvl-2" id="s-22-1" open>
+<summary><h5><span class="numprefix">22.1</span> Zero-shot prompting</h5></summary>
+<p class="summary">Covers the fundamentals of zero-shot prompting.</p>
+<details class="sec lvl-2" id="s-22-2" open>
+<summary><h5><span class="numprefix">22.2</span> Few-shot prompting</h5></summary>
+<p class="summary">Few-shot prompting breaks down into 3 specific concepts and techniques.</p>
+<details class="sec lvl-3" id="s-22-2-1">
+<summary><h6><span class="numprefix">22.2.1</span> Example selection</h6></summary>
+<p class="summary">Example selection.</p>
+<details class="sec lvl-3" id="s-22-2-2">
+<summary><h6><span class="numprefix">22.2.2</span> Example ordering</h6></summary>
+<p class="summary">Example ordering.</p>
+<details class="sec lvl-3" id="s-22-2-3">
+<summary><h6><span class="numprefix">22.2.3</span> Diversity in examples</h6></summary>
+<p class="summary">Diversity in examples.</p>
+<details class="sec lvl-2" id="s-22-3" open>
+<summary><h5><span class="numprefix">22.3</span> Role and persona prompting</h5></summary>
+<p class="summary">Role and persona prompting breaks down into 2 specific concepts and techniques.</p>
+<details class="sec lvl-3" id="s-22-3-1">
+<summary><h6><span class="numprefix">22.3.1</span> Expert identities</h6></summary>
+<p class="summary">Expert identities.</p>
+<details class="sec lvl-3" id="s-22-3-2">
+<summary><h6><span class="numprefix">22.3.2</span> Risks of role prompting</h6></summary>
+<p class="summary">Risks of role prompting.</p>
+<details class="sec lvl-2" id="s-22-4" open>
+<summary><h5><span class="numprefix">22.4</span> Chain-of-thought (CoT)</h5></summary>
+<p class="summary">Chain-of-thought (CoT) breaks down into 2 specific concepts and techniques.</p>
+<details class="sec lvl-3" id="s-22-4-1">
+<summary><h6><span class="numprefix">22.4.1</span> "Let's think step by step"</h6></summary>
+<p class="summary">"Let's think step by step".</p>
+<details class="sec lvl-3" id="s-22-4-2">
+<summary><h6><span class="numprefix">22.4.2</span> When CoT helps — and when it hurts</h6></summary>
+<p class="summary">When CoT helps — and when it hurts.</p>
+<details class="sec lvl-2" id="s-22-5" open>
+<summary><h5><span class="numprefix">22.5</span> Tree-of-thought</h5></summary>
+<p class="summary">Covers the fundamentals of tree-of-thought.</p>
+<details class="sec lvl-2" id="s-22-6" open>
+<summary><h5><span class="numprefix">22.6</span> ReAct — reasoning + action interleaved</h5></summary>
+<p class="summary">Covers the fundamentals of react — reasoning + action interleaved.</p>
+<details class="sec lvl-2" id="s-22-7" open>
+<summary><h5><span class="numprefix">22.7</span> Self-consistency — vote across samples</h5></summary>
+<p class="summary">Covers the fundamentals of self-consistency — vote across samples.</p>
+<details class="sec lvl-2" id="s-22-8" open>
+<summary><h5><span class="numprefix">22.8</span> Self-critique and reflection</h5></summary>
+<p class="summary">Covers the fundamentals of self-critique and reflection.</p>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</section>
+<section class="sec lvl-1" id="s-23">
+<h4><span class="numprefix">23.</span> Advanced Prompt Strategies</h4>
+<p class="summary">Advanced Prompt Strategies introduces 23.1 Prompt chaining.</p>
+<details class="sec lvl-2" id="s-23-1" open>
+<summary><h5><span class="numprefix">23.1</span> Prompt chaining</h5></summary>
+<p class="summary">Prompt chaining breaks down into 3 specific concepts and techniques.</p>
+<details class="sec lvl-3" id="s-23-1-1">
+<summary><h6><span class="numprefix">23.1.1</span> Breaking tasks into stages</h6></summary>
+<p class="summary">Breaking tasks into stages.</p>
+<details class="sec lvl-3" id="s-23-1-2">
+<summary><h6><span class="numprefix">23.1.2</span> Passing outputs between steps</h6></summary>
+<p class="summary">Passing outputs between steps.</p>
+<details class="sec lvl-3" id="s-23-1-3">
+<summary><h6><span class="numprefix">23.1.3</span> Map-reduce patterns over long inputs</h6></summary>
+<p class="summary">Map-reduce patterns over long inputs.</p>
+<details class="sec lvl-2" id="s-23-2" open>
+<summary><h5><span class="numprefix">23.2</span> Structured-output prompting</h5></summary>
+<p class="summary">Structured-output prompting breaks down into 3 specific concepts and techniques.</p>
+<details class="sec lvl-3" id="s-23-2-1">
+<summary><h6><span class="numprefix">23.2.1</span> JSON mode</h6></summary>
+<p class="summary">JSON mode.</p>
+<details class="sec lvl-3" id="s-23-2-2">
+<summary><h6><span class="numprefix">23.2.2</span> XML tags for robust structure</h6></summary>
+<p class="summary">XML tags for robust structure.</p>
+<details class="sec lvl-3" id="s-23-2-3">
+<summary><h6><span class="numprefix">23.2.3</span> Schema-constrained generation</h6></summary>
+<p class="summary">Schema-constrained generation.</p>
+<details class="sec lvl-2" id="s-23-3" open>
+<summary><h5><span class="numprefix">23.3</span> Negative prompting — telling AI what *not* to do</h5></summary>
+<p class="summary">Covers the fundamentals of negative prompting — telling ai what *not* to do.</p>
+<details class="sec lvl-2" id="s-23-4" open>
+<summary><h5><span class="numprefix">23.4</span> Iterative refinement</h5></summary>
+<p class="summary">Iterative refinement breaks down into 2 specific concepts and techniques.</p>
+<details class="sec lvl-3" id="s-23-4-1">
+<summary><h6><span class="numprefix">23.4.1</span> Treating prompts as drafts</h6></summary>
+<p class="summary">Treating prompts as drafts.</p>
+<details class="sec lvl-3" id="s-23-4-2">
+<summary><h6><span class="numprefix">23.4.2</span> A/B testing prompts</h6></summary>
+<p class="summary">A/B testing prompts.</p>
+<details class="sec lvl-2" id="s-23-5" open>
+<summary><h5><span class="numprefix">23.5</span> Meta-prompting</h5></summary>
+<p class="summary">Meta-prompting breaks down into 2 specific concepts and techniques.</p>
+<details class="sec lvl-3" id="s-23-5-1">
+<summary><h6><span class="numprefix">23.5.1</span> Using AI to improve your prompts</h6></summary>
+<p class="summary">Using AI to improve your prompts.</p>
+<details class="sec lvl-3" id="s-23-5-2">
+<summary><h6><span class="numprefix">23.5.2</span> Automated prompt optimization loops</h6></summary>
+<p class="summary">Automated prompt optimization loops.</p>
+<details class="sec lvl-2" id="s-23-6" open>
+<summary><h5><span class="numprefix">23.6</span> Prompt compression and summarization</h5></summary>
+<p class="summary">Covers the fundamentals of prompt compression and summarization.</p>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</section>
+<section class="sec lvl-1" id="s-24">
+<h4><span class="numprefix">24.</span> Prompt Patterns by Task</h4>
+<p class="summary">Prompt Patterns by Task introduces 24.1 Writing and editing, 24.2 Summarization (extractive vs. abstractive), 24.3 Research and synthesis.</p>
+<details class="sec lvl-2" id="s-24-1" open>
+<summary><h5><span class="numprefix">24.1</span> Writing and editing</h5></summary>
+<p class="summary">Covers the fundamentals of writing and editing.</p>
+<details class="sec lvl-2" id="s-24-2" open>
+<summary><h5><span class="numprefix">24.2</span> Summarization (extractive vs. abstractive)</h5></summary>
+<p class="summary">Covers the fundamentals of summarization (extractive vs. abstractive).</p>
+<details class="sec lvl-2" id="s-24-3" open>
+<summary><h5><span class="numprefix">24.3</span> Research and synthesis</h5></summary>
+<p class="summary">Covers the fundamentals of research and synthesis.</p>
+<details class="sec lvl-2" id="s-24-4" open>
+<summary><h5><span class="numprefix">24.4</span> Decision support and tradeoff analysis</h5></summary>
+<p class="summary">Covers the fundamentals of decision support and tradeoff analysis.</p>
+<details class="sec lvl-2" id="s-24-5" open>
+<summary><h5><span class="numprefix">24.5</span> Brainstorming and ideation</h5></summary>
+<p class="summary">Covers the fundamentals of brainstorming and ideation.</p>
+<details class="sec lvl-2" id="s-24-6" open>
+<summary><h5><span class="numprefix">24.6</span> Code assistance (as a non-developer)</h5></summary>
+<p class="summary">Covers the fundamentals of code assistance (as a non-developer).</p>
+<details class="sec lvl-2" id="s-24-7" open>
+<summary><h5><span class="numprefix">24.7</span> Creative writing and storytelling</h5></summary>
+<p class="summary">Covers the fundamentals of creative writing and storytelling.</p>
+<details class="sec lvl-2" id="s-24-8" open>
+<summary><h5><span class="numprefix">24.8</span> Analysis, evaluation, and critique</h5></summary>
+<p class="summary">Covers the fundamentals of analysis, evaluation, and critique.</p>
+<details class="sec lvl-2" id="s-24-9" open>
+<summary><h5><span class="numprefix">24.9</span> Teaching and explanation</h5></summary>
+<p class="summary">Covers the fundamentals of teaching and explanation.</p>
+<details class="sec lvl-2" id="s-24-10" open>
+<summary><h5><span class="numprefix">24.10</span> Translation and localization</h5></summary>
+<p class="summary">Covers the fundamentals of translation and localization.</p>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</section>
+<section class="sec lvl-1" id="s-25">
+<h4><span class="numprefix">25.</span> Provider-Specific Conventions</h4>
+<p class="summary">Provider-Specific Conventions introduces 25.1 OpenAI prompting conventions, 25.2 Anthropic (Claude) prompting conventions.</p>
+<details class="sec lvl-2" id="s-25-1" open>
+<summary><h5><span class="numprefix">25.1</span> OpenAI prompting conventions</h5></summary>
+<p class="summary">Covers the fundamentals of openai prompting conventions.</p>
+<details class="sec lvl-2" id="s-25-2" open>
+<summary><h5><span class="numprefix">25.2</span> Anthropic (Claude) prompting conventions</h5></summary>
+<p class="summary">Anthropic (Claude) prompting conventions breaks down into 3 specific concepts and techniques.</p>
+<details class="sec lvl-3" id="s-25-2-1">
+<summary><h6><span class="numprefix">25.2.1</span> XML tags as first-class citizens</h6></summary>
+<p class="summary">XML tags as first-class citizens.</p>
+<details class="sec lvl-3" id="s-25-2-2">
+<summary><h6><span class="numprefix">25.2.2</span> Long-context best practices</h6></summary>
+<p class="summary">Long-context best practices.</p>
+<details class="sec lvl-3" id="s-25-2-3">
+<summary><h6><span class="numprefix">25.2.3</span> Prefilling assistant responses</h6></summary>
+<p class="summary">Prefilling assistant responses.</p>
+<details class="sec lvl-2" id="s-25-3" open>
+<summary><h5><span class="numprefix">25.3</span> Google Gemini conventions</h5></summary>
+<p class="summary">Covers the fundamentals of google gemini conventions.</p>
+<details class="sec lvl-2" id="s-25-4" open>
+<summary><h5><span class="numprefix">25.4</span> Open-source model conventions (chat templates)</h5></summary>
+<p class="summary">Covers the fundamentals of open-source model conventions (chat templates).</p>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</section>
+<section class="sec lvl-1" id="s-26">
+<h4><span class="numprefix">26.</span> Prompt Security and Failure Modes</h4>
+<p class="summary">Prompt Security and Failure Modes introduces 26.1 Prompt injection, 26.2 Jailbreaks.</p>
+<details class="sec lvl-2" id="s-26-1" open>
+<summary><h5><span class="numprefix">26.1</span> Prompt injection</h5></summary>
+<p class="summary">Prompt injection breaks down into 2 specific concepts and techniques.</p>
+<details class="sec lvl-3" id="s-26-1-1">
+<summary><h6><span class="numprefix">26.1.1</span> Direct injection</h6></summary>
+<p class="summary">Direct injection.</p>
+<details class="sec lvl-3" id="s-26-1-2">
+<summary><h6><span class="numprefix">26.1.2</span> Indirect injection (via retrieved content)</h6></summary>
+<p class="summary">Indirect injection (via retrieved content).</p>
+<details class="sec lvl-2" id="s-26-2" open>
+<summary><h5><span class="numprefix">26.2</span> Jailbreaks</h5></summary>
+<p class="summary">Covers the fundamentals of jailbreaks.</p>
+<details class="sec lvl-2" id="s-26-3" open>
+<summary><h5><span class="numprefix">26.3</span> Data exfiltration via prompts</h5></summary>
+<p class="summary">Covers the fundamentals of data exfiltration via prompts.</p>
+<details class="sec lvl-2" id="s-26-4" open>
+<summary><h5><span class="numprefix">26.4</span> Defensive prompting patterns</h5></summary>
+<p class="summary">Covers the fundamentals of defensive prompting patterns.</p>
+<details class="sec lvl-2" id="s-26-5" open>
+<summary><h5><span class="numprefix">26.5</span> Limits of guardrails</h5></summary>
+<p class="summary">Covers the fundamentals of limits of guardrails.</p>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</section>
+</section>
+<section class="part" id="part-viii">
+<h3><span class="numprefix">VIII</span> Retrieval and Memory (RAG)</h3>
+<p class="summary">Retrieval and Memory (RAG) covers foundational concepts and principles essential for understanding this domain.</p>
+<section class="sec lvl-1" id="s-27">
+<h4><span class="numprefix">27.</span> The Memory Problem</h4>
+<p class="summary">The Memory Problem introduces 27.1 Why LLMs forget between sessions, 27.2 Knowledge cutoffs as a hard constraint, 27.3 Context window as workspace, not memory.</p>
+<details class="sec lvl-2" id="s-27-1" open>
+<summary><h5><span class="numprefix">27.1</span> Why LLMs forget between sessions</h5></summary>
+<p class="summary">Covers the fundamentals of why llms forget between sessions.</p>
+<details class="sec lvl-2" id="s-27-2" open>
+<summary><h5><span class="numprefix">27.2</span> Knowledge cutoffs as a hard constraint</h5></summary>
+<p class="summary">Covers the fundamentals of knowledge cutoffs as a hard constraint.</p>
+<details class="sec lvl-2" id="s-27-3" open>
+<summary><h5><span class="numprefix">27.3</span> Context window as workspace, not memory</h5></summary>
+<p class="summary">Covers the fundamentals of context window as workspace, not memory.</p>
+</details>
+</details>
+</details>
+</section>
+<section class="sec lvl-1" id="s-28">
+<h4><span class="numprefix">28.</span> RAG Fundamentals</h4>
+<p class="summary">RAG Fundamentals introduces 28.1 What RAG is, 28.2 When to use RAG vs. fine-tuning vs. long context, 28.3 Core components of a RAG system.</p>
+<details class="sec lvl-2" id="s-28-1" open>
+<summary><h5><span class="numprefix">28.1</span> What RAG is — retrieve then generate</h5></summary>
+<p class="summary">Covers the fundamentals of what rag is — retrieve then generate.</p>
+<details class="sec lvl-2" id="s-28-2" open>
+<summary><h5><span class="numprefix">28.2</span> When to use RAG vs. fine-tuning vs. long context</h5></summary>
+<p class="summary">Covers the fundamentals of when to use rag vs. fine-tuning vs. long context.</p>
+<details class="sec lvl-2" id="s-28-3" open>
+<summary><h5><span class="numprefix">28.3</span> Core components of a RAG system</h5></summary>
+<p class="summary">Covers the fundamentals of core components of a rag system.</p>
+</details>
+</details>
+</details>
+</section>
+<section class="sec lvl-1" id="s-29">
+<h4><span class="numprefix">29.</span> Embeddings and Vector Search</h4>
+<p class="summary">Embeddings and Vector Search introduces 29.1 Embedding models (what they are, how they're chosen), 29.2 Vector databases.</p>
+<details class="sec lvl-2" id="s-29-1" open>
+<summary><h5><span class="numprefix">29.1</span> Embedding models (what they are, how they're chosen)</h5></summary>
+<p class="summary">Covers the fundamentals of embedding models (what they are, how they're chosen).</p>
+<details class="sec lvl-2" id="s-29-2" open>
+<summary><h5><span class="numprefix">29.2</span> Vector databases</h5></summary>
+<p class="summary">Vector databases breaks down into 2 specific concepts and techniques.</p>
+<details class="sec lvl-3" id="s-29-2-1">
+<summary><h6><span class="numprefix">29.2.1</span> What they do, conceptually</h6></summary>
+<p class="summary">What they do, conceptually.</p>
+<details class="sec lvl-3" id="s-29-2-2">
+<summary><h6><span class="numprefix">29.2.2</span> Approximate nearest-neighbor search</h6></summary>
+<p class="summary">Approximate nearest-neighbor search.</p>
+<details class="sec lvl-2" id="s-29-3" open>
+<summary><h5><span class="numprefix">29.3</span> Chunking strategies</h5></summary>
+<p class="summary">Chunking strategies breaks down into 3 specific concepts and techniques.</p>
+<details class="sec lvl-3" id="s-29-3-1">
+<summary><h6><span class="numprefix">29.3.1</span> Fixed-size vs. semantic chunking</h6></summary>
+<p class="summary">Fixed-size vs. semantic chunking.</p>
+<details class="sec lvl-3" id="s-29-3-2">
+<summary><h6><span class="numprefix">29.3.2</span> Overlap and windowing</h6></summary>
+<p class="summary">Overlap and windowing.</p>
+<details class="sec lvl-3" id="s-29-3-3">
+<summary><h6><span class="numprefix">29.3.3</span> Hierarchical chunking</h6></summary>
+<p class="summary">Hierarchical chunking.</p>
+<details class="sec lvl-2" id="s-29-4" open>
+<summary><h5><span class="numprefix">29.4</span> Hybrid search (vector + keyword)</h5></summary>
+<p class="summary">Covers the fundamentals of hybrid search (vector + keyword).</p>
+<details class="sec lvl-2" id="s-29-5" open>
+<summary><h5><span class="numprefix">29.5</span> Re-ranking</h5></summary>
+<p class="summary">Covers the fundamentals of re-ranking.</p>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</section>
+<section class="sec lvl-1" id="s-30">
+<h4><span class="numprefix">30.</span> Advanced RAG Patterns</h4>
+<p class="summary">Advanced RAG Patterns introduces 30.1 Agentic RAG, 30.2 GraphRAG, 30.3 Hierarchical / multi-hop retrieval.</p>
+<details class="sec lvl-2" id="s-30-1" open>
+<summary><h5><span class="numprefix">30.1</span> Agentic RAG</h5></summary>
+<p class="summary">Covers the fundamentals of agentic rag.</p>
+<details class="sec lvl-2" id="s-30-2" open>
+<summary><h5><span class="numprefix">30.2</span> GraphRAG</h5></summary>
+<p class="summary">Covers the fundamentals of graphrag.</p>
+<details class="sec lvl-2" id="s-30-3" open>
+<summary><h5><span class="numprefix">30.3</span> Hierarchical / multi-hop retrieval</h5></summary>
+<p class="summary">Covers the fundamentals of hierarchical / multi-hop retrieval.</p>
+<details class="sec lvl-2" id="s-30-4" open>
+<summary><h5><span class="numprefix">30.4</span> Query rewriting and expansion</h5></summary>
+<p class="summary">Covers the fundamentals of query rewriting and expansion.</p>
+<details class="sec lvl-2" id="s-30-5" open>
+<summary><h5><span class="numprefix">30.5</span> Self-reflective RAG</h5></summary>
+<p class="summary">Covers the fundamentals of self-reflective rag.</p>
+<details class="sec lvl-2" id="s-30-6" open>
+<summary><h5><span class="numprefix">30.6</span> Contextual retrieval</h5></summary>
+<p class="summary">Covers the fundamentals of contextual retrieval.</p>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</section>
+<section class="sec lvl-1" id="s-31">
+<h4><span class="numprefix">31.</span> Building a "Chat with Your Documents" System (Conceptual)</h4>
+<p class="summary">Building a "Chat with Your Documents" System (Conceptual) introduces 31.1 Document ingestion pipeline, 31.2 Indexing, 31.3 Query pipeline.</p>
+<details class="sec lvl-2" id="s-31-1" open>
+<summary><h5><span class="numprefix">31.1</span> Document ingestion pipeline</h5></summary>
+<p class="summary">Covers the fundamentals of document ingestion pipeline.</p>
+<details class="sec lvl-2" id="s-31-2" open>
+<summary><h5><span class="numprefix">31.2</span> Indexing</h5></summary>
+<p class="summary">Covers the fundamentals of indexing.</p>
+<details class="sec lvl-2" id="s-31-3" open>
+<summary><h5><span class="numprefix">31.3</span> Query pipeline</h5></summary>
+<p class="summary">Covers the fundamentals of query pipeline.</p>
+<details class="sec lvl-2" id="s-31-4" open>
+<summary><h5><span class="numprefix">31.4</span> Response synthesis with citations</h5></summary>
+<p class="summary">Covers the fundamentals of response synthesis with citations.</p>
+<details class="sec lvl-2" id="s-31-5" open>
+<summary><h5><span class="numprefix">31.5</span> Evaluation — retrieval quality vs. answer quality</h5></summary>
+<p class="summary">Covers the fundamentals of evaluation — retrieval quality vs. answer quality.</p>
+</details>
+</details>
+</details>
+</details>
+</details>
+</section>
+</section>
+<section class="part" id="part-ix">
+<h3><span class="numprefix">IX</span> Fine-Tuning and Customization</h3>
+<p class="summary">Fine-Tuning and Customization covers foundational concepts and principles essential for understanding this domain.</p>
+<section class="sec lvl-1" id="s-32">
+<h4><span class="numprefix">32.</span> When Customization Makes Sense</h4>
+<p class="summary">When Customization Makes Sense introduces 32.1 Prompting vs. RAG vs. fine-tuning, 32.2 Cost, complexity, and maintenance tradeoffs.</p>
+<details class="sec lvl-2" id="s-32-1" open>
+<summary><h5><span class="numprefix">32.1</span> Prompting vs. RAG vs. fine-tuning — decision tree</h5></summary>
+<p class="summary">Covers the fundamentals of prompting vs. rag vs. fine-tuning — decision tree.</p>
+<details class="sec lvl-2" id="s-32-2" open>
+<summary><h5><span class="numprefix">32.2</span> Cost, complexity, and maintenance tradeoffs</h5></summary>
+<p class="summary">Covers the fundamentals of cost, complexity, and maintenance tradeoffs.</p>
+</details>
+</details>
+</section>
+<section class="sec lvl-1" id="s-33">
+<h4><span class="numprefix">33.</span> Fine-Tuning, Conceptually</h4>
+<p class="summary">Fine-Tuning, Conceptually introduces 33.1 Full fine-tuning, 33.2 Parameter-efficient fine-tuning (LoRA, QLoRA), 33.3 Domain adaptation vs. instruction tuning.</p>
+<details class="sec lvl-2" id="s-33-1" open>
+<summary><h5><span class="numprefix">33.1</span> Full fine-tuning</h5></summary>
+<p class="summary">Covers the fundamentals of full fine-tuning.</p>
+<details class="sec lvl-2" id="s-33-2" open>
+<summary><h5><span class="numprefix">33.2</span> Parameter-efficient fine-tuning (LoRA, QLoRA)</h5></summary>
+<p class="summary">Covers the fundamentals of parameter-efficient fine-tuning (lora, qlora).</p>
+<details class="sec lvl-2" id="s-33-3" open>
+<summary><h5><span class="numprefix">33.3</span> Domain adaptation vs. instruction tuning</h5></summary>
+<p class="summary">Covers the fundamentals of domain adaptation vs. instruction tuning.</p>
+<details class="sec lvl-2" id="s-33-4" open>
+<summary><h5><span class="numprefix">33.4</span> What fine-tuning teaches well (style, format, tone)</h5></summary>
+<p class="summary">Covers the fundamentals of what fine-tuning teaches well (style, format, tone).</p>
+<details class="sec lvl-2" id="s-33-5" open>
+<summary><h5><span class="numprefix">33.5</span> What fine-tuning teaches *badly* (factual knowledge)</h5></summary>
+<p class="summary">Covers the fundamentals of what fine-tuning teaches *badly* (factual knowledge).</p>
+</details>
+</details>
+</details>
+</details>
+</details>
+</section>
+<section class="sec lvl-1" id="s-34">
+<h4><span class="numprefix">34.</span> No-Code Customization</h4>
+<p class="summary">No-Code Customization introduces 34.1 Custom GPTs (OpenAI), 34.2 Claude Projects and Project knowledge, 34.3 Gemini Gems.</p>
+<details class="sec lvl-2" id="s-34-1" open>
+<summary><h5><span class="numprefix">34.1</span> Custom GPTs (OpenAI)</h5></summary>
+<p class="summary">Covers the fundamentals of custom gpts (openai).</p>
+<details class="sec lvl-2" id="s-34-2" open>
+<summary><h5><span class="numprefix">34.2</span> Claude Projects and Project knowledge</h5></summary>
+<p class="summary">Covers the fundamentals of claude projects and project knowledge.</p>
+<details class="sec lvl-2" id="s-34-3" open>
+<summary><h5><span class="numprefix">34.3</span> Gemini Gems</h5></summary>
+<p class="summary">Covers the fundamentals of gemini gems.</p>
+<details class="sec lvl-2" id="s-34-4" open>
+<summary><h5><span class="numprefix">34.4</span> System prompts as "poor-man's fine-tuning"</h5></summary>
+<p class="summary">Covers the fundamentals of system prompts as "poor-man's fine-tuning".</p>
+<details class="sec lvl-2" id="s-34-5" open>
+<summary><h5><span class="numprefix">34.5</span> Uploading reference documents vs. RAG vs. fine-tuning</h5></summary>
+<p class="summary">Covers the fundamentals of uploading reference documents vs. rag vs. fine-tuning.</p>
+</details>
+</details>
+</details>
+</details>
+</details>
+</section>
+<section class="sec lvl-1" id="s-35">
+<h4><span class="numprefix">35.</span> Distillation (Conceptual)</h4>
+<p class="summary">Distillation (Conceptual) introduces 35.1 What model distillation is, 35.2 Using large models to train small ones, 35.3 Why distilled models are everywhere now.</p>
+<details class="sec lvl-2" id="s-35-1" open>
+<summary><h5><span class="numprefix">35.1</span> What model distillation is</h5></summary>
+<p class="summary">Covers the fundamentals of what model distillation is.</p>
+<details class="sec lvl-2" id="s-35-2" open>
+<summary><h5><span class="numprefix">35.2</span> Using large models to train small ones</h5></summary>
+<p class="summary">Covers the fundamentals of using large models to train small ones.</p>
+<details class="sec lvl-2" id="s-35-3" open>
+<summary><h5><span class="numprefix">35.3</span> Why distilled models are everywhere now</h5></summary>
+<p class="summary">Covers the fundamentals of why distilled models are everywhere now.</p>
+</details>
+</details>
+</details>
+</section>
+</section>
+<section class="part" id="part-x">
+<h3><span class="numprefix">X</span> Agentic AI (Deep Dive)</h3>
+<p class="summary">Agentic AI (Deep Dive) covers foundational concepts and principles essential for understanding this domain.</p>
+<section class="sec lvl-1" id="s-36">
+<h4><span class="numprefix">36.</span> From Chatbots to Agents</h4>
+<p class="summary">From Chatbots to Agents introduces 36.1 What makes an AI "agentic", 36.2 The agent loop, 36.3 The autonomy spectrum.</p>
+<details class="sec lvl-2" id="s-36-1" open>
+<summary><h5><span class="numprefix">36.1</span> What makes an AI "agentic"</h5></summary>
+<p class="summary">Covers the fundamentals of what makes an ai "agentic".</p>
+<details class="sec lvl-2" id="s-36-2" open>
+<summary><h5><span class="numprefix">36.2</span> The agent loop — perceive, think, act, observe</h5></summary>
+<p class="summary">Covers the fundamentals of the agent loop — perceive, think, act, observe.</p>
+<details class="sec lvl-2" id="s-36-3" open>
+<summary><h5><span class="numprefix">36.3</span> The autonomy spectrum</h5></summary>
+<p class="summary">Covers the fundamentals of the autonomy spectrum.</p>
+<details class="sec lvl-2" id="s-36-4" open>
+<summary><h5><span class="numprefix">36.4</span> Agent vs. workflow vs. pipeline — the distinctions</h5></summary>
+<p class="summary">Covers the fundamentals of agent vs. workflow vs. pipeline — the distinctions.</p>
+</details>
+</details>
+</details>
+</details>
+</section>
+<section class="sec lvl-1" id="s-37">
+<h4><span class="numprefix">37.</span> Tool Use (Function Calling)</h4>
+<p class="summary">Tool Use (Function Calling) introduces 37.1 What tool use means mechanically, 37.2 Function-calling interfaces, 37.3 Tool descriptions as specifications.</p>
+<details class="sec lvl-2" id="s-37-1" open>
+<summary><h5><span class="numprefix">37.1</span> What tool use means mechanically</h5></summary>
+<p class="summary">Covers the fundamentals of what tool use means mechanically.</p>
+<details class="sec lvl-2" id="s-37-2" open>
+<summary><h5><span class="numprefix">37.2</span> Function-calling interfaces</h5></summary>
+<p class="summary">Covers the fundamentals of function-calling interfaces.</p>
+<details class="sec lvl-2" id="s-37-3" open>
+<summary><h5><span class="numprefix">37.3</span> Tool descriptions as specifications</h5></summary>
+<p class="summary">Covers the fundamentals of tool descriptions as specifications.</p>
+<details class="sec lvl-2" id="s-37-4" open>
+<summary><h5><span class="numprefix">37.4</span> Parallel vs. sequential tool calls</h5></summary>
+<p class="summary">Covers the fundamentals of parallel vs. sequential tool calls.</p>
+<details class="sec lvl-2" id="s-37-5" open>
+<summary><h5><span class="numprefix">37.5</span> Error handling and retries</h5></summary>
+<p class="summary">Covers the fundamentals of error handling and retries.</p>
+<details class="sec lvl-2" id="s-37-6" open>
+<summary><h5><span class="numprefix">37.6</span> Tool design — writing tools agents can actually use</h5></summary>
+<p class="summary">Covers the fundamentals of tool design — writing tools agents can actually use.</p>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</section>
+<section class="sec lvl-1" id="s-38">
+<h4><span class="numprefix">38.</span> Agent Memory</h4>
+<p class="summary">Agent Memory introduces 38.1 Short-term (in-context) memory, 38.2 Long-term memory architectures.</p>
+<details class="sec lvl-2" id="s-38-1" open>
+<summary><h5><span class="numprefix">38.1</span> Short-term (in-context) memory</h5></summary>
+<p class="summary">Covers the fundamentals of short-term (in-context) memory.</p>
+<details class="sec lvl-2" id="s-38-2" open>
+<summary><h5><span class="numprefix">38.2</span> Long-term memory architectures</h5></summary>
+<p class="summary">Long-term memory architectures breaks down into 4 specific concepts and techniques.</p>
+<details class="sec lvl-3" id="s-38-2-1">
+<summary><h6><span class="numprefix">38.2.1</span> Vector-store memory</h6></summary>
+<p class="summary">Vector-store memory.</p>
+<details class="sec lvl-3" id="s-38-2-2">
+<summary><h6><span class="numprefix">38.2.2</span> Summary-based memory</h6></summary>
+<p class="summary">Summary-based memory.</p>
+<details class="sec lvl-3" id="s-38-2-3">
+<summary><h6><span class="numprefix">38.2.3</span> Episodic memory</h6></summary>
+<p class="summary">Episodic memory.</p>
+<details class="sec lvl-3" id="s-38-2-4">
+<summary><h6><span class="numprefix">38.2.4</span> Structured (graph) memory</h6></summary>
+<p class="summary">Structured (graph) memory.</p>
+<details class="sec lvl-2" id="s-38-3" open>
+<summary><h5><span class="numprefix">38.3</span> Memory hygiene and selective forgetting</h5></summary>
+<p class="summary">Covers the fundamentals of memory hygiene and selective forgetting.</p>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</section>
+<section class="sec lvl-1" id="s-39">
+<h4><span class="numprefix">39.</span> Planning and Reasoning in Agents</h4>
+<p class="summary">Planning and Reasoning in Agents introduces 39.1 Plan-then-execute, 39.2 ReAct-style interleaved reasoning, 39.3 Reflection and self-correction.</p>
+<details class="sec lvl-2" id="s-39-1" open>
+<summary><h5><span class="numprefix">39.1</span> Plan-then-execute</h5></summary>
+<p class="summary">Covers the fundamentals of plan-then-execute.</p>
+<details class="sec lvl-2" id="s-39-2" open>
+<summary><h5><span class="numprefix">39.2</span> ReAct-style interleaved reasoning</h5></summary>
+<p class="summary">Covers the fundamentals of react-style interleaved reasoning.</p>
+<details class="sec lvl-2" id="s-39-3" open>
+<summary><h5><span class="numprefix">39.3</span> Reflection and self-correction</h5></summary>
+<p class="summary">Covers the fundamentals of reflection and self-correction.</p>
+<details class="sec lvl-2" id="s-39-4" open>
+<summary><h5><span class="numprefix">39.4</span> Hierarchical planning</h5></summary>
+<p class="summary">Covers the fundamentals of hierarchical planning.</p>
+<details class="sec lvl-2" id="s-39-5" open>
+<summary><h5><span class="numprefix">39.5</span> When *not* to plan (reactive agents)</h5></summary>
+<p class="summary">Covers the fundamentals of when *not* to plan (reactive agents).</p>
+</details>
+</details>
+</details>
+</details>
+</details>
+</section>
+<section class="sec lvl-1" id="s-40">
+<h4><span class="numprefix">40.</span> Multi-Agent Systems</h4>
+<p class="summary">Multi-Agent Systems introduces 40.1 Why one agent isn't always enough, 40.2 Orchestrator-worker pattern, 40.3 Peer collaboration.</p>
+<details class="sec lvl-2" id="s-40-1" open>
+<summary><h5><span class="numprefix">40.1</span> Why one agent isn't always enough</h5></summary>
+<p class="summary">Covers the fundamentals of why one agent isn't always enough.</p>
+<details class="sec lvl-2" id="s-40-2" open>
+<summary><h5><span class="numprefix">40.2</span> Orchestrator-worker pattern</h5></summary>
+<p class="summary">Covers the fundamentals of orchestrator-worker pattern.</p>
+<details class="sec lvl-2" id="s-40-3" open>
+<summary><h5><span class="numprefix">40.3</span> Peer collaboration</h5></summary>
+<p class="summary">Covers the fundamentals of peer collaboration.</p>
+<details class="sec lvl-2" id="s-40-4" open>
+<summary><h5><span class="numprefix">40.4</span> Debate and adversarial patterns</h5></summary>
+<p class="summary">Covers the fundamentals of debate and adversarial patterns.</p>
+<details class="sec lvl-2" id="s-40-5" open>
+<summary><h5><span class="numprefix">40.5</span> Handoffs and shared state</h5></summary>
+<p class="summary">Covers the fundamentals of handoffs and shared state.</p>
+<details class="sec lvl-2" id="s-40-6" open>
+<summary><h5><span class="numprefix">40.6</span> Multi-agent failure modes (cascading hallucinations, loops)</h5></summary>
+<p class="summary">Covers the fundamentals of multi-agent failure modes (cascading hallucinations, loops).</p>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</section>
+<section class="sec lvl-1" id="s-41">
+<h4><span class="numprefix">41.</span> Model Context Protocol (MCP)</h4>
+<p class="summary">Model Context Protocol (MCP) introduces 41.1 What MCP is and why it exists, 41.2 MCP servers vs. clients vs. hosts, 41.3 Core primitives.</p>
+<details class="sec lvl-2" id="s-41-1" open>
+<summary><h5><span class="numprefix">41.1</span> What MCP is and why it exists</h5></summary>
+<p class="summary">Covers the fundamentals of what mcp is and why it exists.</p>
+<details class="sec lvl-2" id="s-41-2" open>
+<summary><h5><span class="numprefix">41.2</span> MCP servers vs. clients vs. hosts</h5></summary>
+<p class="summary">Covers the fundamentals of mcp servers vs. clients vs. hosts.</p>
+<details class="sec lvl-2" id="s-41-3" open>
+<summary><h5><span class="numprefix">41.3</span> Core primitives</h5></summary>
+<p class="summary">Core primitives breaks down into 3 specific concepts and techniques.</p>
+<details class="sec lvl-3" id="s-41-3-1">
+<summary><h6><span class="numprefix">41.3.1</span> Tools</h6></summary>
+<p class="summary">Tools.</p>
+<details class="sec lvl-3" id="s-41-3-2">
+<summary><h6><span class="numprefix">41.3.2</span> Resources</h6></summary>
+<p class="summary">Resources.</p>
+<details class="sec lvl-3" id="s-41-3-3">
+<summary><h6><span class="numprefix">41.3.3</span> Prompts</h6></summary>
+<p class="summary">Prompts.</p>
+<details class="sec lvl-2" id="s-41-4" open>
+<summary><h5><span class="numprefix">41.4</span> Building an MCP server (conceptual)</h5></summary>
+<p class="summary">Covers the fundamentals of building an mcp server (conceptual).</p>
+<details class="sec lvl-2" id="s-41-5" open>
+<summary><h5><span class="numprefix">41.5</span> Consuming MCP servers from apps</h5></summary>
+<p class="summary">Covers the fundamentals of consuming mcp servers from apps.</p>
+<details class="sec lvl-2" id="s-41-6" open>
+<summary><h5><span class="numprefix">41.6</span> MCP vs. traditional function calling</h5></summary>
+<p class="summary">Covers the fundamentals of mcp vs. traditional function calling.</p>
+<details class="sec lvl-2" id="s-41-7" open>
+<summary><h5><span class="numprefix">41.7</span> The emerging MCP ecosystem</h5></summary>
+<p class="summary">Covers the fundamentals of the emerging mcp ecosystem.</p>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</section>
+<section class="sec lvl-1" id="s-42">
+<h4><span class="numprefix">42.</span> Computer Use Agents</h4>
+<p class="summary">Computer Use Agents introduces 42.1 What "computer use" means, 42.2 Screen perception (vision-based UI understanding), 42.3 Mouse and keyboard control.</p>
+<details class="sec lvl-2" id="s-42-1" open>
+<summary><h5><span class="numprefix">42.1</span> What "computer use" means</h5></summary>
+<p class="summary">Covers the fundamentals of what "computer use" means.</p>
+<details class="sec lvl-2" id="s-42-2" open>
+<summary><h5><span class="numprefix">42.2</span> Screen perception (vision-based UI understanding)</h5></summary>
+<p class="summary">Covers the fundamentals of screen perception (vision-based ui understanding).</p>
+<details class="sec lvl-2" id="s-42-3" open>
+<summary><h5><span class="numprefix">42.3</span> Mouse and keyboard control</h5></summary>
+<p class="summary">Covers the fundamentals of mouse and keyboard control.</p>
+<details class="sec lvl-2" id="s-42-4" open>
+<summary><h5><span class="numprefix">42.4</span> Browser-use agents vs. full-desktop agents</h5></summary>
+<p class="summary">Covers the fundamentals of browser-use agents vs. full-desktop agents.</p>
+<details class="sec lvl-2" id="s-42-5" open>
+<summary><h5><span class="numprefix">42.5</span> Limits, risks, and sandboxing</h5></summary>
+<p class="summary">Covers the fundamentals of limits, risks, and sandboxing.</p>
+</details>
+</details>
+</details>
+</details>
+</details>
+</section>
+<section class="sec lvl-1" id="s-43">
+<h4><span class="numprefix">43.</span> Coding Agents (CLI and IDE)</h4>
+<p class="summary">Coding Agents (CLI and IDE) introduces 43.1 What Claude Code is.</p>
+<details class="sec lvl-2" id="s-43-1" open>
+<summary><h5><span class="numprefix">43.1</span> What Claude Code is</h5></summary>
+<p class="summary">What Claude Code is breaks down into 5 specific concepts and techniques.</p>
+<details class="sec lvl-3" id="s-43-1-1">
+<summary><h6><span class="numprefix">43.1.1</span> Terminal-native agentic workflows</h6></summary>
+<p class="summary">Terminal-native agentic workflows.</p>
+<details class="sec lvl-3" id="s-43-1-2">
+<summary><h6><span class="numprefix">43.1.2</span> File-system awareness and repo navigation</h6></summary>
+<p class="summary">File-system awareness and repo navigation.</p>
+<details class="sec lvl-3" id="s-43-1-3">
+<summary><h6><span class="numprefix">43.1.3</span> Plan mode vs. execution mode</h6></summary>
+<p class="summary">Plan mode vs. execution mode.</p>
+<details class="sec lvl-3" id="s-43-1-4">
+<summary><h6><span class="numprefix">43.1.4</span> Subagents and delegation</h6></summary>
+<p class="summary">Subagents and delegation.</p>
+<details class="sec lvl-3" id="s-43-1-5">
+<summary><h6><span class="numprefix">43.1.5</span> Hooks and slash commands</h6></summary>
+<p class="summary">Hooks and slash commands.</p>
+<details class="sec lvl-2" id="s-43-2" open>
+<summary><h5><span class="numprefix">43.2</span> The CLI coding agent family</h5></summary>
+<p class="summary">The CLI coding agent family breaks down into 4 specific concepts and techniques.</p>
+<details class="sec lvl-3" id="s-43-2-1">
+<summary><h6><span class="numprefix">43.2.1</span> Aider</h6></summary>
+<p class="summary">Aider.</p>
+<details class="sec lvl-3" id="s-43-2-2">
+<summary><h6><span class="numprefix">43.2.2</span> Cline / Roo Code</h6></summary>
+<p class="summary">Cline / Roo Code.</p>
+<details class="sec lvl-3" id="s-43-2-3">
+<summary><h6><span class="numprefix">43.2.3</span> Codex CLI</h6></summary>
+<p class="summary">Codex CLI.</p>
+<details class="sec lvl-3" id="s-43-2-4">
+<summary><h6><span class="numprefix">43.2.4</span> OpenHands</h6></summary>
+<p class="summary">OpenHands.</p>
+<details class="sec lvl-2" id="s-43-3" open>
+<summary><h5><span class="numprefix">43.3</span> The IDE coding agent family</h5></summary>
+<p class="summary">The IDE coding agent family breaks down into 4 specific concepts and techniques.</p>
+<details class="sec lvl-3" id="s-43-3-1">
+<summary><h6><span class="numprefix">43.3.1</span> Cursor</h6></summary>
+<p class="summary">Cursor.</p>
+<details class="sec lvl-3" id="s-43-3-2">
+<summary><h6><span class="numprefix">43.3.2</span> GitHub Copilot</h6></summary>
+<p class="summary">GitHub Copilot.</p>
+<details class="sec lvl-3" id="s-43-3-3">
+<summary><h6><span class="numprefix">43.3.3</span> Windsurf</h6></summary>
+<p class="summary">Windsurf.</p>
+<details class="sec lvl-3" id="s-43-3-4">
+<summary><h6><span class="numprefix">43.3.4</span> Zed AI</h6></summary>
+<p class="summary">Zed AI.</p>
+<details class="sec lvl-2" id="s-43-4" open>
+<summary><h5><span class="numprefix">43.4</span> CLI vs. IDE — when each wins</h5></summary>
+<p class="summary">Covers the fundamentals of cli vs. ide — when each wins.</p>
+<details class="sec lvl-2" id="s-43-5" open>
+<summary><h5><span class="numprefix">43.5</span> Working style patterns (pair programming, autonomous, review-only)</h5></summary>
+<p class="summary">Covers the fundamentals of working style patterns (pair programming, autonomous, review-only).</p>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</section>
+<section class="sec lvl-1" id="s-44">
+<h4><span class="numprefix">44.</span> SKILL.md and the Skills Paradigm</h4>
+<p class="summary">SKILL.md and the Skills Paradigm introduces 44.1 What a "skill" is in this paradigm, 44.2 The SKILL.md format.</p>
+<details class="sec lvl-2" id="s-44-1" open>
+<summary><h5><span class="numprefix">44.1</span> What a "skill" is in this paradigm</h5></summary>
+<p class="summary">Covers the fundamentals of what a "skill" is in this paradigm.</p>
+<details class="sec lvl-2" id="s-44-2" open>
+<summary><h5><span class="numprefix">44.2</span> The SKILL.md format</h5></summary>
+<p class="summary">The SKILL.md format breaks down into 4 specific concepts and techniques.</p>
+<details class="sec lvl-3" id="s-44-2-1">
+<summary><h6><span class="numprefix">44.2.1</span> Frontmatter — name and description</h6></summary>
+<p class="summary">Frontmatter — name and description.</p>
+<details class="sec lvl-3" id="s-44-2-2">
+<summary><h6><span class="numprefix">44.2.2</span> The description as router — how skills get triggered</h6></summary>
+<p class="summary">The description as router — how skills get triggered.</p>
+<details class="sec lvl-3" id="s-44-2-3">
+<summary><h6><span class="numprefix">44.2.3</span> Body structure and conventions</h6></summary>
+<p class="summary">Body structure and conventions.</p>
+<details class="sec lvl-3" id="s-44-2-4">
+<summary><h6><span class="numprefix">44.2.4</span> Referenced files and resources</h6></summary>
+<p class="summary">Referenced files and resources.</p>
+<details class="sec lvl-2" id="s-44-3" open>
+<summary><h5><span class="numprefix">44.3</span> Skill discovery and triggering logic</h5></summary>
+<p class="summary">Covers the fundamentals of skill discovery and triggering logic.</p>
+<details class="sec lvl-2" id="s-44-4" open>
+<summary><h5><span class="numprefix">44.4</span> Skills vs. prompts vs. fine-tuning — the right tool for the job</h5></summary>
+<p class="summary">Covers the fundamentals of skills vs. prompts vs. fine-tuning — the right tool for the job.</p>
+<details class="sec lvl-2" id="s-44-5" open>
+<summary><h5><span class="numprefix">44.5</span> Composable skills (calling skills from skills)</h5></summary>
+<p class="summary">Covers the fundamentals of composable skills (calling skills from skills).</p>
+<details class="sec lvl-2" id="s-44-6" open>
+<summary><h5><span class="numprefix">44.6</span> Public skills vs. personal skills vs. team skills</h5></summary>
+<p class="summary">Covers the fundamentals of public skills vs. personal skills vs. team skills.</p>
+<details class="sec lvl-2" id="s-44-7" open>
+<summary><h5><span class="numprefix">44.7</span> Designing good skills</h5></summary>
+<p class="summary">Designing good skills breaks down into 3 specific concepts and techniques.</p>
+<details class="sec lvl-3" id="s-44-7-1">
+<summary><h6><span class="numprefix">44.7.1</span> Scope and boundaries</h6></summary>
+<p class="summary">Scope and boundaries.</p>
+<details class="sec lvl-3" id="s-44-7-2">
+<summary><h6><span class="numprefix">44.7.2</span> Writing the description for triggering</h6></summary>
+<p class="summary">Writing the description for triggering.</p>
+<details class="sec lvl-3" id="s-44-7-3">
+<summary><h6><span class="numprefix">44.7.3</span> Avoiding scope creep</h6></summary>
+<p class="summary">Avoiding scope creep.</p>
+<details class="sec lvl-2" id="s-44-8" open>
+<summary><h5><span class="numprefix">44.8</span> The skill ecosystem</h5></summary>
+<p class="summary">Covers the fundamentals of the skill ecosystem.</p>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</section>
+<section class="sec lvl-1" id="s-45">
+<h4><span class="numprefix">45.</span> Agent Evaluation</h4>
+<p class="summary">Agent Evaluation introduces 45.1 Task completion benchmarks, 45.2 Coding benchmarks (SWE-bench family), 45.3 Computer-use benchmarks (OSWorld family).</p>
+<details class="sec lvl-2" id="s-45-1" open>
+<summary><h5><span class="numprefix">45.1</span> Task completion benchmarks</h5></summary>
+<p class="summary">Covers the fundamentals of task completion benchmarks.</p>
+<details class="sec lvl-2" id="s-45-2" open>
+<summary><h5><span class="numprefix">45.2</span> Coding benchmarks (SWE-bench family)</h5></summary>
+<p class="summary">Covers the fundamentals of coding benchmarks (swe-bench family).</p>
+<details class="sec lvl-2" id="s-45-3" open>
+<summary><h5><span class="numprefix">45.3</span> Computer-use benchmarks (OSWorld family)</h5></summary>
+<p class="summary">Covers the fundamentals of computer-use benchmarks (osworld family).</p>
+<details class="sec lvl-2" id="s-45-4" open>
+<summary><h5><span class="numprefix">45.4</span> Trajectory analysis</h5></summary>
+<p class="summary">Covers the fundamentals of trajectory analysis.</p>
+<details class="sec lvl-2" id="s-45-5" open>
+<summary><h5><span class="numprefix">45.5</span> Failure-mode taxonomy</h5></summary>
+<p class="summary">Covers the fundamentals of failure-mode taxonomy.</p>
+<details class="sec lvl-2" id="s-45-6" open>
+<summary><h5><span class="numprefix">45.6</span> Cost, latency, and reliability metrics</h5></summary>
+<p class="summary">Covers the fundamentals of cost, latency, and reliability metrics.</p>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</section>
+</section>
+<section class="part" id="part-xi">
+<h3><span class="numprefix">XI</span> Running AI Locally</h3>
+<p class="summary">Running AI Locally covers foundational concepts and principles essential for understanding this domain.</p>
+<section class="sec lvl-1" id="s-46">
+<h4><span class="numprefix">46.</span> Why Run AI Locally</h4>
+<p class="summary">Why Run AI Locally introduces 46.1 Privacy and data sovereignty, 46.2 Cost (no per-token pricing), 46.3 Offline capability.</p>
+<details class="sec lvl-2" id="s-46-1" open>
+<summary><h5><span class="numprefix">46.1</span> Privacy and data sovereignty</h5></summary>
+<p class="summary">Covers the fundamentals of privacy and data sovereignty.</p>
+<details class="sec lvl-2" id="s-46-2" open>
+<summary><h5><span class="numprefix">46.2</span> Cost (no per-token pricing)</h5></summary>
+<p class="summary">Covers the fundamentals of cost (no per-token pricing).</p>
+<details class="sec lvl-2" id="s-46-3" open>
+<summary><h5><span class="numprefix">46.3</span> Offline capability</h5></summary>
+<p class="summary">Covers the fundamentals of offline capability.</p>
+<details class="sec lvl-2" id="s-46-4" open>
+<summary><h5><span class="numprefix">46.4</span> Full customization and control</h5></summary>
+<p class="summary">Covers the fundamentals of full customization and control.</p>
+<details class="sec lvl-2" id="s-46-5" open>
+<summary><h5><span class="numprefix">46.5</span> Honest limits vs. frontier models</h5></summary>
+<p class="summary">Covers the fundamentals of honest limits vs. frontier models.</p>
+</details>
+</details>
+</details>
+</details>
+</details>
+</section>
+<section class="sec lvl-1" id="s-47">
+<h4><span class="numprefix">47.</span> Open-Weight vs. Open-Source (The Distinction That Matters)</h4>
+<p class="summary">Open-Weight vs. Open-Source (The Distinction That Matters) introduces 47.1 Open weights (you can run it), 47.2 Open source code (you can modify it), 47.3 Open training data (you can reproduce it).</p>
+<details class="sec lvl-2" id="s-47-1" open>
+<summary><h5><span class="numprefix">47.1</span> Open weights (you can run it)</h5></summary>
+<p class="summary">Covers the fundamentals of open weights (you can run it).</p>
+<details class="sec lvl-2" id="s-47-2" open>
+<summary><h5><span class="numprefix">47.2</span> Open source code (you can modify it)</h5></summary>
+<p class="summary">Covers the fundamentals of open source code (you can modify it).</p>
+<details class="sec lvl-2" id="s-47-3" open>
+<summary><h5><span class="numprefix">47.3</span> Open training data (you can reproduce it)</h5></summary>
+<p class="summary">Covers the fundamentals of open training data (you can reproduce it).</p>
+<details class="sec lvl-2" id="s-47-4" open>
+<summary><h5><span class="numprefix">47.4</span> Licensing</h5></summary>
+<p class="summary">Licensing breaks down into 3 specific concepts and techniques.</p>
+<details class="sec lvl-3" id="s-47-4-1">
+<summary><h6><span class="numprefix">47.4.1</span> Apache 2.0, MIT, BSD — truly open</h6></summary>
+<p class="summary">Apache 2.0, MIT, BSD — truly open.</p>
+<details class="sec lvl-3" id="s-47-4-2">
+<summary><h6><span class="numprefix">47.4.2</span> Llama license and restrictions</h6></summary>
+<p class="summary">Llama license and restrictions.</p>
+<details class="sec lvl-3" id="s-47-4-3">
+<summary><h6><span class="numprefix">47.4.3</span> "Open-washing" — when "open" isn't</h6></summary>
+<p class="summary">"Open-washing" — when "open" isn't.</p>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</section>
+<section class="sec lvl-1" id="s-48">
+<h4><span class="numprefix">48.</span> Quantization</h4>
+<p class="summary">Quantization introduces 48.1 What quantization does, 48.2 Precision levels, 48.3 GGUF format.</p>
+<details class="sec lvl-2" id="s-48-1" open>
+<summary><h5><span class="numprefix">48.1</span> What quantization does</h5></summary>
+<p class="summary">Covers the fundamentals of what quantization does.</p>
+<details class="sec lvl-2" id="s-48-2" open>
+<summary><h5><span class="numprefix">48.2</span> Precision levels — FP16, FP8, INT8, INT4, INT2</h5></summary>
+<p class="summary">Covers the fundamentals of precision levels — fp16, fp8, int8, int4, int2.</p>
+<details class="sec lvl-2" id="s-48-3" open>
+<summary><h5><span class="numprefix">48.3</span> GGUF format</h5></summary>
+<p class="summary">Covers the fundamentals of gguf format.</p>
+<details class="sec lvl-2" id="s-48-4" open>
+<summary><h5><span class="numprefix">48.4</span> Quality vs. size tradeoffs (perplexity curves)</h5></summary>
+<p class="summary">Covers the fundamentals of quality vs. size tradeoffs (perplexity curves).</p>
+<details class="sec lvl-2" id="s-48-5" open>
+<summary><h5><span class="numprefix">48.5</span> Mixed-precision approaches</h5></summary>
+<p class="summary">Covers the fundamentals of mixed-precision approaches.</p>
+</details>
+</details>
+</details>
+</details>
+</details>
+</section>
+<section class="sec lvl-1" id="s-49">
+<h4><span class="numprefix">49.</span> Local Inference Stacks</h4>
+<p class="summary">Local Inference Stacks introduces 49.1 llama.cpp (the foundation), 49.2 Ollama.</p>
+<details class="sec lvl-2" id="s-49-1" open>
+<summary><h5><span class="numprefix">49.1</span> llama.cpp (the foundation)</h5></summary>
+<p class="summary">Covers the fundamentals of llama.cpp (the foundation).</p>
+<details class="sec lvl-2" id="s-49-2" open>
+<summary><h5><span class="numprefix">49.2</span> Ollama</h5></summary>
+<p class="summary">Ollama breaks down into 6 specific concepts and techniques.</p>
+<details class="sec lvl-3" id="s-49-2-1">
+<summary><h6><span class="numprefix">49.2.1</span> Installation and first run</h6></summary>
+<p class="summary">Installation and first run.</p>
+<details class="sec lvl-3" id="s-49-2-2">
+<summary><h6><span class="numprefix">49.2.2</span> Model library and pulling models</h6></summary>
+<p class="summary">Model library and pulling models.</p>
+<details class="sec lvl-3" id="s-49-2-3">
+<summary><h6><span class="numprefix">49.2.3</span> Modelfiles</h6></summary>
+<p class="summary">Modelfiles.</p>
+<details class="sec lvl-3" id="s-49-2-4">
+<summary><h6><span class="numprefix">49.2.4</span> OpenAI-compatible API</h6></summary>
+<p class="summary">OpenAI-compatible API.</p>
+<details class="sec lvl-3" id="s-49-2-5">
+<summary><h6><span class="numprefix">49.2.5</span> Context window configuration</h6></summary>
+<p class="summary">Context window configuration.</p>
+<details class="sec lvl-3" id="s-49-2-6">
+<summary><h6><span class="numprefix">49.2.6</span> Multi-model workflows</h6></summary>
+<p class="summary">Multi-model workflows.</p>
+<details class="sec lvl-2" id="s-49-3" open>
+<summary><h5><span class="numprefix">49.3</span> LM Studio — GUI-first local AI</h5></summary>
+<p class="summary">Covers the fundamentals of lm studio — gui-first local ai.</p>
+<details class="sec lvl-2" id="s-49-4" open>
+<summary><h5><span class="numprefix">49.4</span> Text Generation WebUI (oobabooga)</h5></summary>
+<p class="summary">Covers the fundamentals of text generation webui (oobabooga).</p>
+<details class="sec lvl-2" id="s-49-5" open>
+<summary><h5><span class="numprefix">49.5</span> vLLM — for serious throughput</h5></summary>
+<p class="summary">Covers the fundamentals of vllm — for serious throughput.</p>
+<details class="sec lvl-2" id="s-49-6" open>
+<summary><h5><span class="numprefix">49.6</span> MLX — Apple Silicon native</h5></summary>
+<p class="summary">Covers the fundamentals of mlx — apple silicon native.</p>
+<details class="sec lvl-2" id="s-49-7" open>
+<summary><h5><span class="numprefix">49.7</span> Exo and distributed local inference</h5></summary>
+<p class="summary">Covers the fundamentals of exo and distributed local inference.</p>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</section>
+<section class="sec lvl-1" id="s-50">
+<h4><span class="numprefix">50.</span> Hardware Considerations</h4>
+<p class="summary">Hardware Considerations introduces 50.1 GPU memory as the primary constraint, 50.2 Consumer GPUs.</p>
+<details class="sec lvl-2" id="s-50-1" open>
+<summary><h5><span class="numprefix">50.1</span> GPU memory as the primary constraint</h5></summary>
+<p class="summary">Covers the fundamentals of gpu memory as the primary constraint.</p>
+<details class="sec lvl-2" id="s-50-2" open>
+<summary><h5><span class="numprefix">50.2</span> Consumer GPUs</h5></summary>
+<p class="summary">Consumer GPUs breaks down into 3 specific concepts and techniques.</p>
+<details class="sec lvl-3" id="s-50-2-1">
+<summary><h6><span class="numprefix">50.2.1</span> NVIDIA (CUDA ecosystem)</h6></summary>
+<p class="summary">NVIDIA (CUDA ecosystem).</p>
+<details class="sec lvl-3" id="s-50-2-2">
+<summary><h6><span class="numprefix">50.2.2</span> AMD (ROCm)</h6></summary>
+<p class="summary">AMD (ROCm).</p>
+<details class="sec lvl-3" id="s-50-2-3">
+<summary><h6><span class="numprefix">50.2.3</span> Intel Arc</h6></summary>
+<p class="summary">Intel Arc.</p>
+<details class="sec lvl-2" id="s-50-3" open>
+<summary><h5><span class="numprefix">50.3</span> Apple Silicon — unified memory advantage</h5></summary>
+<p class="summary">Covers the fundamentals of apple silicon — unified memory advantage.</p>
+<details class="sec lvl-2" id="s-50-4" open>
+<summary><h5><span class="numprefix">50.4</span> CPU-only inference</h5></summary>
+<p class="summary">Covers the fundamentals of cpu-only inference.</p>
+<details class="sec lvl-2" id="s-50-5" open>
+<summary><h5><span class="numprefix">50.5</span> Edge devices (Raspberry Pi, Jetson)</h5></summary>
+<p class="summary">Covers the fundamentals of edge devices (raspberry pi, jetson).</p>
+<details class="sec lvl-2" id="s-50-6" open>
+<summary><h5><span class="numprefix">50.6</span> Cloud GPU rentals (RunPod, Vast, Lambda)</h5></summary>
+<p class="summary">Covers the fundamentals of cloud gpu rentals (runpod, vast, lambda).</p>
+<details class="sec lvl-2" id="s-50-7" open>
+<summary><h5><span class="numprefix">50.7</span> Rule-of-thumb sizing (parameters × quantization → VRAM)</h5></summary>
+<p class="summary">Covers the fundamentals of rule-of-thumb sizing (parameters × quantization → vram).</p>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</section>
+<section class="sec lvl-1" id="s-51">
+<h4><span class="numprefix">51.</span> Open Model Families (Evergreen Categories)</h4>
+<p class="summary">Open Model Families (Evergreen Categories) introduces 51.1 Meta, 51.2 Mistral, 51.3 Alibaba.</p>
+<details class="sec lvl-2" id="s-51-1" open>
+<summary><h5><span class="numprefix">51.1</span> Meta — Llama family</h5></summary>
+<p class="summary">Covers the fundamentals of meta — llama family.</p>
+<details class="sec lvl-2" id="s-51-2" open>
+<summary><h5><span class="numprefix">51.2</span> Mistral — Mistral and Mixtral lineages</h5></summary>
+<p class="summary">Covers the fundamentals of mistral — mistral and mixtral lineages.</p>
+<details class="sec lvl-2" id="s-51-3" open>
+<summary><h5><span class="numprefix">51.3</span> Alibaba — Qwen family</h5></summary>
+<p class="summary">Covers the fundamentals of alibaba — qwen family.</p>
+<details class="sec lvl-2" id="s-51-4" open>
+<summary><h5><span class="numprefix">51.4</span> Microsoft — Phi family (small models)</h5></summary>
+<p class="summary">Covers the fundamentals of microsoft — phi family (small models).</p>
+<details class="sec lvl-2" id="s-51-5" open>
+<summary><h5><span class="numprefix">51.5</span> Google — Gemma family</h5></summary>
+<p class="summary">Covers the fundamentals of google — gemma family.</p>
+<details class="sec lvl-2" id="s-51-6" open>
+<summary><h5><span class="numprefix">51.6</span> DeepSeek family</h5></summary>
+<p class="summary">Covers the fundamentals of deepseek family.</p>
+<details class="sec lvl-2" id="s-51-7" open>
+<summary><h5><span class="numprefix">51.7</span> Specialized open models</h5></summary>
+<p class="summary">Specialized open models breaks down into 4 specific concepts and techniques.</p>
+<details class="sec lvl-3" id="s-51-7-1">
+<summary><h6><span class="numprefix">51.7.1</span> Coding-specialized</h6></summary>
+<p class="summary">Coding-specialized.</p>
+<details class="sec lvl-3" id="s-51-7-2">
+<summary><h6><span class="numprefix">51.7.2</span> Vision-specialized</h6></summary>
+<p class="summary">Vision-specialized.</p>
+<details class="sec lvl-3" id="s-51-7-3">
+<summary><h6><span class="numprefix">51.7.3</span> Multilingual-specialized</h6></summary>
+<p class="summary">Multilingual-specialized.</p>
+<details class="sec lvl-3" id="s-51-7-4">
+<summary><h6><span class="numprefix">51.7.4</span> Reasoning-specialized</h6></summary>
+<p class="summary">Reasoning-specialized.</p>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</section>
+<section class="sec lvl-1" id="s-52">
+<h4><span class="numprefix">52.</span> Local AI Workflows</h4>
+<p class="summary">Local AI Workflows introduces 52.1 Privacy-first personal assistant, 52.2 Offline coding assistant, 52.3 Local RAG over personal documents.</p>
+<details class="sec lvl-2" id="s-52-1" open>
+<summary><h5><span class="numprefix">52.1</span> Privacy-first personal assistant</h5></summary>
+<p class="summary">Covers the fundamentals of privacy-first personal assistant.</p>
+<details class="sec lvl-2" id="s-52-2" open>
+<summary><h5><span class="numprefix">52.2</span> Offline coding assistant</h5></summary>
+<p class="summary">Covers the fundamentals of offline coding assistant.</p>
+<details class="sec lvl-2" id="s-52-3" open>
+<summary><h5><span class="numprefix">52.3</span> Local RAG over personal documents</h5></summary>
+<p class="summary">Covers the fundamentals of local rag over personal documents.</p>
+<details class="sec lvl-2" id="s-52-4" open>
+<summary><h5><span class="numprefix">52.4</span> Self-hosted agents</h5></summary>
+<p class="summary">Covers the fundamentals of self-hosted agents.</p>
+<details class="sec lvl-2" id="s-52-5" open>
+<summary><h5><span class="numprefix">52.5</span> Hybrid routing (local for private, cloud for hard)</h5></summary>
+<p class="summary">Covers the fundamentals of hybrid routing (local for private, cloud for hard).</p>
+<details class="sec lvl-2" id="s-52-6" open>
+<summary><h5><span class="numprefix">52.6</span> Local fine-tuning workflows</h5></summary>
+<p class="summary">Covers the fundamentals of local fine-tuning workflows.</p>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</section>
+<section class="sec lvl-1" id="s-53">
+<h4><span class="numprefix">53.</span> Self-Hosting the Full Stack</h4>
+<p class="summary">Self-Hosting the Full Stack introduces 53.1 Docker and Docker Compose for AI, 53.2 Open WebUI as the frontend, 53.3 Reverse proxies and authentication.</p>
+<details class="sec lvl-2" id="s-53-1" open>
+<summary><h5><span class="numprefix">53.1</span> Docker and Docker Compose for AI</h5></summary>
+<p class="summary">Covers the fundamentals of docker and docker compose for ai.</p>
+<details class="sec lvl-2" id="s-53-2" open>
+<summary><h5><span class="numprefix">53.2</span> Open WebUI as the frontend</h5></summary>
+<p class="summary">Covers the fundamentals of open webui as the frontend.</p>
+<details class="sec lvl-2" id="s-53-3" open>
+<summary><h5><span class="numprefix">53.3</span> Reverse proxies and authentication</h5></summary>
+<p class="summary">Covers the fundamentals of reverse proxies and authentication.</p>
+<details class="sec lvl-2" id="s-53-4" open>
+<summary><h5><span class="numprefix">53.4</span> Monitoring and logging</h5></summary>
+<p class="summary">Covers the fundamentals of monitoring and logging.</p>
+<details class="sec lvl-2" id="s-53-5" open>
+<summary><h5><span class="numprefix">53.5</span> Backups and model versioning</h5></summary>
+<p class="summary">Covers the fundamentals of backups and model versioning.</p>
+<details class="sec lvl-2" id="s-53-6" open>
+<summary><h5><span class="numprefix">53.6</span> Secure remote access (Tailscale, Wireguard, Cloudflare Tunnel)</h5></summary>
+<p class="summary">Covers the fundamentals of secure remote access (tailscale, wireguard, cloudflare tunnel).</p>
+<details class="sec lvl-2" id="s-53-7" open>
+<summary><h5><span class="numprefix">53.7</span> Home-lab patterns (Proxmox, bare metal, mini-PCs)</h5></summary>
+<p class="summary">Covers the fundamentals of home-lab patterns (proxmox, bare metal, mini-pcs).</p>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</section>
+</section>
+<section class="part" id="part-xii">
+<h3><span class="numprefix">XII</span> AI for Creators and Builders</h3>
+<p class="summary">AI for Creators and Builders covers foundational concepts and principles essential for understanding this domain.</p>
+<section class="sec lvl-1" id="s-54">
+<h4><span class="numprefix">54.</span> AI for Writing</h4>
+<p class="summary">AI for Writing introduces 54.1 Long-form drafting workflows, 54.2 Editing and revision loops, 54.3 Style matching and voice preservation.</p>
+<details class="sec lvl-2" id="s-54-1" open>
+<summary><h5><span class="numprefix">54.1</span> Long-form drafting workflows</h5></summary>
+<p class="summary">Covers the fundamentals of long-form drafting workflows.</p>
+<details class="sec lvl-2" id="s-54-2" open>
+<summary><h5><span class="numprefix">54.2</span> Editing and revision loops</h5></summary>
+<p class="summary">Covers the fundamentals of editing and revision loops.</p>
+<details class="sec lvl-2" id="s-54-3" open>
+<summary><h5><span class="numprefix">54.3</span> Style matching and voice preservation</h5></summary>
+<p class="summary">Covers the fundamentals of style matching and voice preservation.</p>
+<details class="sec lvl-2" id="s-54-4" open>
+<summary><h5><span class="numprefix">54.4</span> Research-to-draft pipelines</h5></summary>
+<p class="summary">Covers the fundamentals of research-to-draft pipelines.</p>
+</details>
+</details>
+</details>
+</details>
+</section>
+<section class="sec lvl-1" id="s-55">
+<h4><span class="numprefix">55.</span> AI for Image Creation</h4>
+<p class="summary">AI for Image Creation introduces 55.1 Concept ideation, 55.2 Iterative prompting workflows, 55.3 Style development and consistency.</p>
+<details class="sec lvl-2" id="s-55-1" open>
+<summary><h5><span class="numprefix">55.1</span> Concept ideation</h5></summary>
+<p class="summary">Covers the fundamentals of concept ideation.</p>
+<details class="sec lvl-2" id="s-55-2" open>
+<summary><h5><span class="numprefix">55.2</span> Iterative prompting workflows</h5></summary>
+<p class="summary">Covers the fundamentals of iterative prompting workflows.</p>
+<details class="sec lvl-2" id="s-55-3" open>
+<summary><h5><span class="numprefix">55.3</span> Style development and consistency</h5></summary>
+<p class="summary">Covers the fundamentals of style development and consistency.</p>
+<details class="sec lvl-2" id="s-55-4" open>
+<summary><h5><span class="numprefix">55.4</span> Asset production pipelines</h5></summary>
+<p class="summary">Covers the fundamentals of asset production pipelines.</p>
+</details>
+</details>
+</details>
+</details>
+</section>
+<section class="sec lvl-1" id="s-56">
+<h4><span class="numprefix">56.</span> AI for Video</h4>
+<p class="summary">AI for Video introduces 56.1 Storyboarding with AI, 56.2 Text-to-video generation workflow, 56.3 AI-assisted video editing.</p>
+<details class="sec lvl-2" id="s-56-1" open>
+<summary><h5><span class="numprefix">56.1</span> Storyboarding with AI</h5></summary>
+<p class="summary">Covers the fundamentals of storyboarding with ai.</p>
+<details class="sec lvl-2" id="s-56-2" open>
+<summary><h5><span class="numprefix">56.2</span> Text-to-video generation workflow</h5></summary>
+<p class="summary">Covers the fundamentals of text-to-video generation workflow.</p>
+<details class="sec lvl-2" id="s-56-3" open>
+<summary><h5><span class="numprefix">56.3</span> AI-assisted video editing</h5></summary>
+<p class="summary">Covers the fundamentals of ai-assisted video editing.</p>
+<details class="sec lvl-2" id="s-56-4" open>
+<summary><h5><span class="numprefix">56.4</span> Subtitling, dubbing, and translation</h5></summary>
+<p class="summary">Covers the fundamentals of subtitling, dubbing, and translation.</p>
+</details>
+</details>
+</details>
+</details>
+</section>
+<section class="sec lvl-1" id="s-57">
+<h4><span class="numprefix">57.</span> AI for Music and Audio</h4>
+<p class="summary">AI for Music and Audio introduces 57.1 Music generation workflow, 57.2 Voice design and synthetic narrators, 57.3 Podcast production with AI.</p>
+<details class="sec lvl-2" id="s-57-1" open>
+<summary><h5><span class="numprefix">57.1</span> Music generation workflow</h5></summary>
+<p class="summary">Covers the fundamentals of music generation workflow.</p>
+<details class="sec lvl-2" id="s-57-2" open>
+<summary><h5><span class="numprefix">57.2</span> Voice design and synthetic narrators</h5></summary>
+<p class="summary">Covers the fundamentals of voice design and synthetic narrators.</p>
+<details class="sec lvl-2" id="s-57-3" open>
+<summary><h5><span class="numprefix">57.3</span> Podcast production with AI</h5></summary>
+<p class="summary">Covers the fundamentals of podcast production with ai.</p>
+<details class="sec lvl-2" id="s-57-4" open>
+<summary><h5><span class="numprefix">57.4</span> Stem separation and remixing</h5></summary>
+<p class="summary">Covers the fundamentals of stem separation and remixing.</p>
+</details>
+</details>
+</details>
+</details>
+</section>
+<section class="sec lvl-1" id="s-58">
+<h4><span class="numprefix">58.</span> AI for Coding (From a Non-Developer's Angle)</h4>
+<p class="summary">AI for Coding (From a Non-Developer's Angle) introduces 58.1 Understanding unfamiliar code, 58.2 Scripting and automation, 58.3 Building simple tools without writing code from scratch.</p>
+<details class="sec lvl-2" id="s-58-1" open>
+<summary><h5><span class="numprefix">58.1</span> Understanding unfamiliar code</h5></summary>
+<p class="summary">Covers the fundamentals of understanding unfamiliar code.</p>
+<details class="sec lvl-2" id="s-58-2" open>
+<summary><h5><span class="numprefix">58.2</span> Scripting and automation</h5></summary>
+<p class="summary">Covers the fundamentals of scripting and automation.</p>
+<details class="sec lvl-2" id="s-58-3" open>
+<summary><h5><span class="numprefix">58.3</span> Building simple tools without writing code from scratch</h5></summary>
+<p class="summary">Covers the fundamentals of building simple tools without writing code from scratch.</p>
+<details class="sec lvl-2" id="s-58-4" open>
+<summary><h5><span class="numprefix">58.4</span> No-code platforms × AI</h5></summary>
+<p class="summary">Covers the fundamentals of no-code platforms × ai.</p>
+<details class="sec lvl-2" id="s-58-5" open>
+<summary><h5><span class="numprefix">58.5</span> Spreadsheet and document automation</h5></summary>
+<p class="summary">Covers the fundamentals of spreadsheet and document automation.</p>
+<details class="sec lvl-2" id="s-58-6" open>
+<summary><h5><span class="numprefix">58.6</span> When to lean on AI vs. learn to code properly</h5></summary>
+<p class="summary">Covers the fundamentals of when to lean on ai vs. learn to code properly.</p>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</section>
+<section class="sec lvl-1" id="s-59">
+<h4><span class="numprefix">59.</span> Workflow and Automation Platforms (Conceptual)</h4>
+<p class="summary">Workflow and Automation Platforms (Conceptual) introduces 59.1 Visual workflow builders (n8n, Make, Zapier), 59.2 Agent-first platforms (conceptual), 59.3 The "AI inside a workflow" vs. "workflow inside an agen.</p>
+<details class="sec lvl-2" id="s-59-1" open>
+<summary><h5><span class="numprefix">59.1</span> Visual workflow builders (n8n, Make, Zapier)</h5></summary>
+<p class="summary">Covers the fundamentals of visual workflow builders (n8n, make, zapier).</p>
+<details class="sec lvl-2" id="s-59-2" open>
+<summary><h5><span class="numprefix">59.2</span> Agent-first platforms (conceptual)</h5></summary>
+<p class="summary">Covers the fundamentals of agent-first platforms (conceptual).</p>
+<details class="sec lvl-2" id="s-59-3" open>
+<summary><h5><span class="numprefix">59.3</span> The "AI inside a workflow" vs. "workflow inside an agent" distinction</h5></summary>
+<p class="summary">Covers the fundamentals of the "ai inside a workflow" vs. "workflow inside an agent" distinction.</p>
+</details>
+</details>
+</details>
+</section>
+</section>
+<section class="part" id="part-xiii">
+<h3><span class="numprefix">XIII</span> Evaluation and Critical Thinking</h3>
+<p class="summary">Evaluation and Critical Thinking covers foundational concepts and principles essential for understanding this domain.</p>
+<section class="sec lvl-1" id="s-60">
+<h4><span class="numprefix">60.</span> Evaluating AI Outputs</h4>
+<p class="summary">Evaluating AI Outputs introduces 60.1 Correctness, 60.2 Factuality and groundedness, 60.3 Relevance.</p>
+<details class="sec lvl-2" id="s-60-1" open>
+<summary><h5><span class="numprefix">60.1</span> Correctness</h5></summary>
+<p class="summary">Covers the fundamentals of correctness.</p>
+<details class="sec lvl-2" id="s-60-2" open>
+<summary><h5><span class="numprefix">60.2</span> Factuality and groundedness</h5></summary>
+<p class="summary">Covers the fundamentals of factuality and groundedness.</p>
+<details class="sec lvl-2" id="s-60-3" open>
+<summary><h5><span class="numprefix">60.3</span> Relevance</h5></summary>
+<p class="summary">Covers the fundamentals of relevance.</p>
+<details class="sec lvl-2" id="s-60-4" open>
+<summary><h5><span class="numprefix">60.4</span> Style, tone, and format fit</h5></summary>
+<p class="summary">Covers the fundamentals of style, tone, and format fit.</p>
+<details class="sec lvl-2" id="s-60-5" open>
+<summary><h5><span class="numprefix">60.5</span> Safety and appropriateness</h5></summary>
+<p class="summary">Covers the fundamentals of safety and appropriateness.</p>
+</details>
+</details>
+</details>
+</details>
+</details>
+</section>
+<section class="sec lvl-1" id="s-61">
+<h4><span class="numprefix">61.</span> Benchmarks (Conceptually)</h4>
+<p class="summary">Benchmarks (Conceptually) introduces 61.1 What benchmarks measure, 61.2 Major benchmark categories.</p>
+<details class="sec lvl-2" id="s-61-1" open>
+<summary><h5><span class="numprefix">61.1</span> What benchmarks measure — and don't</h5></summary>
+<p class="summary">Covers the fundamentals of what benchmarks measure — and don't.</p>
+<details class="sec lvl-2" id="s-61-2" open>
+<summary><h5><span class="numprefix">61.2</span> Major benchmark categories</h5></summary>
+<p class="summary">Major benchmark categories breaks down into 6 specific concepts and techniques.</p>
+<details class="sec lvl-3" id="s-61-2-1">
+<summary><h6><span class="numprefix">61.2.1</span> General knowledge and reasoning</h6></summary>
+<p class="summary">General knowledge and reasoning.</p>
+<details class="sec lvl-3" id="s-61-2-2">
+<summary><h6><span class="numprefix">61.2.2</span> Coding</h6></summary>
+<p class="summary">Coding.</p>
+<details class="sec lvl-3" id="s-61-2-3">
+<summary><h6><span class="numprefix">61.2.3</span> Math</h6></summary>
+<p class="summary">Math.</p>
+<details class="sec lvl-3" id="s-61-2-4">
+<summary><h6><span class="numprefix">61.2.4</span> Agentic tasks</h6></summary>
+<p class="summary">Agentic tasks.</p>
+<details class="sec lvl-3" id="s-61-2-5">
+<summary><h6><span class="numprefix">61.2.5</span> Long context</h6></summary>
+<p class="summary">Long context.</p>
+<details class="sec lvl-3" id="s-61-2-6">
+<summary><h6><span class="numprefix">61.2.6</span> Multimodal</h6></summary>
+<p class="summary">Multimodal.</p>
+<details class="sec lvl-2" id="s-61-3" open>
+<summary><h5><span class="numprefix">61.3</span> Benchmark saturation and gaming</h5></summary>
+<p class="summary">Covers the fundamentals of benchmark saturation and gaming.</p>
+<details class="sec lvl-2" id="s-61-4" open>
+<summary><h5><span class="numprefix">61.4</span> Why "vibes" testing still matters</h5></summary>
+<p class="summary">Covers the fundamentals of why "vibes" testing still matters.</p>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</section>
+<section class="sec lvl-1" id="s-62">
+<h4><span class="numprefix">62.</span> Evals for Your Own Use</h4>
+<p class="summary">Evals for Your Own Use introduces 62.1 Building a golden dataset, 62.2 LLM-as-judge (strengths and traps), 62.3 Human evaluation.</p>
+<details class="sec lvl-2" id="s-62-1" open>
+<summary><h5><span class="numprefix">62.1</span> Building a golden dataset</h5></summary>
+<p class="summary">Covers the fundamentals of building a golden dataset.</p>
+<details class="sec lvl-2" id="s-62-2" open>
+<summary><h5><span class="numprefix">62.2</span> LLM-as-judge (strengths and traps)</h5></summary>
+<p class="summary">Covers the fundamentals of llm-as-judge (strengths and traps).</p>
+<details class="sec lvl-2" id="s-62-3" open>
+<summary><h5><span class="numprefix">62.3</span> Human evaluation</h5></summary>
+<p class="summary">Covers the fundamentals of human evaluation.</p>
+<details class="sec lvl-2" id="s-62-4" open>
+<summary><h5><span class="numprefix">62.4</span> A/B testing prompts and models</h5></summary>
+<p class="summary">Covers the fundamentals of a/b testing prompts and models.</p>
+<details class="sec lvl-2" id="s-62-5" open>
+<summary><h5><span class="numprefix">62.5</span> Regression testing as models update</h5></summary>
+<p class="summary">Covers the fundamentals of regression testing as models update.</p>
+</details>
+</details>
+</details>
+</details>
+</details>
+</section>
+<section class="sec lvl-1" id="s-63">
+<h4><span class="numprefix">63.</span> Critical Thinking About AI</h4>
+<p class="summary">Critical Thinking About AI introduces 63.1 Detecting hallucinations in practice, 63.2 Source verification habits, 63.3 Recognizing sycophancy.</p>
+<details class="sec lvl-2" id="s-63-1" open>
+<summary><h5><span class="numprefix">63.1</span> Detecting hallucinations in practice</h5></summary>
+<p class="summary">Covers the fundamentals of detecting hallucinations in practice.</p>
+<details class="sec lvl-2" id="s-63-2" open>
+<summary><h5><span class="numprefix">63.2</span> Source verification habits</h5></summary>
+<p class="summary">Covers the fundamentals of source verification habits.</p>
+<details class="sec lvl-2" id="s-63-3" open>
+<summary><h5><span class="numprefix">63.3</span> Recognizing sycophancy</h5></summary>
+<p class="summary">Covers the fundamentals of recognizing sycophancy.</p>
+<details class="sec lvl-2" id="s-63-4" open>
+<summary><h5><span class="numprefix">63.4</span> When to trust, when to verify, when to discard</h5></summary>
+<p class="summary">Covers the fundamentals of when to trust, when to verify, when to discard.</p>
+<details class="sec lvl-2" id="s-63-5" open>
+<summary><h5><span class="numprefix">63.5</span> The "AI told me so" cognitive trap</h5></summary>
+<p class="summary">Covers the fundamentals of the "ai told me so" cognitive trap.</p>
+<details class="sec lvl-2" id="s-63-6" open>
+<summary><h5><span class="numprefix">63.6</span> Epistemic humility about your own prompts</h5></summary>
+<p class="summary">Covers the fundamentals of epistemic humility about your own prompts.</p>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</section>
+</section>
+<section class="part" id="part-xiv">
+<h3><span class="numprefix">XIV</span> Ethics, Safety, Law, and Society</h3>
+<p class="summary">Ethics, Safety, Law, and Society covers foundational concepts and principles essential for understanding this domain.</p>
+<section class="sec lvl-1" id="s-64">
+<h4><span class="numprefix">64.</span> AI Bias and Fairness</h4>
+<p class="summary">AI Bias and Fairness introduces 64.1 Sources of bias (data, labels, design, deployment), 64.2 Types of bias (representation, measurement, aggregation, 64.3 Real-world harms.</p>
+<details class="sec lvl-2" id="s-64-1" open>
+<summary><h5><span class="numprefix">64.1</span> Sources of bias (data, labels, design, deployment)</h5></summary>
+<p class="summary">Covers the fundamentals of sources of bias (data, labels, design, deployment).</p>
+<details class="sec lvl-2" id="s-64-2" open>
+<summary><h5><span class="numprefix">64.2</span> Types of bias (representation, measurement, aggregation)</h5></summary>
+<p class="summary">Covers the fundamentals of types of bias (representation, measurement, aggregation).</p>
+<details class="sec lvl-2" id="s-64-3" open>
+<summary><h5><span class="numprefix">64.3</span> Real-world harms</h5></summary>
+<p class="summary">Covers the fundamentals of real-world harms.</p>
+<details class="sec lvl-2" id="s-64-4" open>
+<summary><h5><span class="numprefix">64.4</span> Mitigation approaches and their limits</h5></summary>
+<p class="summary">Covers the fundamentals of mitigation approaches and their limits.</p>
+</details>
+</details>
+</details>
+</details>
+</section>
+<section class="sec lvl-1" id="s-65">
+<h4><span class="numprefix">65.</span> AI Safety and Alignment</h4>
+<p class="summary">AI Safety and Alignment introduces 65.1 The alignment problem stated clearly, 65.2 Specification gaming and reward hacking, 65.3 Deceptive alignment (conceptual).</p>
+<details class="sec lvl-2" id="s-65-1" open>
+<summary><h5><span class="numprefix">65.1</span> The alignment problem stated clearly</h5></summary>
+<p class="summary">Covers the fundamentals of the alignment problem stated clearly.</p>
+<details class="sec lvl-2" id="s-65-2" open>
+<summary><h5><span class="numprefix">65.2</span> Specification gaming and reward hacking</h5></summary>
+<p class="summary">Covers the fundamentals of specification gaming and reward hacking.</p>
+<details class="sec lvl-2" id="s-65-3" open>
+<summary><h5><span class="numprefix">65.3</span> Deceptive alignment (conceptual)</h5></summary>
+<p class="summary">Covers the fundamentals of deceptive alignment (conceptual).</p>
+<details class="sec lvl-2" id="s-65-4" open>
+<summary><h5><span class="numprefix">65.4</span> Interpretability research</h5></summary>
+<p class="summary">Interpretability research breaks down into 2 specific concepts and techniques.</p>
+<details class="sec lvl-3" id="s-65-4-1">
+<summary><h6><span class="numprefix">65.4.1</span> Mechanistic interpretability</h6></summary>
+<p class="summary">Mechanistic interpretability.</p>
+<details class="sec lvl-3" id="s-65-4-2">
+<summary><h6><span class="numprefix">65.4.2</span> Feature circuits and activation patching</h6></summary>
+<p class="summary">Feature circuits and activation patching.</p>
+<details class="sec lvl-2" id="s-65-5" open>
+<summary><h5><span class="numprefix">65.5</span> Responsible Scaling Policies and frontier-model commitments</h5></summary>
+<p class="summary">Covers the fundamentals of responsible scaling policies and frontier-model commitments.</p>
+<details class="sec lvl-2" id="s-65-6" open>
+<summary><h5><span class="numprefix">65.6</span> Existential-risk perspectives — faithful coverage</h5></summary>
+<p class="summary">Covers the fundamentals of existential-risk perspectives — faithful coverage.</p>
+<details class="sec lvl-2" id="s-65-7" open>
+<summary><h5><span class="numprefix">65.7</span> AI-safety skeptics — faithful coverage</h5></summary>
+<p class="summary">Covers the fundamentals of ai-safety skeptics — faithful coverage.</p>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</section>
+<section class="sec lvl-1" id="s-66">
+<h4><span class="numprefix">66.</span> Misinformation, Deepfakes, and Trust</h4>
+<p class="summary">Misinformation, Deepfakes, and Trust introduces 66.1 The synthetic-media landscape, 66.2 Detection tools and their limits, 66.3 Provenance standards (C2PA, Content Credentials).</p>
+<details class="sec lvl-2" id="s-66-1" open>
+<summary><h5><span class="numprefix">66.1</span> The synthetic-media landscape</h5></summary>
+<p class="summary">Covers the fundamentals of the synthetic-media landscape.</p>
+<details class="sec lvl-2" id="s-66-2" open>
+<summary><h5><span class="numprefix">66.2</span> Detection tools and their limits</h5></summary>
+<p class="summary">Covers the fundamentals of detection tools and their limits.</p>
+<details class="sec lvl-2" id="s-66-3" open>
+<summary><h5><span class="numprefix">66.3</span> Provenance standards (C2PA, Content Credentials)</h5></summary>
+<p class="summary">Covers the fundamentals of provenance standards (c2pa, content credentials).</p>
+<details class="sec lvl-2" id="s-66-4" open>
+<summary><h5><span class="numprefix">66.4</span> Watermarking approaches</h5></summary>
+<p class="summary">Covers the fundamentals of watermarking approaches.</p>
+<details class="sec lvl-2" id="s-66-5" open>
+<summary><h5><span class="numprefix">66.5</span> Media literacy in the AI age</h5></summary>
+<p class="summary">Covers the fundamentals of media literacy in the ai age.</p>
+</details>
+</details>
+</details>
+</details>
+</details>
+</section>
+<section class="sec lvl-1" id="s-67">
+<h4><span class="numprefix">67.</span> Privacy and Data Rights</h4>
+<p class="summary">Privacy and Data Rights introduces 67.1 What AI companies collect and why, 67.2 Training-data rights, 67.3 Opting out of training.</p>
+<details class="sec lvl-2" id="s-67-1" open>
+<summary><h5><span class="numprefix">67.1</span> What AI companies collect and why</h5></summary>
+<p class="summary">Covers the fundamentals of what ai companies collect and why.</p>
+<details class="sec lvl-2" id="s-67-2" open>
+<summary><h5><span class="numprefix">67.2</span> Training-data rights</h5></summary>
+<p class="summary">Covers the fundamentals of training-data rights.</p>
+<details class="sec lvl-2" id="s-67-3" open>
+<summary><h5><span class="numprefix">67.3</span> Opting out of training</h5></summary>
+<p class="summary">Covers the fundamentals of opting out of training.</p>
+<details class="sec lvl-2" id="s-67-4" open>
+<summary><h5><span class="numprefix">67.4</span> Privacy-preserving techniques (federated learning, differential privacy)</h5></summary>
+<p class="summary">Covers the fundamentals of privacy-preserving techniques (federated learning, differential privacy).</p>
+<details class="sec lvl-2" id="s-67-5" open>
+<summary><h5><span class="numprefix">67.5</span> Personal AI as a privacy strategy</h5></summary>
+<p class="summary">Covers the fundamentals of personal ai as a privacy strategy.</p>
+</details>
+</details>
+</details>
+</details>
+</details>
+</section>
+<section class="sec lvl-1" id="s-68">
+<h4><span class="numprefix">68.</span> Intellectual Property and Copyright</h4>
+<p class="summary">Intellectual Property and Copyright introduces 68.1 Training-data copyright controversies, 68.2 Ownership of AI-generated output, 68.3 Major legal themes and precedents.</p>
+<details class="sec lvl-2" id="s-68-1" open>
+<summary><h5><span class="numprefix">68.1</span> Training-data copyright controversies</h5></summary>
+<p class="summary">Covers the fundamentals of training-data copyright controversies.</p>
+<details class="sec lvl-2" id="s-68-2" open>
+<summary><h5><span class="numprefix">68.2</span> Ownership of AI-generated output</h5></summary>
+<p class="summary">Covers the fundamentals of ownership of ai-generated output.</p>
+<details class="sec lvl-2" id="s-68-3" open>
+<summary><h5><span class="numprefix">68.3</span> Major legal themes and precedents</h5></summary>
+<p class="summary">Covers the fundamentals of major legal themes and precedents.</p>
+<details class="sec lvl-2" id="s-68-4" open>
+<summary><h5><span class="numprefix">68.4</span> Using AI output commercially — practical guardrails</h5></summary>
+<p class="summary">Covers the fundamentals of using ai output commercially — practical guardrails.</p>
+</details>
+</details>
+</details>
+</details>
+</section>
+<section class="sec lvl-1" id="s-69">
+<h4><span class="numprefix">69.</span> Regulation Landscape (Evergreen Framing)</h4>
+<p class="summary">Regulation Landscape (Evergreen Framing) introduces 69.1 Risk-based regulatory frameworks, 69.2 Jurisdictional differences (EU, US, UK, China, Brazil), 69.3 Industry self-regulation and voluntary commitments.</p>
+<details class="sec lvl-2" id="s-69-1" open>
+<summary><h5><span class="numprefix">69.1</span> Risk-based regulatory frameworks</h5></summary>
+<p class="summary">Covers the fundamentals of risk-based regulatory frameworks.</p>
+<details class="sec lvl-2" id="s-69-2" open>
+<summary><h5><span class="numprefix">69.2</span> Jurisdictional differences (EU, US, UK, China, Brazil)</h5></summary>
+<p class="summary">Covers the fundamentals of jurisdictional differences (eu, us, uk, china, brazil).</p>
+<details class="sec lvl-2" id="s-69-3" open>
+<summary><h5><span class="numprefix">69.3</span> Industry self-regulation and voluntary commitments</h5></summary>
+<p class="summary">Covers the fundamentals of industry self-regulation and voluntary commitments.</p>
+<details class="sec lvl-2" id="s-69-4" open>
+<summary><h5><span class="numprefix">69.4</span> The compute-governance debate</h5></summary>
+<p class="summary">Covers the fundamentals of the compute-governance debate.</p>
+<details class="sec lvl-2" id="s-69-5" open>
+<summary><h5><span class="numprefix">69.5</span> Model cards, system cards, and transparency</h5></summary>
+<p class="summary">Covers the fundamentals of model cards, system cards, and transparency.</p>
+</details>
+</details>
+</details>
+</details>
+</details>
+</section>
+<section class="sec lvl-1" id="s-70">
+<h4><span class="numprefix">70.</span> AI and Work</h4>
+<p class="summary">AI and Work introduces 70.1 Augmentation vs. replacement, 70.2 Skill shifts more than role disappearance, 70.3 New roles emerging.</p>
+<details class="sec lvl-2" id="s-70-1" open>
+<summary><h5><span class="numprefix">70.1</span> Augmentation vs. replacement — nuanced reality</h5></summary>
+<p class="summary">Covers the fundamentals of augmentation vs. replacement — nuanced reality.</p>
+<details class="sec lvl-2" id="s-70-2" open>
+<summary><h5><span class="numprefix">70.2</span> Skill shifts more than role disappearance</h5></summary>
+<p class="summary">Covers the fundamentals of skill shifts more than role disappearance.</p>
+<details class="sec lvl-2" id="s-70-3" open>
+<summary><h5><span class="numprefix">70.3</span> New roles emerging</h5></summary>
+<p class="summary">Covers the fundamentals of new roles emerging.</p>
+<details class="sec lvl-2" id="s-70-4" open>
+<summary><h5><span class="numprefix">70.4</span> Distributional and economic questions</h5></summary>
+<p class="summary">Covers the fundamentals of distributional and economic questions.</p>
+</details>
+</details>
+</details>
+</details>
+</section>
+</section>
+<section class="part" id="part-xv">
+<h3><span class="numprefix">XV</span> Personal Mastery and Staying Current</h3>
+<p class="summary">Personal Mastery and Staying Current covers foundational concepts and principles essential for understanding this domain.</p>
+<section class="sec lvl-1" id="s-71">
+<h4><span class="numprefix">71.</span> Building AI Literacy</h4>
+<p class="summary">Building AI Literacy introduces 71.1 Core mental models every AI-literate person carries, 71.2 Evaluating AI tools critically, 71.3 Personal AI stack curation.</p>
+<details class="sec lvl-2" id="s-71-1" open>
+<summary><h5><span class="numprefix">71.1</span> Core mental models every AI-literate person carries</h5></summary>
+<p class="summary">Covers the fundamentals of core mental models every ai-literate person carries.</p>
+<details class="sec lvl-2" id="s-71-2" open>
+<summary><h5><span class="numprefix">71.2</span> Evaluating AI tools critically</h5></summary>
+<p class="summary">Covers the fundamentals of evaluating ai tools critically.</p>
+<details class="sec lvl-2" id="s-71-3" open>
+<summary><h5><span class="numprefix">71.3</span> Personal AI stack curation</h5></summary>
+<p class="summary">Covers the fundamentals of personal ai stack curation.</p>
+<details class="sec lvl-2" id="s-71-4" open>
+<summary><h5><span class="numprefix">71.4</span> Building an experimentation habit</h5></summary>
+<p class="summary">Covers the fundamentals of building an experimentation habit.</p>
+</details>
+</details>
+</details>
+</details>
+</section>
+<section class="sec lvl-1" id="s-72">
+<h4><span class="numprefix">72.</span> Staying Current Without Drowning</h4>
+<p class="summary">Staying Current Without Drowning introduces 72.1 Reading research papers without a PhD, 72.2 Newsletters, podcasts, blogs.</p>
+<details class="sec lvl-2" id="s-72-1" open>
+<summary><h5><span class="numprefix">72.1</span> Reading research papers without a PhD</h5></summary>
+<p class="summary">Reading research papers without a PhD breaks down into 2 specific concepts and techniques.</p>
+<details class="sec lvl-3" id="s-72-1-1">
+<summary><h6><span class="numprefix">72.1.1</span> Abstract-introduction-conclusion-discussion skim pattern</h6></summary>
+<p class="summary">Abstract-introduction-conclusion-discussion skim pattern.</p>
+<details class="sec lvl-3" id="s-72-1-2">
+<summary><h6><span class="numprefix">72.1.2</span> How to read arXiv strategically</h6></summary>
+<p class="summary">How to read arXiv strategically.</p>
+<details class="sec lvl-2" id="s-72-2" open>
+<summary><h5><span class="numprefix">72.2</span> Newsletters, podcasts, blogs — categories to follow</h5></summary>
+<p class="summary">Covers the fundamentals of newsletters, podcasts, blogs — categories to follow.</p>
+<details class="sec lvl-2" id="s-72-3" open>
+<summary><h5><span class="numprefix">72.3</span> Researchers, labs, and communities — categories to follow</h5></summary>
+<p class="summary">Covers the fundamentals of researchers, labs, and communities — categories to follow.</p>
+<details class="sec lvl-2" id="s-72-4" open>
+<summary><h5><span class="numprefix">72.4</span> The signal-vs-noise problem</h5></summary>
+<p class="summary">Covers the fundamentals of the signal-vs-noise problem.</p>
+<details class="sec lvl-2" id="s-72-5" open>
+<summary><h5><span class="numprefix">72.5</span> Personal AI research journal habit</h5></summary>
+<p class="summary">Covers the fundamentals of personal ai research journal habit.</p>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</section>
+<section class="sec lvl-1" id="s-73">
+<h4><span class="numprefix">73.</span> Leading AI Adoption (For Teams and Orgs)</h4>
+<p class="summary">Leading AI Adoption (For Teams and Orgs) introduces 73.1 Identifying high-leverage use cases, 73.2 Running pilot programs, 73.3 Writing a responsible AI policy.</p>
+<details class="sec lvl-2" id="s-73-1" open>
+<summary><h5><span class="numprefix">73.1</span> Identifying high-leverage use cases</h5></summary>
+<p class="summary">Covers the fundamentals of identifying high-leverage use cases.</p>
+<details class="sec lvl-2" id="s-73-2" open>
+<summary><h5><span class="numprefix">73.2</span> Running pilot programs</h5></summary>
+<p class="summary">Covers the fundamentals of running pilot programs.</p>
+<details class="sec lvl-2" id="s-73-3" open>
+<summary><h5><span class="numprefix">73.3</span> Writing a responsible AI policy</h5></summary>
+<p class="summary">Covers the fundamentals of writing a responsible ai policy.</p>
+<details class="sec lvl-2" id="s-73-4" open>
+<summary><h5><span class="numprefix">73.4</span> Managing expectations and measuring ROI</h5></summary>
+<p class="summary">Covers the fundamentals of managing expectations and measuring roi.</p>
+<details class="sec lvl-2" id="s-73-5" open>
+<summary><h5><span class="numprefix">73.5</span> Communicating AI decisions to non-technical stakeholders</h5></summary>
+<p class="summary">Covers the fundamentals of communicating ai decisions to non-technical stakeholders.</p>
+</details>
+</details>
+</details>
+</details>
+</details>
+</section>
+<section class="sec lvl-1" id="s-74">
+<h4><span class="numprefix">74.</span> Frontiers (Evergreen Framing)</h4>
+<p class="summary">Frontiers (Evergreen Framing) introduces 74.1 Reasoning and planning frontiers, 74.2 Embodied AI and robotics, 74.3 AI × science (the AlphaFold pattern).</p>
+<details class="sec lvl-2" id="s-74-1" open>
+<summary><h5><span class="numprefix">74.1</span> Reasoning and planning frontiers</h5></summary>
+<p class="summary">Covers the fundamentals of reasoning and planning frontiers.</p>
+<details class="sec lvl-2" id="s-74-2" open>
+<summary><h5><span class="numprefix">74.2</span> Embodied AI and robotics</h5></summary>
+<p class="summary">Covers the fundamentals of embodied ai and robotics.</p>
+<details class="sec lvl-2" id="s-74-3" open>
+<summary><h5><span class="numprefix">74.3</span> AI × science (the AlphaFold pattern)</h5></summary>
+<p class="summary">Covers the fundamentals of ai × science (the alphafold pattern).</p>
+<details class="sec lvl-2" id="s-74-4" open>
+<summary><h5><span class="numprefix">74.4</span> AGI definitions, debates, and milestones</h5></summary>
+<p class="summary">Covers the fundamentals of agi definitions, debates, and milestones.</p>
+<details class="sec lvl-2" id="s-74-5" open>
+<summary><h5><span class="numprefix">74.5</span> Open questions no one has answered yet</h5></summary>
+<p class="summary">Covers the fundamentals of open questions no one has answered yet.</p>
+</details>
+</details>
+</details>
+</details>
+</details>
+</section>
+</section>
+</section>
+<section class="track warn" id="track-b">
+<h2 class="track-title">🟡 Track B — Current Landscape (2025–2026)</h2>
+<div class="warn-banner">Track B is time-sensitive — refresh yearly.</div>
+<p class="summary">Current Landscape — time-sensitive overview of existing models, tools, and platforms. Refresh annually for relevance.</p>
+<section class="part" id="part-xvi">
+<h3><span class="numprefix">XVI</span> Current Model Families</h3>
+<p class="summary">Current Model Families covers foundational concepts and principles essential for understanding this domain.</p>
+<section class="sec lvl-1" id="s-75">
+<h4><span class="numprefix">75.</span> Frontier Closed Models</h4>
+<p class="summary">Frontier Closed Models introduces 75.1 OpenAI.</p>
+<details class="sec lvl-2" id="s-75-1" open>
+<summary><h5><span class="numprefix">75.1</span> OpenAI</h5></summary>
+<p class="summary">OpenAI breaks down into 3 specific concepts and techniques.</p>
+<details class="sec lvl-3" id="s-75-1-1">
+<summary><h6><span class="numprefix">75.1.1</span> GPT-5 family</h6></summary>
+<p class="summary">GPT-5 family.</p>
+<details class="sec lvl-3" id="s-75-1-2">
+<summary><h6><span class="numprefix">75.1.2</span> o-series reasoning models</h6></summary>
+<p class="summary">o-series reasoning models.</p>
+<details class="sec lvl-3" id="s-75-1-3">
+<summary><h6><span class="numprefix">75.1.3</span> GPT-realtime / voice models</h6></summary>
+<p class="summary">GPT-realtime / voice models.</p>
+<details class="sec lvl-2" id="s-75-2" open>
+<summary><h5><span class="numprefix">75.2</span> Anthropic</h5></summary>
+<p class="summary">Anthropic breaks down into 3 specific concepts and techniques.</p>
+<details class="sec lvl-3" id="s-75-2-1">
+<summary><h6><span class="numprefix">75.2.1</span> Claude Opus 4.x</h6></summary>
+<p class="summary">Claude Opus 4.x.</p>
+<details class="sec lvl-3" id="s-75-2-2">
+<summary><h6><span class="numprefix">75.2.2</span> Claude Sonnet 4.x</h6></summary>
+<p class="summary">Claude Sonnet 4.x.</p>
+<details class="sec lvl-3" id="s-75-2-3">
+<summary><h6><span class="numprefix">75.2.3</span> Claude Haiku 4.x</h6></summary>
+<p class="summary">Claude Haiku 4.x.</p>
+<details class="sec lvl-2" id="s-75-3" open>
+<summary><h5><span class="numprefix">75.3</span> Google DeepMind</h5></summary>
+<p class="summary">Google DeepMind breaks down into 2 specific concepts and techniques.</p>
+<details class="sec lvl-3" id="s-75-3-1">
+<summary><h6><span class="numprefix">75.3.1</span> Gemini 2.x / 3.x</h6></summary>
+<p class="summary">Gemini 2.x / 3.x.</p>
+<details class="sec lvl-3" id="s-75-3-2">
+<summary><h6><span class="numprefix">75.3.2</span> Gemini reasoning variants</h6></summary>
+<p class="summary">Gemini reasoning variants.</p>
+<details class="sec lvl-2" id="s-75-4" open>
+<summary><h5><span class="numprefix">75.4</span> xAI — Grok family</h5></summary>
+<p class="summary">Covers the fundamentals of xai — grok family.</p>
+<details class="sec lvl-2" id="s-75-5" open>
+<summary><h5><span class="numprefix">75.5</span> Mistral — closed-tier models</h5></summary>
+<p class="summary">Covers the fundamentals of mistral — closed-tier models.</p>
+<details class="sec lvl-2" id="s-75-6" open>
+<summary><h5><span class="numprefix">75.6</span> Others worth watching (Inflection, Cohere, AI21)</h5></summary>
+<p class="summary">Covers the fundamentals of others worth watching (inflection, cohere, ai21).</p>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</section>
+<section class="sec lvl-1" id="s-76">
+<h4><span class="numprefix">76.</span> Current Open-Weight Leaders</h4>
+<p class="summary">Current Open-Weight Leaders introduces 76.1 Llama (current generation), 76.2 Qwen (current generation), 76.3 DeepSeek (current generation).</p>
+<details class="sec lvl-2" id="s-76-1" open>
+<summary><h5><span class="numprefix">76.1</span> Llama (current generation)</h5></summary>
+<p class="summary">Covers the fundamentals of llama (current generation).</p>
+<details class="sec lvl-2" id="s-76-2" open>
+<summary><h5><span class="numprefix">76.2</span> Qwen (current generation)</h5></summary>
+<p class="summary">Covers the fundamentals of qwen (current generation).</p>
+<details class="sec lvl-2" id="s-76-3" open>
+<summary><h5><span class="numprefix">76.3</span> DeepSeek (current generation)</h5></summary>
+<p class="summary">Covers the fundamentals of deepseek (current generation).</p>
+<details class="sec lvl-2" id="s-76-4" open>
+<summary><h5><span class="numprefix">76.4</span> Mistral / Mixtral open releases</h5></summary>
+<p class="summary">Covers the fundamentals of mistral / mixtral open releases.</p>
+<details class="sec lvl-2" id="s-76-5" open>
+<summary><h5><span class="numprefix">76.5</span> Phi (current small models)</h5></summary>
+<p class="summary">Covers the fundamentals of phi (current small models).</p>
+<details class="sec lvl-2" id="s-76-6" open>
+<summary><h5><span class="numprefix">76.6</span> Gemma (current small models)</h5></summary>
+<p class="summary">Covers the fundamentals of gemma (current small models).</p>
+<details class="sec lvl-2" id="s-76-7" open>
+<summary><h5><span class="numprefix">76.7</span> Specialized open models</h5></summary>
+<p class="summary">Specialized open models breaks down into 4 specific concepts and techniques.</p>
+<details class="sec lvl-3" id="s-76-7-1">
+<summary><h6><span class="numprefix">76.7.1</span> Coding (Qwen Coder, DeepSeek Coder, etc.)</h6></summary>
+<p class="summary">Coding (Qwen Coder, DeepSeek Coder, etc.).</p>
+<details class="sec lvl-3" id="s-76-7-2">
+<summary><h6><span class="numprefix">76.7.2</span> Vision (Qwen-VL, LLaVA family)</h6></summary>
+<p class="summary">Vision (Qwen-VL, LLaVA family).</p>
+<details class="sec lvl-3" id="s-76-7-3">
+<summary><h6><span class="numprefix">76.7.3</span> Multilingual</h6></summary>
+<p class="summary">Multilingual.</p>
+<details class="sec lvl-3" id="s-76-7-4">
+<summary><h6><span class="numprefix">76.7.4</span> Reasoning (open "thinking" models)</h6></summary>
+<p class="summary">Reasoning (open "thinking" models).</p>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</section>
+<section class="sec lvl-1" id="s-77">
+<h4><span class="numprefix">77.</span> Current Benchmark Standings</h4>
+<p class="summary">Current Benchmark Standings introduces 77.1 General reasoning, 77.2 Coding (SWE-bench Verified, LiveCodeBench), 77.3 Agentic tasks (OSWorld, WebArena).</p>
+<details class="sec lvl-2" id="s-77-1" open>
+<summary><h5><span class="numprefix">77.1</span> General reasoning</h5></summary>
+<p class="summary">Covers the fundamentals of general reasoning.</p>
+<details class="sec lvl-2" id="s-77-2" open>
+<summary><h5><span class="numprefix">77.2</span> Coding (SWE-bench Verified, LiveCodeBench)</h5></summary>
+<p class="summary">Covers the fundamentals of coding (swe-bench verified, livecodebench).</p>
+<details class="sec lvl-2" id="s-77-3" open>
+<summary><h5><span class="numprefix">77.3</span> Agentic tasks (OSWorld, WebArena)</h5></summary>
+<p class="summary">Covers the fundamentals of agentic tasks (osworld, webarena).</p>
+<details class="sec lvl-2" id="s-77-4" open>
+<summary><h5><span class="numprefix">77.4</span> Long context (needle-in-haystack, RULER)</h5></summary>
+<p class="summary">Covers the fundamentals of long context (needle-in-haystack, ruler).</p>
+<details class="sec lvl-2" id="s-77-5" open>
+<summary><h5><span class="numprefix">77.5</span> Multimodal</h5></summary>
+<p class="summary">Covers the fundamentals of multimodal.</p>
+<details class="sec lvl-2" id="s-77-6" open>
+<summary><h5><span class="numprefix">77.6</span> Safety and refusal evaluations</h5></summary>
+<p class="summary">Covers the fundamentals of safety and refusal evaluations.</p>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</section>
+</section>
+<section class="part" id="part-xvii">
+<h3><span class="numprefix">XVII</span> Current Tool Ecosystem</h3>
+<p class="summary">Current Tool Ecosystem covers foundational concepts and principles essential for understanding this domain.</p>
+<section class="sec lvl-1" id="s-78">
+<h4><span class="numprefix">78.</span> Consumer Chat Interfaces</h4>
+<p class="summary">Consumer Chat Interfaces introduces 78.1 ChatGPT, 78.2 Claude (web, desktop, mobile), 78.3 Gemini.</p>
+<details class="sec lvl-2" id="s-78-1" open>
+<summary><h5><span class="numprefix">78.1</span> ChatGPT</h5></summary>
+<p class="summary">Covers the fundamentals of chatgpt.</p>
+<details class="sec lvl-2" id="s-78-2" open>
+<summary><h5><span class="numprefix">78.2</span> Claude (web, desktop, mobile)</h5></summary>
+<p class="summary">Covers the fundamentals of claude (web, desktop, mobile).</p>
+<details class="sec lvl-2" id="s-78-3" open>
+<summary><h5><span class="numprefix">78.3</span> Gemini</h5></summary>
+<p class="summary">Covers the fundamentals of gemini.</p>
+<details class="sec lvl-2" id="s-78-4" open>
+<summary><h5><span class="numprefix">78.4</span> Perplexity</h5></summary>
+<p class="summary">Covers the fundamentals of perplexity.</p>
+<details class="sec lvl-2" id="s-78-5" open>
+<summary><h5><span class="numprefix">78.5</span> Microsoft Copilot</h5></summary>
+<p class="summary">Covers the fundamentals of microsoft copilot.</p>
+<details class="sec lvl-2" id="s-78-6" open>
+<summary><h5><span class="numprefix">78.6</span> Grok</h5></summary>
+<p class="summary">Covers the fundamentals of grok.</p>
+<details class="sec lvl-2" id="s-78-7" open>
+<summary><h5><span class="numprefix">78.7</span> Open-source chat frontends</h5></summary>
+<p class="summary">Open-source chat frontends breaks down into 3 specific concepts and techniques.</p>
+<details class="sec lvl-3" id="s-78-7-1">
+<summary><h6><span class="numprefix">78.7.1</span> Open WebUI</h6></summary>
+<p class="summary">Open WebUI.</p>
+<details class="sec lvl-3" id="s-78-7-2">
+<summary><h6><span class="numprefix">78.7.2</span> LibreChat</h6></summary>
+<p class="summary">LibreChat.</p>
+<details class="sec lvl-3" id="s-78-7-3">
+<summary><h6><span class="numprefix">78.7.3</span> AnythingLLM</h6></summary>
+<p class="summary">AnythingLLM.</p>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</section>
+<section class="sec lvl-1" id="s-79">
+<h4><span class="numprefix">79.</span> Coding Assistants (Current)</h4>
+<p class="summary">Coding Assistants (Current) introduces 79.1 Claude Code (CLI and beyond), 79.2 Cursor, 79.3 GitHub Copilot (and Copilot Workspace / Spaces).</p>
+<details class="sec lvl-2" id="s-79-1" open>
+<summary><h5><span class="numprefix">79.1</span> Claude Code (CLI and beyond)</h5></summary>
+<p class="summary">Covers the fundamentals of claude code (cli and beyond).</p>
+<details class="sec lvl-2" id="s-79-2" open>
+<summary><h5><span class="numprefix">79.2</span> Cursor</h5></summary>
+<p class="summary">Covers the fundamentals of cursor.</p>
+<details class="sec lvl-2" id="s-79-3" open>
+<summary><h5><span class="numprefix">79.3</span> GitHub Copilot (and Copilot Workspace / Spaces)</h5></summary>
+<p class="summary">Covers the fundamentals of github copilot (and copilot workspace / spaces).</p>
+<details class="sec lvl-2" id="s-79-4" open>
+<summary><h5><span class="numprefix">79.4</span> Aider</h5></summary>
+<p class="summary">Covers the fundamentals of aider.</p>
+<details class="sec lvl-2" id="s-79-5" open>
+<summary><h5><span class="numprefix">79.5</span> Cline / Roo Code</h5></summary>
+<p class="summary">Covers the fundamentals of cline / roo code.</p>
+<details class="sec lvl-2" id="s-79-6" open>
+<summary><h5><span class="numprefix">79.6</span> Codex CLI (OpenAI)</h5></summary>
+<p class="summary">Covers the fundamentals of codex cli (openai).</p>
+<details class="sec lvl-2" id="s-79-7" open>
+<summary><h5><span class="numprefix">79.7</span> Windsurf</h5></summary>
+<p class="summary">Covers the fundamentals of windsurf.</p>
+<details class="sec lvl-2" id="s-79-8" open>
+<summary><h5><span class="numprefix">79.8</span> Zed AI</h5></summary>
+<p class="summary">Covers the fundamentals of zed ai.</p>
+<details class="sec lvl-2" id="s-79-9" open>
+<summary><h5><span class="numprefix">79.9</span> JetBrains AI Assistant</h5></summary>
+<p class="summary">Covers the fundamentals of jetbrains ai assistant.</p>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</section>
+<section class="sec lvl-1" id="s-80">
+<h4><span class="numprefix">80.</span> Productivity Integrations</h4>
+<p class="summary">Productivity Integrations introduces 80.1 Microsoft 365 Copilot, 80.2 Google Workspace AI, 80.3 Notion AI.</p>
+<details class="sec lvl-2" id="s-80-1" open>
+<summary><h5><span class="numprefix">80.1</span> Microsoft 365 Copilot</h5></summary>
+<p class="summary">Covers the fundamentals of microsoft 365 copilot.</p>
+<details class="sec lvl-2" id="s-80-2" open>
+<summary><h5><span class="numprefix">80.2</span> Google Workspace AI</h5></summary>
+<p class="summary">Covers the fundamentals of google workspace ai.</p>
+<details class="sec lvl-2" id="s-80-3" open>
+<summary><h5><span class="numprefix">80.3</span> Notion AI</h5></summary>
+<p class="summary">Covers the fundamentals of notion ai.</p>
+<details class="sec lvl-2" id="s-80-4" open>
+<summary><h5><span class="numprefix">80.4</span> Obsidian AI plugins</h5></summary>
+<p class="summary">Covers the fundamentals of obsidian ai plugins.</p>
+<details class="sec lvl-2" id="s-80-5" open>
+<summary><h5><span class="numprefix">80.5</span> Raycast AI</h5></summary>
+<p class="summary">Covers the fundamentals of raycast ai.</p>
+<details class="sec lvl-2" id="s-80-6" open>
+<summary><h5><span class="numprefix">80.6</span> Arc / Dia browser AI</h5></summary>
+<p class="summary">Covers the fundamentals of arc / dia browser ai.</p>
+<details class="sec lvl-2" id="s-80-7" open>
+<summary><h5><span class="numprefix">80.7</span> Claude in Chrome and similar browser agents</h5></summary>
+<p class="summary">Covers the fundamentals of claude in chrome and similar browser agents.</p>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</section>
+<section class="sec lvl-1" id="s-81">
+<h4><span class="numprefix">81.</span> Research and Search</h4>
+<p class="summary">Research and Search introduces 81.1 Perplexity, 81.2 ChatGPT Search and Deep Research, 81.3 Claude Research.</p>
+<details class="sec lvl-2" id="s-81-1" open>
+<summary><h5><span class="numprefix">81.1</span> Perplexity</h5></summary>
+<p class="summary">Covers the fundamentals of perplexity.</p>
+<details class="sec lvl-2" id="s-81-2" open>
+<summary><h5><span class="numprefix">81.2</span> ChatGPT Search and Deep Research</h5></summary>
+<p class="summary">Covers the fundamentals of chatgpt search and deep research.</p>
+<details class="sec lvl-2" id="s-81-3" open>
+<summary><h5><span class="numprefix">81.3</span> Claude Research</h5></summary>
+<p class="summary">Covers the fundamentals of claude research.</p>
+<details class="sec lvl-2" id="s-81-4" open>
+<summary><h5><span class="numprefix">81.4</span> Gemini Deep Research</h5></summary>
+<p class="summary">Covers the fundamentals of gemini deep research.</p>
+<details class="sec lvl-2" id="s-81-5" open>
+<summary><h5><span class="numprefix">81.5</span> Elicit, Consensus, Semantic Scholar</h5></summary>
+<p class="summary">Covers the fundamentals of elicit, consensus, semantic scholar.</p>
+<details class="sec lvl-2" id="s-81-6" open>
+<summary><h5><span class="numprefix">81.6</span> NotebookLM</h5></summary>
+<p class="summary">Covers the fundamentals of notebooklm.</p>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</section>
+<section class="sec lvl-1" id="s-82">
+<h4><span class="numprefix">82.</span> Image, Video, Voice, Music (Current Leaders)</h4>
+<p class="summary">Image, Video, Voice, Music (Current Leaders) introduces 82.1 Image.</p>
+<details class="sec lvl-2" id="s-82-1" open>
+<summary><h5><span class="numprefix">82.1</span> Image</h5></summary>
+<p class="summary">Image breaks down into 6 specific concepts and techniques.</p>
+<details class="sec lvl-3" id="s-82-1-1">
+<summary><h6><span class="numprefix">82.1.1</span> Midjourney (current version)</h6></summary>
+<p class="summary">Midjourney (current version).</p>
+<details class="sec lvl-3" id="s-82-1-2">
+<summary><h6><span class="numprefix">82.1.2</span> DALL-E / GPT Image</h6></summary>
+<p class="summary">DALL-E / GPT Image.</p>
+<details class="sec lvl-3" id="s-82-1-3">
+<summary><h6><span class="numprefix">82.1.3</span> Google Imagen</h6></summary>
+<p class="summary">Google Imagen.</p>
+<details class="sec lvl-3" id="s-82-1-4">
+<summary><h6><span class="numprefix">82.1.4</span> FLUX family</h6></summary>
+<p class="summary">FLUX family.</p>
+<details class="sec lvl-3" id="s-82-1-5">
+<summary><h6><span class="numprefix">82.1.5</span> Stable Diffusion (current releases)</h6></summary>
+<p class="summary">Stable Diffusion (current releases).</p>
+<details class="sec lvl-3" id="s-82-1-6">
+<summary><h6><span class="numprefix">82.1.6</span> Ideogram</h6></summary>
+<p class="summary">Ideogram.</p>
+<details class="sec lvl-2" id="s-82-2" open>
+<summary><h5><span class="numprefix">82.2</span> Video</h5></summary>
+<p class="summary">Video breaks down into 6 specific concepts and techniques.</p>
+<details class="sec lvl-3" id="s-82-2-1">
+<summary><h6><span class="numprefix">82.2.1</span> Sora</h6></summary>
+<p class="summary">Sora.</p>
+<details class="sec lvl-3" id="s-82-2-2">
+<summary><h6><span class="numprefix">82.2.2</span> Google Veo</h6></summary>
+<p class="summary">Google Veo.</p>
+<details class="sec lvl-3" id="s-82-2-3">
+<summary><h6><span class="numprefix">82.2.3</span> Runway</h6></summary>
+<p class="summary">Runway.</p>
+<details class="sec lvl-3" id="s-82-2-4">
+<summary><h6><span class="numprefix">82.2.4</span> Kling</h6></summary>
+<p class="summary">Kling.</p>
+<details class="sec lvl-3" id="s-82-2-5">
+<summary><h6><span class="numprefix">82.2.5</span> Pika</h6></summary>
+<p class="summary">Pika.</p>
+<details class="sec lvl-3" id="s-82-2-6">
+<summary><h6><span class="numprefix">82.2.6</span> Luma</h6></summary>
+<p class="summary">Luma.</p>
+<details class="sec lvl-2" id="s-82-3" open>
+<summary><h5><span class="numprefix">82.3</span> Voice</h5></summary>
+<p class="summary">Voice breaks down into 4 specific concepts and techniques.</p>
+<details class="sec lvl-3" id="s-82-3-1">
+<summary><h6><span class="numprefix">82.3.1</span> ElevenLabs</h6></summary>
+<p class="summary">ElevenLabs.</p>
+<details class="sec lvl-3" id="s-82-3-2">
+<summary><h6><span class="numprefix">82.3.2</span> OpenAI Voice</h6></summary>
+<p class="summary">OpenAI Voice.</p>
+<details class="sec lvl-3" id="s-82-3-3">
+<summary><h6><span class="numprefix">82.3.3</span> Play.ai</h6></summary>
+<p class="summary">Play.ai.</p>
+<details class="sec lvl-3" id="s-82-3-4">
+<summary><h6><span class="numprefix">82.3.4</span> Hume</h6></summary>
+<p class="summary">Hume.</p>
+<details class="sec lvl-2" id="s-82-4" open>
+<summary><h5><span class="numprefix">82.4</span> Music</h5></summary>
+<p class="summary">Music breaks down into 2 specific concepts and techniques.</p>
+<details class="sec lvl-3" id="s-82-4-1">
+<summary><h6><span class="numprefix">82.4.1</span> Suno</h6></summary>
+<p class="summary">Suno.</p>
+<details class="sec lvl-3" id="s-82-4-2">
+<summary><h6><span class="numprefix">82.4.2</span> Udio</h6></summary>
+<p class="summary">Udio.</p>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</section>
+<section class="sec lvl-1" id="s-83">
+<h4><span class="numprefix">83.</span> Agent and Automation Platforms (Current)</h4>
+<p class="summary">Agent and Automation Platforms (Current) introduces 83.1 Zapier with AI actions, 83.2 n8n (self-hostable), 83.3 Make.</p>
+<details class="sec lvl-2" id="s-83-1" open>
+<summary><h5><span class="numprefix">83.1</span> Zapier with AI actions</h5></summary>
+<p class="summary">Covers the fundamentals of zapier with ai actions.</p>
+<details class="sec lvl-2" id="s-83-2" open>
+<summary><h5><span class="numprefix">83.2</span> n8n (self-hostable)</h5></summary>
+<p class="summary">Covers the fundamentals of n8n (self-hostable).</p>
+<details class="sec lvl-2" id="s-83-3" open>
+<summary><h5><span class="numprefix">83.3</span> Make</h5></summary>
+<p class="summary">Covers the fundamentals of make.</p>
+<details class="sec lvl-2" id="s-83-4" open>
+<summary><h5><span class="numprefix">83.4</span> LangGraph</h5></summary>
+<p class="summary">Covers the fundamentals of langgraph.</p>
+<details class="sec lvl-2" id="s-83-5" open>
+<summary><h5><span class="numprefix">83.5</span> CrewAI</h5></summary>
+<p class="summary">Covers the fundamentals of crewai.</p>
+<details class="sec lvl-2" id="s-83-6" open>
+<summary><h5><span class="numprefix">83.6</span> AutoGen</h5></summary>
+<p class="summary">Covers the fundamentals of autogen.</p>
+<details class="sec lvl-2" id="s-83-7" open>
+<summary><h5><span class="numprefix">83.7</span> Relevance AI</h5></summary>
+<p class="summary">Covers the fundamentals of relevance ai.</p>
+<details class="sec lvl-2" id="s-83-8" open>
+<summary><h5><span class="numprefix">83.8</span> Lindy</h5></summary>
+<p class="summary">Covers the fundamentals of lindy.</p>
+<details class="sec lvl-2" id="s-83-9" open>
+<summary><h5><span class="numprefix">83.9</span> Dify</h5></summary>
+<p class="summary">Covers the fundamentals of dify.</p>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</section>
+<section class="sec lvl-1" id="s-84">
+<h4><span class="numprefix">84.</span> Local Inference (Current)</h4>
+<p class="summary">Local Inference (Current) introduces 84.1 Ollama (current features), 84.2 LM Studio, 84.3 Open WebUI.</p>
+<details class="sec lvl-2" id="s-84-1" open>
+<summary><h5><span class="numprefix">84.1</span> Ollama (current features)</h5></summary>
+<p class="summary">Covers the fundamentals of ollama (current features).</p>
+<details class="sec lvl-2" id="s-84-2" open>
+<summary><h5><span class="numprefix">84.2</span> LM Studio</h5></summary>
+<p class="summary">Covers the fundamentals of lm studio.</p>
+<details class="sec lvl-2" id="s-84-3" open>
+<summary><h5><span class="numprefix">84.3</span> Open WebUI</h5></summary>
+<p class="summary">Covers the fundamentals of open webui.</p>
+<details class="sec lvl-2" id="s-84-4" open>
+<summary><h5><span class="numprefix">84.4</span> vLLM</h5></summary>
+<p class="summary">Covers the fundamentals of vllm.</p>
+<details class="sec lvl-2" id="s-84-5" open>
+<summary><h5><span class="numprefix">84.5</span> llama.cpp ecosystem</h5></summary>
+<p class="summary">Covers the fundamentals of llama.cpp ecosystem.</p>
+<details class="sec lvl-2" id="s-84-6" open>
+<summary><h5><span class="numprefix">84.6</span> MLX community</h5></summary>
+<p class="summary">Covers the fundamentals of mlx community.</p>
+<details class="sec lvl-2" id="s-84-7" open>
+<summary><h5><span class="numprefix">84.7</span> GPT4All / Jan</h5></summary>
+<p class="summary">Covers the fundamentals of gpt4all / jan.</p>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</details>
+</section>
+</section>
+<section class="part" id="part-xviii">
+<h3><span class="numprefix">XVIII</span> Current Frontier Topics</h3>
+<p class="summary">Current Frontier Topics covers foundational concepts and principles essential for understanding this domain.</p>
+<section class="sec lvl-1" id="s-85">
+<h4><span class="numprefix">85.</span> Reasoning Models (Current State)</h4>
+<p class="summary">Reasoning Models (Current State) introduces 85.1 Test-time compute as a scaling dimension, 85.2 Chain-of-thought as training signal, 85.3 When reasoning models help vs. hurt.</p>
+<details class="sec lvl-2" id="s-85-1" open>
+<summary><h5><span class="numprefix">85.1</span> Test-time compute as a scaling dimension</h5></summary>
+<p class="summary">Covers the fundamentals of test-time compute as a scaling dimension.</p>
+<details class="sec lvl-2" id="s-85-2" open>
+<summary><h5><span class="numprefix">85.2</span> Chain-of-thought as training signal</h5></summary>
+<p class="summary">Covers the fundamentals of chain-of-thought as training signal.</p>
+<details class="sec lvl-2" id="s-85-3" open>
+<summary><h5><span class="numprefix">85.3</span> When reasoning models help vs. hurt</h5></summary>
+<p class="summary">Covers the fundamentals of when reasoning models help vs. hurt.</p>
+<details class="sec lvl-2" id="s-85-4" open>
+<summary><h5><span class="numprefix">85.4</span> Visible vs. hidden reasoning traces</h5></summary>
+<p class="summary">Covers the fundamentals of visible vs. hidden reasoning traces.</p>
+</details>
+</details>
+</details>
+</details>
+</section>
+<section class="sec lvl-1" id="s-86">
+<h4><span class="numprefix">86.</span> MCP Ecosystem (Current State)</h4>
+<p class="summary">MCP Ecosystem (Current State) introduces 86.1 Major MCP servers in the wild, 86.2 MCP adoption across vendors, 86.3 Tooling for building and hosting MCP servers.</p>
+<details class="sec lvl-2" id="s-86-1" open>
+<summary><h5><span class="numprefix">86.1</span> Major MCP servers in the wild</h5></summary>
+<p class="summary">Covers the fundamentals of major mcp servers in the wild.</p>
+<details class="sec lvl-2" id="s-86-2" open>
+<summary><h5><span class="numprefix">86.2</span> MCP adoption across vendors</h5></summary>
+<p class="summary">Covers the fundamentals of mcp adoption across vendors.</p>
+<details class="sec lvl-2" id="s-86-3" open>
+<summary><h5><span class="numprefix">86.3</span> Tooling for building and hosting MCP servers</h5></summary>
+<p class="summary">Covers the fundamentals of tooling for building and hosting mcp servers.</p>
+</details>
+</details>
+</details>
+</section>
+<section class="sec lvl-1" id="s-87">
+<h4><span class="numprefix">87.</span> Computer-Use Agents (Current State)</h4>
+<p class="summary">Computer-Use Agents (Current State) introduces 87.1 Anthropic Computer Use, 87.2 OpenAI Operator and Agent Mode, 87.3 Google Project Mariner.</p>
+<details class="sec lvl-2" id="s-87-1" open>
+<summary><h5><span class="numprefix">87.1</span> Anthropic Computer Use</h5></summary>
+<p class="summary">Covers the fundamentals of anthropic computer use.</p>
+<details class="sec lvl-2" id="s-87-2" open>
+<summary><h5><span class="numprefix">87.2</span> OpenAI Operator and Agent Mode</h5></summary>
+<p class="summary">Covers the fundamentals of openai operator and agent mode.</p>
+<details class="sec lvl-2" id="s-87-3" open>
+<summary><h5><span class="numprefix">87.3</span> Google Project Mariner</h5></summary>
+<p class="summary">Covers the fundamentals of google project mariner.</p>
+<details class="sec lvl-2" id="s-87-4" open>
+<summary><h5><span class="numprefix">87.4</span> Browser-Use, Stagehand, and similar libraries</h5></summary>
+<p class="summary">Covers the fundamentals of browser-use, stagehand, and similar libraries.</p>
+</details>
+</details>
+</details>
+</details>
+</section>
+<section class="sec lvl-1" id="s-88">
+<h4><span class="numprefix">88.</span> Current Skills Ecosystem</h4>
+<p class="summary">Current Skills Ecosystem introduces 88.1 Anthropic's official skills, 88.2 Community skill repositories, 88.3 Skill marketplaces and sharing platforms.</p>
+<details class="sec lvl-2" id="s-88-1" open>
+<summary><h5><span class="numprefix">88.1</span> Anthropic's official skills</h5></summary>
+<p class="summary">Covers the fundamentals of anthropic's official skills.</p>
+<details class="sec lvl-2" id="s-88-2" open>
+<summary><h5><span class="numprefix">88.2</span> Community skill repositories</h5></summary>
+<p class="summary">Covers the fundamentals of community skill repositories.</p>
+<details class="sec lvl-2" id="s-88-3" open>
+<summary><h5><span class="numprefix">88.3</span> Skill marketplaces and sharing platforms</h5></summary>
+<p class="summary">Covers the fundamentals of skill marketplaces and sharing platforms.</p>
+</details>
+</details>
+</details>
+</section>
+<section class="sec lvl-1" id="s-89">
+<h4><span class="numprefix">89.</span> Governance Developments (Current)</h4>
+<p class="summary">Governance Developments (Current) introduces 89.1 EU AI Act, 89.2 US federal and state AI action, 89.3 China's regulatory approach.</p>
+<details class="sec lvl-2" id="s-89-1" open>
+<summary><h5><span class="numprefix">89.1</span> EU AI Act — current implementation status</h5></summary>
+<p class="summary">Covers the fundamentals of eu ai act — current implementation status.</p>
+<details class="sec lvl-2" id="s-89-2" open>
+<summary><h5><span class="numprefix">89.2</span> US federal and state AI action</h5></summary>
+<p class="summary">Covers the fundamentals of us federal and state ai action.</p>
+<details class="sec lvl-2" id="s-89-3" open>
+<summary><h5><span class="numprefix">89.3</span> China's regulatory approach</h5></summary>
+<p class="summary">Covers the fundamentals of china's regulatory approach.</p>
+<details class="sec lvl-2" id="s-89-4" open>
+<summary><h5><span class="numprefix">89.4</span> Voluntary commitments and frontier-model reports</h5></summary>
+<p class="summary">Covers the fundamentals of voluntary commitments and frontier-model reports.</p>
+<details class="sec lvl-2" id="s-89-5" open>
+<summary><h5><span class="numprefix">89.5</span> AI Safety Institutes and third-party evaluations</h5></summary>
+<p class="summary">Covers the fundamentals of ai safety institutes and third-party evaluations.</p>
+</details>
+</details>
+</details>
+</details>
+</details>
+</section>
+</section>
+<section class="part" id="part-xix">
+<h3><span class="numprefix">XIX</span> Staying Current (Living Resources)</h3>
+<p class="summary">Staying Current (Living Resources) covers foundational concepts and principles essential for understanding this domain.</p>
+<section class="sec lvl-1" id="s-90">
+<h4><span class="numprefix">90.</span> Researchers and Thinkers to Follow (2026 Snapshot)</h4>
+<p class="summary">Researchers and Thinkers to Follow (2026 Snapshot) introduces 90.1 Safety and alignment voices, 90.2 Capability-research voices, 90.3 Applied and practitioner voices.</p>
+<details class="sec lvl-2" id="s-90-1" open>
+<summary><h5><span class="numprefix">90.1</span> Safety and alignment voices</h5></summary>
+<p class="summary">Covers the fundamentals of safety and alignment voices.</p>
+<details class="sec lvl-2" id="s-90-2" open>
+<summary><h5><span class="numprefix">90.2</span> Capability-research voices</h5></summary>
+<p class="summary">Covers the fundamentals of capability-research voices.</p>
+<details class="sec lvl-2" id="s-90-3" open>
+<summary><h5><span class="numprefix">90.3</span> Applied and practitioner voices</h5></summary>
+<p class="summary">Covers the fundamentals of applied and practitioner voices.</p>
+<details class="sec lvl-2" id="s-90-4" open>
+<summary><h5><span class="numprefix">90.4</span> Critical and heterodox voices</h5></summary>
+<p class="summary">Covers the fundamentals of critical and heterodox voices.</p>
+</details>
+</details>
+</details>
+</details>
+</section>
+<section class="sec lvl-1" id="s-91">
+<h4><span class="numprefix">91.</span> Newsletters and Blogs (2026 Snapshot)</h4>
+<p class="summary">Newsletters and Blogs (2026 Snapshot) introduces 91.1 Daily / weekly roundups, 91.2 Technical deep-dives, 91.3 Business and strategy.</p>
+<details class="sec lvl-2" id="s-91-1" open>
+<summary><h5><span class="numprefix">91.1</span> Daily / weekly roundups</h5></summary>
+<p class="summary">Covers the fundamentals of daily / weekly roundups.</p>
+<details class="sec lvl-2" id="s-91-2" open>
+<summary><h5><span class="numprefix">91.2</span> Technical deep-dives</h5></summary>
+<p class="summary">Covers the fundamentals of technical deep-dives.</p>
+<details class="sec lvl-2" id="s-91-3" open>
+<summary><h5><span class="numprefix">91.3</span> Business and strategy</h5></summary>
+<p class="summary">Covers the fundamentals of business and strategy.</p>
+<details class="sec lvl-2" id="s-91-4" open>
+<summary><h5><span class="numprefix">91.4</span> Policy and governance</h5></summary>
+<p class="summary">Covers the fundamentals of policy and governance.</p>
+</details>
+</details>
+</details>
+</details>
+</section>
+<section class="sec lvl-1" id="s-92">
+<h4><span class="numprefix">92.</span> Podcasts (2026 Snapshot)</h4>
+<p class="summary">This section covers podcasts (2026 snapshot) with practical depth.</p>
+</section>
+<section class="sec lvl-1" id="s-93">
+<h4><span class="numprefix">93.</span> YouTube Channels (2026 Snapshot)</h4>
+<p class="summary">This section covers youtube channels (2026 snapshot) with practical depth.</p>
+</section>
+<section class="sec lvl-1" id="s-94">
+<h4><span class="numprefix">94.</span> Communities (2026 Snapshot)</h4>
+<p class="summary">Communities (2026 Snapshot) introduces 94.1 Discord servers, 94.2 Reddit subreddits, 94.3 Hugging Face communities.</p>
+<details class="sec lvl-2" id="s-94-1" open>
+<summary><h5><span class="numprefix">94.1</span> Discord servers</h5></summary>
+<p class="summary">Covers the fundamentals of discord servers.</p>
+<details class="sec lvl-2" id="s-94-2" open>
+<summary><h5><span class="numprefix">94.2</span> Reddit subreddits</h5></summary>
+<p class="summary">Covers the fundamentals of reddit subreddits.</p>
+<details class="sec lvl-2" id="s-94-3" open>
+<summary><h5><span class="numprefix">94.3</span> Hugging Face communities</h5></summary>
+<p class="summary">Covers the fundamentals of hugging face communities.</p>
+<details class="sec lvl-2" id="s-94-4" open>
+<summary><h5><span class="numprefix">94.4</span> X / Bluesky AI circles</h5></summary>
+<p class="summary">Covers the fundamentals of x / bluesky ai circles.</p>
+<details class="sec lvl-2" id="s-94-5" open>
+<summary><h5><span class="numprefix">94.5</span> Local meetups and conferences</h5></summary>
+<p class="summary">Covers the fundamentals of local meetups and conferences.</p>
+</details>
+</details>
+</details>
+</details>
+</details>
+</section>
+<section class="sec lvl-1" id="s-95">
+<h4><span class="numprefix">95.</span> Conferences and Events (2026 Snapshot)</h4>
+<p class="summary">This section covers conferences and events (2026 snapshot) with practical depth.</p>
+</section>
+</section>
+</section>
+</main>
+  </div>
+
+  <button id="back-to-top" class="fab" aria-label="Back to top" hidden>↑ Top</button>
+</body>
+</html>
